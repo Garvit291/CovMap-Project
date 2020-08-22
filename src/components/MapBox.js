@@ -1,5 +1,6 @@
 import React , {useState} from 'react';
-import MapGL from 'react-map-gl';
+import  MapGL, {Source, Layer} from 'react-map-gl';
+import {clusterLayer, clusterCountLayer, unclusteredPointLayer} from './layers';
 
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2Fydml0MiIsImEiOiJja2U1Z3lvZWcxMnF2MzduN3FyZmtzaDViIn0.-XsOlUf85kWRRFa88u6aLQ';
@@ -12,6 +13,31 @@ const MapBox = () => {
         bearing: 0,
         pitch: 0
       });
+
+      const _sourceRef = React.createRef();
+
+      const _onClick = event => {
+        const feature = event.features[0];
+        const clusterId = feature.properties.cluster_id;
+    
+        const mapboxSource = _sourceRef.current.getSource();
+
+        mapboxSource.getClusterExpansionZoom(clusterId, (err, zoom) => {
+          if (err) {
+            return;
+          }
+          setViewport({
+            ...viewport,
+            longitude:feature.geometry.cordinares[0],
+            latitude: feature.geometry.coordinates[1],
+        zoom,
+        transitionDuration: 500
+          }
+          )
+            
+          });
+      };
+
   return (
     <MapGL
     {...viewport}
@@ -20,7 +46,23 @@ const MapBox = () => {
     mapStyle="mapbox://styles/garvit2/cke5j2o2c1oej19qo843rhfi4"
     onViewportChange={nextViewport => setViewport(nextViewport)}
     mapboxApiAccessToken={MAPBOX_TOKEN}
-  />
+    onClick={_onClick}
+  >
+    
+  <Source
+          type="geojson"
+          data="https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
+          cluster={true}
+          clusterMaxZoom={14}
+          clusterRadius={50}
+          ref={_sourceRef}
+        >
+          <Layer {...clusterLayer} />
+          <Layer {...clusterCountLayer} />
+          <Layer {...unclusteredPointLayer} />
+        </Source>
+        
+      </MapGL>
   )
 }
 
