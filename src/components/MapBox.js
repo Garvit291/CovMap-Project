@@ -1,7 +1,7 @@
 import React , {useState} from 'react';
 import  MapGL, {Source, Layer} from 'react-map-gl';
 import {clusterLayer, clusterCountLayer, unclusteredPointLayer} from './layers';
-
+import data from '../data/TestingCentres.geojson';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2Fydml0MiIsImEiOiJja2U1Z3lvZWcxMnF2MzduN3FyZmtzaDViIn0.-XsOlUf85kWRRFa88u6aLQ';
 
@@ -28,7 +28,7 @@ const MapBox = () => {
           }
           setViewport({
             ...viewport,
-            longitude:feature.geometry.cordinares[0],
+            longitude:feature.geometry.cordinates[0],
             latitude: feature.geometry.coordinates[1],
         zoom,
         transitionDuration: 500
@@ -51,7 +51,7 @@ const MapBox = () => {
     
   <Source
           type="geojson"
-          data="https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
+          data={data}
           cluster={true}
           clusterMaxZoom={14}
           clusterRadius={50}
