@@ -8,6 +8,7 @@ NavigationControl,
 import {clusterLayer, clusterCountLayer, unclusteredPointLayer} from './layers';
 import data from '../data/TestingCentres.geojson';
 import SearchBox from './SearchBox.js';
+import axios from 'axios';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2Fydml0MiIsImEiOiJja2U1Z3lvZWcxMnF2MzduN3FyZmtzaDViIn0.-XsOlUf85kWRRFa88u6aLQ';
 
@@ -40,6 +41,8 @@ const scaleControlStyle = {
   padding: '10px'
 };
 
+
+
 const MapBox = () => {
     const [viewport, setViewport] = useState({
         latitude: 25.275005879170045,
@@ -48,6 +51,8 @@ const MapBox = () => {
         bearing: 0,
         pitch: 0
       });
+
+      const [address, setAddress] = useState([]);
       const chandigarh = () =>{
       
       } 
@@ -65,6 +70,25 @@ const MapBox = () => {
       }
 
       const _sourceRef = React.createRef();
+
+      const  successCallback = async function (position) {
+    const ulon = position.coords.longitude;
+    const ulat = position.coords.latitude;
+    console.log(ulon,ulat);
+    const response = await axios.get(`https://eu1.locationiq.com/v1/reverse.php?key=1406ec0cbf52a3&lat=${ulat}&lon=${ulon}&format=json`)
+    const {county} = response.data.address;
+    console.log(county);
+  }
+
+  const failureCallback = () =>{
+
+  }
+
+const getUserLocation = () =>{
+  window.navigator.geolocation
+  .getCurrentPosition(successCallback,failureCallback,{maximumAge:60000, timeout:5000, enableHighAccuracy:true});
+ 
+}
 
       
 
@@ -120,7 +144,12 @@ const MapBox = () => {
       </Source>
 
       <div style={geolocateStyle}>
-          <GeolocateControl/>
+          <GeolocateControl
+          positionOptions={{enableHighAccuracy: true}}
+          trackUserLocation={true}
+          />
+         <button onClick = {getUserLocation}>get</button>
+          
         </div>
         <div style={fullscreenControlStyle}>
           <FullscreenControl />
