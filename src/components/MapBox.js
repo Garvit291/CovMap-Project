@@ -5,10 +5,11 @@ NavigationControl,
   ScaleControl,
   GeolocateControl
 } from 'react-map-gl';
-import {clusterLayer, clusterCountLayer, unclusteredPointLayer} from './layers';
-import data from '../data/TestingCentres.geojson';
+import {clusterLayer, clusterCountLayer, unclusteredPointLayer,geoJsonLayer} from './layers';
+import geojson from '../data/India GADM/IND_level1_states.geojson';
 import SearchBox from './SearchBox.js';
 import axios from 'axios';
+import {fetchData} from '../api/index.js';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2Fydml0MiIsImEiOiJja2U1Z3lvZWcxMnF2MzduN3FyZmtzaDViIn0.-XsOlUf85kWRRFa88u6aLQ';
 
@@ -52,10 +53,10 @@ const MapBox = () => {
         pitch: 0
       });
 
-      const [address, setAddress] = useState([]);
-      const chandigarh = () =>{
+      const [data , setData] = useState ([])
+
       
-      } 
+      
 
       const zoomToLocation = (lat,long) =>{
           setViewport(
@@ -69,12 +70,101 @@ const MapBox = () => {
       )
       }
 
+      function capitalizeFirstLetter(str) {
+      
+     str = str.split("_");
+
+    for (var i = 0, x = str.length; i < x; i++) {
+        str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+    }
+
+    return str.join(" ");
+
+}
+
+    const handleSearch = (item) =>
+    {  
+      if (item.type==='District'){
+        if(item.state==='daman_and_diu'|| item.state==='dadra_and_nagar_haveli'){
+          item.state='Dadra and Nagar Haveli and Daman and Diu'
+        }
+        let state = capitalizeFirstLetter(item.state)
+        handleDistrict(item.c19oName, state)
+
+      }
+
+      else if (item.type==='State'){
+        let state = capitalizeFirstLetter(item.state)
+        handleState(state)
+      }
+
+      else if(item.type ==='Union Territory'){
+        handleState(item.c19oName)
+      }
+    }  
+
+    const handleState = async (state) =>{
+      const response = await fetchData();
+        let totalconfirmed=0
+        let totalactive = 0
+        let totaldeceased = 0
+        let totaldeltaconfirmed = 0
+        let r=[]
+
+      const data = response.data
+        Object.entries(data[state]['districtData']).map((district)=>{
+          let c=district[1].confirmed
+          totalconfirmed=totalconfirmed+c
+          let a = district[1].active 
+          totalactive = totalactive + a
+          let d = district[1].deceased
+          totaldeceased = totaldeceased + d
+
+          let deltac = Object.entries(district[1].delta)[0][1]
+          totaldeltaconfirmed = totaldeltaconfirmed + deltac
+  })
+  r.push(totalconfirmed,totalactive,totaldeceased,totaldeltaconfirmed)
+
+        setData(r);
+        console.log(r)
+        
+      }
+
+      const handleDistrict = async (d , state) =>{
+        const response = await fetchData();
+        const data = response.data
+ let totalconfirmed=0
+  let totalactive = 0
+  let totaldeceased = 0
+  let totaldeltaconfirmed = 0
+  let r=[]
+ Object.entries(data[state]['districtData']).map((district)=>{
+    if (d===district[0]){
+        totalconfirmed =   district[1].confirmed
+        totalactive = district[1].active
+        totaldeceased = district[1].deceased
+        totaldeltaconfirmed=Object.entries(district[1].delta)[0][1]
+    }
+  })
+  
+  r.push(totalconfirmed,totalactive,totaldeceased,totaldeltaconfirmed)
+        setData(r)
+        console.log(r)
+      }
+
       const _sourceRef = React.createRef();
 
-      const  successCallback = async function (position) {
+    const  successCallback = async function (position) {
     const ulon = position.coords.longitude;
     const ulat = position.coords.latitude;
     console.log(ulon,ulat);
+    setViewport({
+      latitude:ulat,
+      longitude:ulon,
+      zoom:14,
+      transitionInterpolator: new FlyToInterpolator({speed: 2}),
+      transitionDuration: '.2s'
+    });
     const response = await axios.get(`https://eu1.locationiq.com/v1/reverse.php?key=1406ec0cbf52a3&lat=${ulat}&lon=${ulon}&format=json`)
     const {county} = response.data.address;
     console.log(county);
@@ -117,7 +207,7 @@ const getUserLocation = () =>{
   return (
     <div>
       <div className="searchbox">
-            <SearchBox zoomToLocation={zoomToLocation}/>
+            <SearchBox handleSearch={handleSearch}/>
       </div>
     
       <MapGL
@@ -127,20 +217,13 @@ const getUserLocation = () =>{
       mapStyle="mapbox://styles/garvit2/cke5j2o2c1oej19qo843rhfi4"
       onViewportChange={nextViewport => setViewport(nextViewport)}
       mapboxApiAccessToken={MAPBOX_TOKEN}
-      onClick={chandigarh}
       >
     
       <Source
           type="geojson"
-          data={data}
-          cluster={true}
-          clusterMaxZoom={14}
-          clusterRadius={50}
-          ref={_sourceRef}
+          data={geojson}
         >
-        <Layer {...clusterLayer} />
-        <Layer {...clusterCountLayer} />
-        <Layer {...unclusteredPointLayer} />
+        <Layer {...geoJsonLayer}/>
       </Source>
 
       <div style={geolocateStyle}>
@@ -149,7 +232,6 @@ const getUserLocation = () =>{
           trackUserLocation={true}
           />
          <button onClick = {getUserLocation}>get</button>
-          
         </div>
         <div style={fullscreenControlStyle}>
           <FullscreenControl />

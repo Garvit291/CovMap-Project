@@ -1,35 +1,20 @@
-import React , {useState} from 'react';
+import React , {useState,useEffect} from 'react';
 import './SearchBox.css';
+import data from '../data/csvjson.js';
 
-const SearchBox = ({zoomToLocation}) => {
+const SearchBox = ({handleSearch}) => {
 
     const [option,setOption] = useState('');
-    const [items , setItems] = useState([
-        {   
-            id:1,
-            name:'sonipat',
-            lat:28.993082,
-            long:77.015076
-        },
-        {   
-            id:2,
-            name:'chandigarh',
-            lat:30.733315,
-            long:76.779419
-        },
-        {
-            id:3,
-            name:'mumbai',
-            lat:19.075983,
-            long:72.877655
-        }
-    ]);
+    const [items , setItems] = useState([...data]);
 
+
+    
     const [text, setText] = useState('');
     const [display , setDisplay] = useState(false);
 
     const onChange = (e) =>{
        setText(e.target.value);
+       console.log('changed')
        if (e.target.value !== ''){
        setDisplay(true);
        }
@@ -38,8 +23,8 @@ const SearchBox = ({zoomToLocation}) => {
     }
 
     const optionSelected  = (item) =>{
-        setText(item.name);
-        zoomToLocation(item.lat , item.long);
+        handleSearch(item);
+        console.log(item)
         setDisplay(false);
     }
 
@@ -48,10 +33,11 @@ const SearchBox = ({zoomToLocation}) => {
     <div className = 'container'>
         <input type='text' className='input' onChange={onChange} value={text}  />
         {display && ( <div>
-                {items.filter(({name})=>name.indexOf(text.toLowerCase())>-1).map((item)=> {
+                {items.filter((namedata)=> namedata.apiName.indexOf(text.toLowerCase())>-1).map((item)=> {
+                    
             return(
-                <div key={item.id} onClick = {() => optionSelected(item)} className='li'>
-                <span>{item.name}</span>
+                <div  onClick = {() => optionSelected(item)} className='li'>
+                <span>{item.c19oName}</span>
                 </div>
             );
         })}

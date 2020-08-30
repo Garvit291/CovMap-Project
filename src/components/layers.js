@@ -33,3 +33,13 @@ export const clusterLayer = {
       'circle-stroke-color': '#fff'
     }
   };
+
+  export const geoJsonLayer = {
+    id:'geojson-layer','type': 'fill',
+'source': 'data',
+'layout': {},
+'paint': {
+'fill-color': 'red',
+'fill-opacity': 0.8
+  }
+  };
