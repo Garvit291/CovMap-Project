@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+.searchbox{
+  position: fixed;
+  top: 100px;
+  left: 40px;
+  z-index: 100;
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib{
+  opacity: 0 !important;
+}
