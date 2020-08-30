@@ -1,0 +1,730 @@
+covid19Name,apiName
+Adilabad,adilabad
+Agar Malwa,agar_malwa
+Agra,agra
+Ahmedabad,ahmadabad
+Ahmednagar,ahmadnagar
+Aizawl,aizawl
+Ajmer,ajmer
+Akola,akola
+Alappuzha,alappuzha
+Aligarh,aligarh
+Alipurduar,alipurduar
+Alirajpur,alirajpur
+Almora,almora
+Alwar,alwar
+Ambala,ambala
+Ambedkar Nagar,ambedkar_nagar
+Amethi,amethi
+Amravati,amravati
+Amreli,amreli
+Amritsar,amritsar
+Amroha,amroha
+Anand,anand
+Anantapur,anantapur
+Anantnag,anantnag
+Angul,anjaw
+Anjaw,anugul
+Anuppur,anuppur
+Araria,araria
+Aravalli,aravalli
+Ariyalur,ariyalur
+Arwal,arwal
+Ashoknagar,ashoknagar
+Auraiya,auraiya
+Aurangabad,aurangabad
+Ayodhya,faizabad
+Azamgarh,azamgarh
+Bagalkote,bagalkot
+Bageshwar,bageshwar
+Baghpat,baghpat
+Bahraich,bahraich
+Baksa,baksa
+Balaghat,balaghat
+Balangir,balangir
+Balasore,baleshwar
+Ballari,bellary
+Ballia,ballia
+Balod,balod
+Baloda Bazar,baloda_bazar
+Balrampur,balrampur
+Bametara,balrampur
+Banaskantha,banas_kantha
+Banda,banda
+Bandipora,bandipore
+Banka,banka
+Bankura,bankura
+Banswara,banswara
+Barabanki,barabanki
+Baramulla,baramulla
+Baran,baran
+Bareilly,bareilly
+Bargarh,bargarh
+Barmer,barmer
+Barnala,barnala
+Barpeta,barpeta
+Barwani,barwani
+Bastar,bastar
+Basti,basti
+Bathinda,bathinda
+Beed,bid
+Begusarai,begusarai
+Belagavi,belgaum
+Bengaluru Rural,bangalore_rural
+Bengaluru Urban,bangalore
+Betul,betul
+Bhadohi,sant_ravi_das_nagar
+Bhadradri Kothagudem,bhadradri_kothagudem
+Bhadrak,bhadrak
+Bhagalpur,bhagalpur
+Bhandara,bhandara
+Bharatpur,bharatpur
+Bharuch,bharuch
+Bhavnagar,bhavnagar
+Bhilwara,bhilwara
+Bhind,bhind
+Bhiwani,bhiwani
+Bhojpur,bhojpur
+Bhopal,bhopal
+Bidar,bidar
+Bijapur,bijapur
+Bijnor,bijnor
+Bikaner,bikaner
+Bilaspur,bilaspur
+Birbhum,birbhum
+Bishnupur,bishnupur
+Biswanath,sonitpur
+Bokaro,bokaro
+Bongaigaon,bongaigaon
+Botad,botad
+Boudh,bauda
+Budaun,budaun
+Budgam,badgam
+Bulandshahr,bulandshahr
+Buldhana,buldana
+Bundi,bundi
+Burhanpur,burhanpur
+Buxar,buxar
+Cachar,cachar
+Central Delhi,west
+Chamarajanagara,chamrajnagar
+Chamba,chamba
+Chamoli,chamoli
+Champawat,champawat
+Champhai,champhai
+Chandauli,chandauli
+Chandel,chandel
+Chandigarh,chandigarh
+Chandrapur,chandrapur
+Changlang,changlang
+Charaideo,sivasagar
+Charkhi Dadri,bhiwani
+Chatra,chatra
+Chengalpattu,kancheepuram
+Chennai,chennai
+Chhatarpur,chhatarpur
+Chhindwara,chhindwara
+Chhota Udaipur,chhota_udaipur
+Chikkaballapura,chikballapura
+Chikkamagaluru,chikmagalur
+Chirang,chirang
+Chitradurga,chitradurga
+Chitrakoot,chitrakoot
+Chittoor,chittoor
+Chittorgarh,chittaurgarh
+Churachandpur,churachandpur
+Churu,churu
+Coimbatore,coimbatore
+Cooch Behar,koch_bihar
+Cuddalore,cuddalore
+Cuttack,cuttack
+Dadra and Nagar Haveli,dadra_and_nagar_haveli
+Dahod,dahod
+Dakshin Bastar Dantewada,dantewada
+Dakshin Dinajpur,dakshin_dinajpur
+Dakshina Kannada,dakshina_kannada
+Daman,daman
+Damoh,damoh
+Dang,the_dangs
+Darbhanga,darbhanga
+Darjeeling,darjiling
+Darrang,darrang
+Datia,datia
+Dausa,dausa
+Davanagere,davanagere
+Dehradun,debagarh
+Deogarh,dehradun
+Deoghar,deoghar
+Deoria,deoria
+Devbhumi Dwarka,devbhumi_dwarka
+Dewas,dewas
+Dhalai,dhalai
+Dhamtari,dhamtari
+Dhanbad,dhanbad
+Dhar,dhar
+Dharmapuri,dharmapuri
+Dharwad,dharwad
+Dhemaji,dhaulpur
+Dhenkanal,dhemaji
+Dholpur,dhenkanal
+Dhubri,dhubri
+Dhule,dhule
+Dibrugarh,dibrugarh
+Dima Hasao,dima_hasao
+Dimapur,dimapur
+Dindigul,dindigul
+Dindori,dindori
+Diu,diu
+Doda,doda
+Dumka,dumka
+Dungarpur,dungarpur
+Durg,durg
+East Champaran,purba_champaran
+East Delhi,west
+East Garo Hills,east_garo_hills
+East Godavari,east_godavari
+East Jaintia Hills,jaintia_hills
+East Kameng,east_kameng
+East Khasi Hills,east_khasi_hills
+East Siang,east_siang
+East Sikkim,east_sikkim
+East Singhbhum,purbi_singhbhum
+Ernakulam,ernakulam
+Erode,erode
+Etah,etah
+Etawah,etawah
+Faridabad,faridabad
+Faridkot,faridkot
+Farrukhabad,farrukhabad
+Fatehabad,fatehabad
+Fatehgarh Sahib,fatehgarh_sahib
+Fatehpur,fatehpur
+Fazilka,fazilka
+Ferozepur,firozabad
+Firozabad,firozpur
+Gadag,gadag
+Gadchiroli,garhchiroli
+Gajapati,gajapati
+Ganderbal,ganderbal
+Gandhinagar,gandhinagar
+Ganganagar,ganganagar
+Ganjam,ganjam
+Garhwa,garhwa
+Gariaband,gariaband
+Gautam Buddha Nagar,gautam_buddha_nagar
+Gaya,gaya
+Ghaziabad,ghaziabad
+Ghazipur,ghazipur
+Gir Somnath,gir_somnath
+Giridih,giridih
+Goalpara,goalpara
+Godda,godda
+Golaghat,golaghat
+Gomati,gomati
+Gonda,gonda
+Gondia,gondiya
+Gopalganj,gopalganj
+Gorakhpur,gorakhpur
+Gumla,gumla
+Guna,guna
+Guntur,guntur
+Gurdaspur,gurdaspur
+Gurugram,gurgaon
+Gwalior,gwalior
+Hailakandi,hailakandi
+Hamirpur,hamirpur
+Hanumangarh,hanumangarh
+Hapur,hapur
+Harda,harda
+Hardoi,hardoi
+Haridwar,hardwar
+Hassan,hassan
+Hathras,hathras
+Haveri,haveri
+Hazaribagh,hazaribagh
+Hingoli,hingoli
+Hisar,hisar
+Hnahthial,lunglei
+Hojai,nagaon
+Hooghly,hugli
+Hoshangabad,hoshangabad
+Hoshiarpur,hoshiarpur
+Howrah,haora
+Hyderabad,hyderabad
+Idukki,idukki
+Imphal East,imphal_east
+Imphal West,imphal_west
+Indore,indore
+Jabalpur,jabalpur
+Jagatsinghpur,jagatsinghapur
+Jagtial,jagtial
+Jaipur,jaipur
+Jaisalmer,jaisalmer
+Jajpur,jajapur
+Jalandhar,jalandhar
+Jalaun,jalaun
+Jalgaon,jalgaon
+Jalna,jalna
+Jalore,jalor
+Jalpaiguri,jalpaiguri
+Jammu,jammu
+Jamnagar,jamnagar
+Jamtara,jamtara
+Jamui,jamui
+Jangaon,jangoan
+Janjgir Champa,janjgir-champa
+Jashpur,jashpur
+Jaunpur,jaunpur
+Jayashankar Bhupalapally,jayashankar_bhupalpally
+Jehanabad,jehanabad
+Jhabua,jhabua
+Jhajjar,jhajjar
+Jhalawar,jhalawar
+Jhansi,jhansi
+Jhargram,pashchim_medinipur
+Jharsuguda,jharsuguda
+Jhunjhunu,jhunjhunun
+Jind,jind
+Jiribam,imphal_east
+Jodhpur,jodhpur
+Jogulamba Gadwal,jogulamba_gadwal
+Jorhat,jorhat
+Junagadh,junagadh
+Kabeerdham,kabeerdham
+Kaimur,kaimur
+Kaithal,kaithal
+Kakching,thoubal
+Kalaburagi,gulbarga
+Kalahandi,kalahandi
+Kalimpong,darjiling
+Kallakurichi,viluppuram
+Kamareddy,kamareddy
+Kamjong,ukhrul
+Kamle,lower_subansiri
+Kamrup,kamrup
+Kamrup Metropolitan,kamrup_metropolitan
+Kancheepuram,kancheepuram
+Kandhamal,kandhamal
+Kangpokpi,senapati
+Kangra,kangra
+Kannauj,kannauj
+Kannur,kannur
+Kanpur Dehat,kanpur_dehat
+Kanpur Nagar,kanpur_nagar
+Kanyakumari,kanniyakumari
+Kapurthala,kapurthala
+Karaikal,karaikal
+Karauli,karauli
+Karbi Anglong,karbi_anglong
+Kargil,kargil
+Karimganj,karimganj
+Karimnagar,karimnagar
+Karnal,karnal
+Karur,karur
+Kasaragod,kasaragod
+Kasganj,kasganj
+Kathua,kathua
+Katihar,katihar
+Katni,katni
+Kaushambi,kaushambi
+Kendrapara,kendrapara
+Kendujhar,kendujhar
+Khagaria,khagaria
+Khammam,khammam
+Khandwa,east_nimar
+Khargone,west_nimar
+Khawzawl,champhai
+Kheda,kheda
+Khordha,khordha
+Khowai,khowai
+Khunti,khunti
+Kinnaur,kinnaur
+Kiphire,kiphire
+Kishanganj,kishanganj
+Kishtwar,kishtwar
+Kodagu,kodagu
+Koderma,kodarma
+Kohima,kohima
+Kokrajhar,kokrajhar
+Kolar,kolar
+Kolasib,kolasib
+Kolhapur,kolhapur
+Kolkata,kolkata
+Kollam,kollam
+Komaram Bheem,kumurambheem_asifabad
+Kondagaon,kondagaon
+Koppal,koppal
+Koraput,koraput
+Korba,korba
+Koriya,koriya
+Kota,kota
+Kottayam,kottayam
+Kozhikode,kozhikode
+Kra Daadi,kurung_kumey
+Krishna,krishna
+Krishnagiri,krishnagiri
+Kulgam,kulgam
+Kullu,kullu
+Kupwara,kupwara
+Kurnool,kurnool
+Kurukshetra,kurukshetra
+Kurung Kumey,kurung_kumey
+Kushinagar,kushinagar
+Kutch,kachchh
+Lahaul and Spiti,lahul_and_spiti
+Lakhimpur,lakhimpur
+Lakhimpur Kheri,lakhimpur_kheri
+Lakhisarai,lakhisarai
+Lakshadweep,lakshadweep
+Lalitpur,lalitpur
+Latehar,latehar
+Latur,latur
+Lawngtlai,lawangtlai
+Leh,leh
+Lepa Rada,west_siang
+Lohardaga,lohardaga
+Lohit,lohit
+Longding,longding
+Longleng,longleng
+Lower Dibang Valley,lower_dibang_valley
+Lower Siang,west_siang
+Lower Subansiri,lower_subansiri
+Lucknow,lucknow
+Ludhiana,ludhiana
+Lunglei,lunglei
+Madhepura,madhepura
+Madhubani,madhubani
+Madurai,madurai
+Mahabubabad,mahabubabad
+Mahabubnagar,mahbubnagar
+Maharajganj,maharajganj
+Mahasamund,mahasamund
+Mahe,mahe
+Mahendragarh,mahendragarh
+Mahisagar,mahisagar
+Mahoba,mahoba
+Mainpuri,mainpuri
+Majuli,jorhat
+Malappuram,malappuram
+Malda,maldah
+Malkangiri,malkangiri
+Mamit,mamit
+Mancherial,mancherial
+Mandi,mandi
+Mandla,mandla
+Mandsaur,mandsaur
+Mandya,mandya
+Mansa,mansa
+Mathura,mathura
+Mau,mau
+Mayurbhanj,mayurbhanj
+Medak,medak
+Medchal Malkajgiri,medchal_malkajgiri
+Meerut,meerut
+Mehsana,mahesana
+Mirpur,mirpur
+Mirzapur,mirzapur
+Moga,moga
+Mokokchung,mokokchung
+Mon,mon
+Moradabad,moradabad
+Morbi,morbi
+Morena,morena
+Morigaon,morigaon
+Mulugu,mulugu
+Mumbai,mumbai_city
+Mumbai Suburban,mumbai_suburban
+Mungeli,mungeli
+Munger,munger
+Murshidabad,murshidabad
+Muzaffarabad,muzaffarabad
+Muzaffarnagar,muzaffarnagar
+Muzaffarpur,muzaffarpur
+Mysuru,mysore
+Nabarangapur,nabarangapur
+Nadia,nadia
+Nagaon,nagaon
+Nagapattinam,nagappattinam
+Nagarkurnool,nagarkurnool
+Nagaur,nagaur
+Nagpur,nagpur
+Nainital,nainital
+Nalanda,nalanda
+Nalbari,nalbari
+Nalgonda,nalgonda
+Namakkal,namakkal
+Namsai,namsai
+Nanded,nanded
+Nandurbar,nandurbar
+Narayanpet,narayanpet
+Narayanpur,narayanpur
+Narmada,narmada
+Narsinghpur,narsimhapur
+Nashik,nashik
+Navsari,navsari
+Nawada,nawada
+Nayagarh,nayagarh
+Neemuch,neemuch
+New Delhi,west
+Nicobars,nicobar_islands
+Nilgiris,the_nilgiris
+Nirmal,nirmal
+Niwari,tikamgarh
+Nizamabad,nizamabad
+Noney,tamenglong
+North 24 Parganas,north_24_parganas
+North Delhi,west
+North East Delhi,west
+North Garo Hills,north_garo_hills
+North Goa,north_goa
+North Sikkim,north_sikkim
+North Tripura,north_tripura
+North West Delhi,west
+North and Middle Andaman,north_and_middle_andaman
+Nuapada,nuapada
+Nuh,mewat
+Osmanabad,osmanabad
+Pakke Kessang,east_kameng
+Pakur,pakur
+Palakkad,palakkad
+Palamu,palamu
+Palghar,palghar
+Pali,pali
+Palwal,palwal
+Panchkula,panchkula
+Panchmahal,panch_mahals
+Panipat,panipat
+Panna,panna
+Papum Pare,papum_pare
+Parbhani,parbhani
+Paschim Bardhaman,barddhaman
+Paschim Medinipur,pashchim_medinipur
+Patan,patan
+Pathanamthitta,pathanamthitta
+Pathankot,pathankot
+Patiala,patiala
+Patna,patna
+Pauri Garhwal,garhwal
+Peddapalli,peddapalli
+Perambalur,perambalur
+Peren,peren
+Phek,phek
+Pherzawl,churachandpur
+Pilibhit,pilibhit
+Pithoragarh,pithoragarh
+Porbandar,porbandar
+Prakasam,prakasam
+Pratapgarh,pratapgarh
+Prayagraj,allahabad
+Puducherry,puducherry
+Pudukkottai,pudukkottai
+Pulwama,pulwama
+Punch,poonch
+Pune,pune
+Purba Bardhaman,barddhaman
+Purba Medinipur,purba_medinipur
+Puri,puri
+Purnia,purnia
+Purulia,puruliya
+Rae Bareli,rae_bareli
+Raichur,raichur
+Raigad,raigarh
+Raigarh,raigarh
+Raipur,raipur
+Raisen,raisen
+Rajanna Sircilla,rajanna_sircilla
+Rajgarh,rajgarh
+Rajkot,rajkot
+Rajnandgaon,rajnandgaon
+Rajouri,rajouri
+Rajsamand,rajsamand
+Ramanagara,ramanagara
+Ramanathapuram,ramanathapuram
+Ramban,ramban
+Ramgarh,ramgarh
+Rampur,rampur
+Ranchi,ranchi
+Ranga Reddy,rangareddy
+Ranipet,vellore
+Ratlam,ratlam
+Ratnagiri,ratnagiri
+Rayagada,rayagada
+Reasi,reasi
+Rewa,rewa
+Rewari,rewari
+Ribhoi,ri_bhoi
+Rohtak,rohtak
+Rohtas,rohtas
+Rudraprayag,rudraprayag
+Rupnagar,rupnagar
+S.A.S. Nagar,sahibzada_ajit_singh_nagar
+S.P.S. Nellore,nellore
+Sabarkantha,sabar_kantha
+Sagar,sagar
+Saharanpur,saharanpur
+Saharsa,saharsa
+Sahibganj,sahibganj
+Saiha,saiha
+Salem,salem
+Samastipur,samastipur
+Samba,samba
+Sambalpur,sambalpur
+Sambhal,sambhal
+Sangareddy,sangareddy
+Sangli,sangli
+Sangrur,sangrur
+Sant Kabir Nagar,sant_kabir_nagar
+Saraikela-Kharsawan,saraikela-kharsawan
+Saran,saran
+Satara,satara
+Satna,satna
+Sawai Madhopur,sawai_madhopur
+Sehore,sehore
+Senapati,senapati
+Seoni,seoni
+Serchhip,serchhip
+Shahdara,west
+Shahdol,shahdol
+Shahid Bhagat Singh Nagar,shahid_bhagat_singh_nagar
+Shahjahanpur,shahjahanpur
+Shajapur,shajapur
+Shamli,shamli
+Sheikhpura,sheikhpura
+Sheohar,sheohar
+Sheopur,sheopur
+Shi Yomi,west_siang
+Shimla,shimla
+Shivamogga,shimoga
+Shivpuri,shivpuri
+Shopiyan,shupiyan
+Shrawasti,shravasti
+Siang,west_siang
+Siddharthnagar,siddharth_nagar
+Siddipet,siddipet
+Sidhi,sidhi
+Sikar,sikar
+Simdega,simdega
+Sindhudurg,sindhudurg
+Singrauli,singrauli
+Sipahijala,sipahijala
+Sirmaur,sirmaur
+Sirohi,sirohi
+Sirsa,sirsa
+Sitamarhi,sitamarhi
+Sitapur,sitapur
+Sivaganga,sivaganga
+Sivasagar,sivasagar
+Siwan,siwan
+Solan,solan
+Solapur,solapur
+Sonbhadra,sonbhadra
+Sonipat,sonipat
+Sonitpur,sonitpur
+South 24 Parganas,south_24_parganas
+South Andaman,south_andaman
+South Delhi,west
+South East Delhi,west
+South Garo Hills,south_garo_hills
+South Goa,south_goa
+South Salmara Mankachar,dhubri
+South Sikkim,south_sikkim
+South Tripura,south_tripura
+South West Delhi,west
+South West Garo Hills,south_west_garo_hills
+South West Khasi Hills,south_west_khasi_hills
+Sri Muktsar Sahib,muktsar
+Srikakulam,srikakulam
+Srinagar,srinagar
+Subarnapur,subarnapur
+Sukma,sukma
+Sultanpur,sultanpur
+Sundargarh,sundargarh
+Supaul,supaul
+Surajpur,surajpur
+Surat,surat
+Surendranagar,surendranagar
+Surguja,surguja
+Suryapet,suryapet
+Tamenglong,tamenglong
+Tapi,tapi
+Tarn Taran,tarn_taran
+Tawang,tawang
+Tehri Garhwal,tehri_garhwal
+Tengnoupal,chandel
+Tenkasi,tirunelveli
+Thane,thane
+Thanjavur,thanjavur
+Theni,theni
+Thiruvallur,thiruvallur
+Thiruvananthapuram,thiruvananthapuram
+Thiruvarur,thiruvarur
+Thoothukkudi,thoothukkudi
+Thoubal,thoubal
+Thrissur,thrissur
+Tikamgarh,tikamgarh
+Tinsukia,tinsukia
+Tirap,tirap
+Tiruchirappalli,tiruchirappalli
+Tirunelveli,tirunelveli
+Tirupathur,krishnagiri
+Tiruppur,tiruppur
+Tiruvannamalai,tiruvannamalai
+Tonk,tonk
+Tuensang,tuensang
+Tumakuru,tumkur
+Udaipur,udaipur
+Udalguri,udalguri
+Udham Singh Nagar,udham_singh_nagar
+Udhampur,udhampur
+Udupi,udupi
+Ujjain,ujjain
+Ukhrul,ukhrul
+Umaria,umaria
+Una,una
+Unnao,unnao
+Unokoti,unokoti
+Upper Dibang Valley,dibang_valley
+Upper Siang,upper_siang
+Upper Subansiri,upper_subansiri
+Uttar Bastar Kanker,uttar_bastar_kanker
+Uttar Dinajpur,uttar_dinajpur
+Uttara Kannada,uttara_kannada
+Uttarkashi,uttarkashi
+Vadodara,vadodara
+Vaishali,vaishali
+Valsad,valsad
+Varanasi,varanasi
+Vellore,vellore
+Vidisha,vidisha
+Vijayapura,bijapur
+Vikarabad,vikarabad
+Viluppuram,viluppuram
+Virudhunagar,virudunagar
+Visakhapatnam,visakhapatnam
+Vizianagaram,vizianagaram
+Wanaparthy,wanaparthy
+Warangal Rural,warangal_rural
+Warangal Urban,warangal_urban
+Wardha,wardha
+Washim,washim
+Wayanad,wayanad
+West Champaran,pashchim_champaran
+West Delhi,west
+West Garo Hills,west_garo_hills
+West Godavari,west_godavari
+West Jaintia Hills,jaintia_hills
+West Kameng,west_kameng
+West Karbi Anglong,karbi_anglong
+West Khasi Hills,west_khasi_hills
+West Siang,west_siang
+West Sikkim,west_sikkim
+West Singhbhum,pashchimi_singhbhum
+West Tripura,west_tripura
+Wokha,wokha
+Y.S.R. Kadapa,y_s_r
+Yadadri Bhuvanagiri,yadadri_bhuvanagiri
+Yadgir,yadgir
+Yamunanagar,yamunanagar
+Yanam,yanam
+Yavatmal,yavatmal
+Zunheboto,zunheboto

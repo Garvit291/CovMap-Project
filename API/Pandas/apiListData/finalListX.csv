@@ -1,0 +1,769 @@
+name,type,state,statecode,c19oName,apiName
+Adilabad,d,telangana,TG,Adilabad,adilabad
+Agar Malwa,d,madhya_pradesh,MP,Agar Malwa,agar_malwa
+Agra,d,uttar_pradesh,UP,Agra,agra
+Ahmedabad,d,gujarat,GJ,Ahmedabad,ahmadabad
+Ahmednagar,d,maharashtra,MH,Ahmednagar,ahmadnagar
+Aizawl,d,mizoram,MZ,Aizawl,aizawl
+Ajmer,d,rajasthan,RJ,Ajmer,ajmer
+Akola,d,maharashtra,MH,Akola,akola
+Alappuzha,d,kerala,KL,Alappuzha,alappuzha
+Aligarh,d,uttar_pradesh,UP,Aligarh,aligarh
+Alipurduar,d,west_bengal,WB,Alipurduar,alipurduar
+Alirajpur,d,madhya_pradesh,MP,Alirajpur,alirajpur
+Almora,d,uttarakhand,UT,Almora,almora
+Alwar,d,rajasthan,RJ,Alwar,alwar
+Ambala,d,haryana,HR,Ambala,ambala
+Ambedkar Nagar,d,uttar_pradesh,UP,Ambedkar Nagar,ambedkar_nagar
+Amethi,d,uttar_pradesh,UP,Amethi,amethi
+Amravati,d,maharashtra,MH,Amravati,amravati
+Amreli,d,gujarat,GJ,Amreli,amreli
+Amritsar,d,punjab,PB,Amritsar,amritsar
+Amroha,d,uttar_pradesh,UP,Amroha,amroha
+Anand,d,gujarat,GJ,Anand,anand
+Anantapur,d,andhra_pradesh,AD,Anantapur,anantapur
+Anantnag,d,jammu_and_kashmir,JK,Anantnag,anantnag
+Andaman and Nicobar Islands,u,andaman_and_nicobar,AN,Andaman and Nicobar Islands,andaman_and_nicobar
+Andhra Pradesh,s,andhra_pradesh,AP,Andhra Pradesh,andhra_pradesh
+Angul,d,arunachal_pradesh,AR,Angul,anjaw
+Anjaw,d,odisha,OR,Anjaw,anugul
+Anuppur,d,madhya_pradesh,MP,Anuppur,anuppur
+Araria,d,bihar,BR,Araria,araria
+Aravalli,d,gujarat,GJ,Aravalli,aravalli
+Ariyalur,d,tamil_nadu,TN,Ariyalur,ariyalur
+Arunachal Pradesh,s,arunachal_pradesh,AR,Arunachal Pradesh,arunachal_pradesh
+Arwal,d,bihar,BR,Arwal,arwal
+Ashoknagar,d,madhya_pradesh,MP,Ashoknagar,ashoknagar
+Assam,s,assam,AS,Assam,assam
+Auraiya,d,uttar_pradesh,UP,Auraiya,auraiya
+Aurangabad,d,bihar,BR,Aurangabad,aurangabadbr
+Aurangabad,d,maharashtra,MH,Aurangabad,aurangabad
+Ayodhya,d,uttar_pradesh,UP,Ayodhya,faizabad
+Azamgarh,d,uttar_pradesh,UP,Azamgarh,azamgarh
+Bagalkote,d,karnataka,KA,Bagalkote,bagalkot
+Bageshwar,d,uttarakhand,UT,Bageshwar,bageshwar
+Baghpat,d,uttar_pradesh,UP,Baghpat,baghpat
+Bahraich,d,uttar_pradesh,UP,Bahraich,bahraich
+Baksa,d,assam,AS,Baksa,baksa
+Balaghat,d,madhya_pradesh,MP,Balaghat,balaghat
+Balangir,d,odisha,OR,Balangir,balangir
+Balasore,d,odisha,OR,Balasore,baleshwar
+Ballari,d,karnataka,KA,Ballari,bellary
+Ballia,d,uttar_pradesh,UP,Ballia,ballia
+Balod,d,chhattisgarh,CT,Balod,balod
+Baloda Bazar,d,chhattisgarh,CT,Baloda Bazar,baloda_bazar
+Balrampur,d,chhattisgarh,CT,Balrampur,balrampur
+Balrampur,d,uttar_pradesh,UP,Balrampur,balrampurct
+Bametara,d,chhattisgarh,CT,Bametara,bemetara
+Banaskantha,d,gujarat,GJ,Banaskantha,banas_kantha
+Banda,d,uttar_pradesh,UP,Banda,banda
+Bandipora,d,jammu_and_kashmir,JK,Bandipora,bandipore
+Banka,d,bihar,BR,Banka,banka
+Bankura,d,west_bengal,WB,Bankura,bankura
+Banswara,d,rajasthan,RJ,Banswara,banswara
+Barabanki,d,uttar_pradesh,UP,Barabanki,barabanki
+Baramulla,d,jammu_and_kashmir,JK,Baramulla,baramulla
+Baran,d,rajasthan,RJ,Baran,baran
+Bareilly,d,uttar_pradesh,UP,Bareilly,bareilly
+Bargarh,d,odisha,OR,Bargarh,bargarh
+Barmer,d,rajasthan,RJ,Barmer,barmer
+Barnala,d,punjab,PB,Barnala,barnala
+Barpeta,d,assam,AS,Barpeta,barpeta
+Barwani,d,madhya_pradesh,MP,Barwani,barwani
+Bastar,d,chhattisgarh,CT,Bastar,bastar
+Basti,d,uttar_pradesh,UP,Basti,basti
+Bathinda,d,punjab,PB,Bathinda,bathinda
+Beed,d,maharashtra,MH,Beed,bid
+Begusarai,d,bihar,BR,Begusarai,begusarai
+Belagavi,d,karnataka,KA,Belagavi,belgaum
+Bengaluru Rural,d,karnataka,KA,Bengaluru Rural,bangalore_rural
+Bengaluru Urban,d,karnataka,KA,Bengaluru Urban,bangalore
+Betul,d,madhya_pradesh,MP,Betul,betul
+Bhadohi,d,uttar_pradesh,UP,Bhadohi,sant_ravi_das_nagar
+Bhadradri Kothagudem,d,telangana,TG,Bhadradri Kothagudem,bhadradri_kothagudem
+Bhadrak,d,odisha,OR,Bhadrak,bhadrak
+Bhagalpur,d,bihar,BR,Bhagalpur,bhagalpur
+Bhandara,d,maharashtra,MH,Bhandara,bhandara
+Bharatpur,d,rajasthan,RJ,Bharatpur,bharatpur
+Bharuch,d,gujarat,GJ,Bharuch,bharuch
+Bhavnagar,d,gujarat,GJ,Bhavnagar,bhavnagar
+Bhilwara,d,rajasthan,RJ,Bhilwara,bhilwara
+Bhind,d,madhya_pradesh,MP,Bhind,bhind
+Bhiwani,d,haryana,HR,Bhiwani,bhiwani
+Bhojpur,d,bihar,BR,Bhojpur,bhojpur
+Bhopal,d,madhya_pradesh,MP,Bhopal,bhopal
+Bidar,d,karnataka,KA,Bidar,bidar
+Bihar,s,bihar,BR,Bihar,bihar
+Bijapur,d,chhattisgarh,CT,Bijapur,bijapur
+Bijnor,d,uttar_pradesh,UP,Bijnor,bijnor
+Bikaner,d,rajasthan,RJ,Bikaner,bikaner
+Bilaspur,d,himachal_pradesh,HP,Bilaspur,bilaspur
+Bilaspur,d,chhattisgarh,CT,Bilaspur,bilaspurct
+Birbhum,d,west_bengal,WB,Birbhum,birbhum
+Bishnupur,d,manipur,MN,Bishnupur,bishnupur
+Biswanath,d,assam,AS,Biswanath,sonitpur
+Bokaro,d,jharkhand,JH,Bokaro,bokaro
+Bongaigaon,d,assam,AS,Bongaigaon,bongaigaon
+Botad,d,gujarat,GJ,Botad,botad
+Boudh,d,odisha,OR,Boudh,bauda
+Budaun,d,uttar_pradesh,UP,Budaun,budaun
+Budgam,d,jammu_and_kashmir,JK,Budgam,badgam
+Bulandshahr,d,uttar_pradesh,UP,Bulandshahr,bulandshahr
+Buldhana,d,maharashtra,MH,Buldhana,buldana
+Bundi,d,rajasthan,RJ,Bundi,bundi
+Burhanpur,d,madhya_pradesh,MP,Burhanpur,burhanpur
+Buxar,d,bihar,BR,Buxar,buxar
+Cachar,d,assam,AS,Cachar,cachar
+Central Delhi,d,nct_of_delhi,DL,Central Delhi,west
+Chamarajanagara,d,karnataka,KA,Chamarajanagara,chamrajnagar
+Chamba,d,himachal_pradesh,HP,Chamba,chamba
+Chamoli,d,uttarakhand,UT,Chamoli,chamoli
+Champawat,d,uttarakhand,UT,Champawat,champawat
+Champhai,d,mizoram,MZ,Champhai,champhai
+Chandauli,d,uttar_pradesh,UP,Chandauli,chandauli
+Chandel,d,manipur,MN,Chandel,chandel
+Chandigarh,d,chandigarh,CH,Chandigarh,chandigarh
+Chandigarh,u,chandigarh,CH,Chandigarh,chandigarh
+Chandrapur,d,maharashtra,MH,Chandrapur,chandrapur
+Changlang,d,arunachal_pradesh,AR,Changlang,changlang
+Charaideo,d,assam,AS,Charaideo,sivasagar
+Charkhi Dadri,d,haryana,HR,Charkhi Dadri,bhiwani
+Chatra,d,jharkhand,JH,Chatra,chatra
+Chengalpattu,d,tamil_nadu,TN,Chengalpattu,kancheepuram
+Chennai,d,tamil_nadu,TN,Chennai,chennai
+Chhatarpur,d,madhya_pradesh,MP,Chhatarpur,chhatarpur
+Chhattisgarh,s,chhattisgarh,CT,Chhattisgarh,chhattisgarh
+Chhindwara,d,madhya_pradesh,MP,Chhindwara,chhindwara
+Chhota Udaipur,d,gujarat,GJ,Chhota Udaipur,chhota_udaipur
+Chikkaballapura,d,karnataka,KA,Chikkaballapura,chikballapura
+Chikkamagaluru,d,karnataka,KA,Chikkamagaluru,chikmagalur
+Chirang,d,assam,AS,Chirang,chirang
+Chitradurga,d,karnataka,KA,Chitradurga,chitradurga
+Chitrakoot,d,uttar_pradesh,UP,Chitrakoot,chitrakoot
+Chittoor,d,andhra_pradesh,AD,Chittoor,chittoor
+Chittorgarh,d,rajasthan,RJ,Chittorgarh,chittaurgarh
+Churachandpur,d,manipur,MN,Churachandpur,churachandpur
+Churu,d,rajasthan,RJ,Churu,churu
+Coimbatore,d,tamil_nadu,TN,Coimbatore,coimbatore
+Cooch Behar,d,west_bengal,WB,Cooch Behar,koch_bihar
+Cuddalore,d,tamil_nadu,TN,Cuddalore,cuddalore
+Cuttack,d,odisha,OR,Cuttack,cuttack
+Dadra and Nagar Haveli,d,dadra_and_nagar_haveli,DN,Dadra and Nagar Haveli,dadra_and_nagar_haveli
+Dahod,d,gujarat,GJ,Dahod,dahod
+Dakshin Bastar Dantewada,d,chhattisgarh,CT,Dakshin Bastar Dantewada,dantewada
+Dakshin Dinajpur,d,west_bengal,WB,Dakshin Dinajpur,dakshin_dinajpur
+Dakshina Kannada,d,karnataka,KA,Dakshina Kannada,dakshina_kannada
+Daman,d,daman_and_diu,DD,Daman,daman
+Damoh,d,madhya_pradesh,MP,Damoh,damoh
+Dang,d,gujarat,GJ,Dang,the_dangs
+Darbhanga,d,bihar,BR,Darbhanga,darbhanga
+Darjeeling,d,west_bengal,WB,Darjeeling,darjiling
+Darrang,d,assam,AS,Darrang,darrang
+Datia,d,madhya_pradesh,MP,Datia,datia
+Dausa,d,rajasthan,RJ,Dausa,dausa
+Davanagere,d,karnataka,KA,Davanagere,davanagere
+Dehradun,d,odisha,OR,Dehradun,debagarh
+Delhi,u,nct_of_delhi,DL,Delhi,nct_of_delhi
+Deogarh,d,uttarakhand,UT,Deogarh,dehradun
+Deoghar,d,jharkhand,JH,Deoghar,deoghar
+Deoria,d,uttar_pradesh,UP,Deoria,deoria
+Devbhumi Dwarka,d,gujarat,GJ,Devbhumi Dwarka,devbhumi_dwarka
+Dewas,d,madhya_pradesh,MP,Dewas,dewas
+Dhalai,d,tripura,TR,Dhalai,dhalai
+Dhamtari,d,chhattisgarh,CT,Dhamtari,dhamtari
+Dhanbad,d,jharkhand,JH,Dhanbad,dhanbad
+Dhar,d,madhya_pradesh,MP,Dhar,dhar
+Dharmapuri,d,tamil_nadu,TN,Dharmapuri,dharmapuri
+Dharwad,d,karnataka,KA,Dharwad,dharwad
+Dhemaji,d,rajasthan,RJ,Dhemaji,dhaulpur
+Dhenkanal,d,assam,AS,Dhenkanal,dhemaji
+Dholpur,d,odisha,OR,Dholpur,dhenkanal
+Dhubri,d,assam,AS,Dhubri,dhubri
+Dhule,d,maharashtra,MH,Dhule,dhule
+Dibrugarh,d,assam,AS,Dibrugarh,dibrugarh
+Dima Hasao,d,assam,AS,Dima Hasao,dima_hasao
+Dimapur,d,nagaland,NL,Dimapur,dimapur
+Dindigul,d,tamil_nadu,TN,Dindigul,dindigul
+Dindori,d,madhya_pradesh,MP,Dindori,dindori
+Diu,d,daman_and_diu,DD,Diu,diu
+Doda,d,jammu_and_kashmir,JK,Doda,doda
+Dumka,d,jharkhand,JH,Dumka,dumka
+Dungarpur,d,rajasthan,RJ,Dungarpur,dungarpur
+Durg,d,chhattisgarh,CT,Durg,durg
+East Champaran,d,bihar,BR,East Champaran,purba_champaran
+East Delhi,d,nct_of_delhi,DL,East Delhi,west
+East Garo Hills,d,meghalaya,ML,East Garo Hills,east_garo_hills
+East Godavari,d,andhra_pradesh,AD,East Godavari,east_godavari
+East Jaintia Hills,d,meghalaya,ML,East Jaintia Hills,jaintia_hills
+East Kameng,d,arunachal_pradesh,AR,East Kameng,east_kameng
+East Khasi Hills,d,meghalaya,ML,East Khasi Hills,east_khasi_hills
+East Siang,d,arunachal_pradesh,AR,East Siang,east_siang
+East Sikkim,d,sikkim,SK,East Sikkim,east_sikkim
+East Singhbhum,d,jharkhand,JH,East Singhbhum,purbi_singhbhum
+Ernakulam,d,kerala,KL,Ernakulam,ernakulam
+Erode,d,tamil_nadu,TN,Erode,erode
+Etah,d,uttar_pradesh,UP,Etah,etah
+Etawah,d,uttar_pradesh,UP,Etawah,etawah
+Faridabad,d,haryana,HR,Faridabad,faridabad
+Faridkot,d,punjab,PB,Faridkot,faridkot
+Farrukhabad,d,uttar_pradesh,UP,Farrukhabad,farrukhabad
+Fatehabad,d,haryana,HR,Fatehabad,fatehabad
+Fatehgarh Sahib,d,punjab,PB,Fatehgarh Sahib,fatehgarh_sahib
+Fatehpur,d,uttar_pradesh,UP,Fatehpur,fatehpur
+Fazilka,d,punjab,PB,Fazilka,fazilka
+Ferozepur,d,uttar_pradesh,UP,Ferozepur,firozabad
+Firozabad,d,punjab,PB,Firozabad,firozpur
+Gadag,d,karnataka,KA,Gadag,gadag
+Gadchiroli,d,maharashtra,MH,Gadchiroli,garhchiroli
+Gajapati,d,odisha,OR,Gajapati,gajapati
+Ganderbal,d,jammu_and_kashmir,JK,Ganderbal,ganderbal
+Gandhinagar,d,gujarat,GJ,Gandhinagar,gandhinagar
+Ganganagar,d,rajasthan,RJ,Ganganagar,ganganagar
+Ganjam,d,odisha,OR,Ganjam,ganjam
+Garhwa,d,jharkhand,JH,Garhwa,garhwa
+Gariaband,d,chhattisgarh,CT,Gariaband,gariaband
+Gautam Buddha Nagar,d,uttar_pradesh,UP,Gautam Buddha Nagar,gautam_buddha_nagar
+Gaya,d,bihar,BR,Gaya,gaya
+Ghaziabad,d,uttar_pradesh,UP,Ghaziabad,ghaziabad
+Ghazipur,d,uttar_pradesh,UP,Ghazipur,ghazipur
+Gir Somnath,d,gujarat,GJ,Gir Somnath,gir_somnath
+Giridih,d,jharkhand,JH,Giridih,giridih
+Goa,s,goa,GA,Goa,goa
+Goalpara,d,assam,AS,Goalpara,goalpara
+Godda,d,jharkhand,JH,Godda,godda
+Golaghat,d,assam,AS,Golaghat,golaghat
+Gomati,d,tripura,TR,Gomati,gomati
+Gonda,d,uttar_pradesh,UP,Gonda,gonda
+Gondia,d,maharashtra,MH,Gondia,gondiya
+Gopalganj,d,bihar,BR,Gopalganj,gopalganj
+Gorakhpur,d,uttar_pradesh,UP,Gorakhpur,gorakhpur
+Gujarat,s,gujarat,GJ,Gujarat,gujarat
+Gumla,d,jharkhand,JH,Gumla,gumla
+Guna,d,madhya_pradesh,MP,Guna,guna
+Guntur,d,andhra_pradesh,AD,Guntur,guntur
+Gurdaspur,d,punjab,PB,Gurdaspur,gurdaspur
+Gurugram,d,haryana,HR,Gurugram,gurgaon
+Gwalior,d,madhya_pradesh,MP,Gwalior,gwalior
+Hailakandi,d,assam,AS,Hailakandi,hailakandi
+Hamirpur,d,himachal_pradesh,HP,Hamirpur,hamirpur
+Hamirpur,d,uttar_pradesh,UP,Hamirpur,hamirpurup
+Hanumangarh,d,rajasthan,RJ,Hanumangarh,hanumangarh
+Hapur,d,uttar_pradesh,UP,Hapur,hapur
+Harda,d,madhya_pradesh,MP,Harda,harda
+Hardoi,d,uttar_pradesh,UP,Hardoi,hardoi
+Haridwar,d,uttarakhand,UT,Haridwar,hardwar
+Haryana,s,haryana,HR,Haryana,haryana
+Hassan,d,karnataka,KA,Hassan,hassan
+Hathras,d,uttar_pradesh,UP,Hathras,hathras
+Haveri,d,karnataka,KA,Haveri,haveri
+Hazaribagh,d,jharkhand,JH,Hazaribagh,hazaribagh
+Himachal Pradesh,s,himachal_pradesh,HP,Himachal Pradesh,himachal_pradesh
+Hingoli,d,maharashtra,MH,Hingoli,hingoli
+Hisar,d,haryana,HR,Hisar,hisar
+Hnahthial,d,mizoram,MZ,Hnahthial,lunglei
+Hojai,d,assam,AS,Hojai,nagaon
+Hooghly,d,west_bengal,WB,Hooghly,hugli
+Hoshangabad,d,madhya_pradesh,MP,Hoshangabad,hoshangabad
+Hoshiarpur,d,punjab,PB,Hoshiarpur,hoshiarpur
+Howrah,d,west_bengal,WB,Howrah,haora
+Hyderabad,d,telangana,TG,Hyderabad,hyderabad
+Idukki,d,kerala,KL,Idukki,idukki
+Imphal East,d,manipur,MN,Imphal East,imphal_east
+Imphal West,d,manipur,MN,Imphal West,imphal_west
+Indore,d,madhya_pradesh,MP,Indore,indore
+Jabalpur,d,madhya_pradesh,MP,Jabalpur,jabalpur
+Jagatsinghpur,d,odisha,OR,Jagatsinghpur,jagatsinghapur
+Jagtial,d,telangana,TG,Jagtial,jagtial
+Jaipur,d,rajasthan,RJ,Jaipur,jaipur
+Jaisalmer,d,rajasthan,RJ,Jaisalmer,jaisalmer
+Jajpur,d,odisha,OR,Jajpur,jajapur
+Jalandhar,d,punjab,PB,Jalandhar,jalandhar
+Jalaun,d,uttar_pradesh,UP,Jalaun,jalaun
+Jalgaon,d,maharashtra,MH,Jalgaon,jalgaon
+Jalna,d,maharashtra,MH,Jalna,jalna
+Jalore,d,rajasthan,RJ,Jalore,jalor
+Jalpaiguri,d,west_bengal,WB,Jalpaiguri,jalpaiguri
+Jammu,d,jammu_and_kashmir,JK,Jammu,jammu
+Jammu and Kashmir,u,jammu_and_kashmir,JK,Jammu and Kashmir,jammu_and_kashmir
+Jamnagar,d,gujarat,GJ,Jamnagar,jamnagar
+Jamtara,d,jharkhand,JH,Jamtara,jamtara
+Jamui,d,bihar,BR,Jamui,jamui
+Jangaon,d,telangana,TG,Jangaon,jangoan
+Janjgir Champa,d,chhattisgarh,CT,Janjgir Champa,janjgir-champa
+Jashpur,d,chhattisgarh,CT,Jashpur,jashpur
+Jaunpur,d,uttar_pradesh,UP,Jaunpur,jaunpur
+Jayashankar Bhupalapally,d,telangana,TG,Jayashankar Bhupalapally,jayashankar_bhupalpally
+Jehanabad,d,bihar,BR,Jehanabad,jehanabad
+Jhabua,d,madhya_pradesh,MP,Jhabua,jhabua
+Jhajjar,d,haryana,HR,Jhajjar,jhajjar
+Jhalawar,d,rajasthan,RJ,Jhalawar,jhalawar
+Jhansi,d,uttar_pradesh,UP,Jhansi,jhansi
+Jhargram,d,west_bengal,WB,Jhargram,pashchim_medinipur
+Jharkhand,s,jharkhand,JH,Jharkhand,jharkhand
+Jharsuguda,d,odisha,OR,Jharsuguda,jharsuguda
+Jhunjhunu,d,rajasthan,RJ,Jhunjhunu,jhunjhunun
+Jind,d,haryana,HR,Jind,jind
+Jiribam,d,manipur,MN,Jiribam,imphal_east
+Jodhpur,d,rajasthan,RJ,Jodhpur,jodhpur
+Jogulamba Gadwal,d,telangana,TG,Jogulamba Gadwal,jogulamba_gadwal
+Jorhat,d,assam,AS,Jorhat,jorhat
+Junagadh,d,gujarat,GJ,Junagadh,junagadh
+Kabeerdham,d,chhattisgarh,CT,Kabeerdham,kabeerdham
+Kaimur,d,bihar,BR,Kaimur,kaimur
+Kaithal,d,haryana,HR,Kaithal,kaithal
+Kakching,d,manipur,MN,Kakching,thoubal
+Kalaburagi,d,karnataka,KA,Kalaburagi,gulbarga
+Kalahandi,d,odisha,OR,Kalahandi,kalahandi
+Kalimpong,d,west_bengal,WB,Kalimpong,darjiling
+Kallakurichi,d,tamil_nadu,TN,Kallakurichi,viluppuram
+Kamareddy,d,telangana,TG,Kamareddy,kamareddy
+Kamjong,d,manipur,MN,Kamjong,ukhrul
+Kamle,d,arunachal_pradesh,AR,Kamle,lower_subansiri
+Kamrup,d,assam,AS,Kamrup,kamrup
+Kamrup Metropolitan,d,assam,AS,Kamrup Metropolitan,kamrup_metropolitan
+Kancheepuram,d,tamil_nadu,TN,Kancheepuram,kancheepuram
+Kandhamal,d,odisha,OR,Kandhamal,kandhamal
+Kangpokpi,d,manipur,MN,Kangpokpi,senapati
+Kangra,d,himachal_pradesh,HP,Kangra,kangra
+Kannauj,d,uttar_pradesh,UP,Kannauj,kannauj
+Kannur,d,kerala,KL,Kannur,kannur
+Kanpur Dehat,d,uttar_pradesh,UP,Kanpur Dehat,kanpur_dehat
+Kanpur Nagar,d,uttar_pradesh,UP,Kanpur Nagar,kanpur_nagar
+Kanyakumari,d,tamil_nadu,TN,Kanyakumari,kanniyakumari
+Kapurthala,d,punjab,PB,Kapurthala,kapurthala
+Karaikal,d,puducherry,PY,Karaikal,karaikal
+Karauli,d,rajasthan,RJ,Karauli,karauli
+Karbi Anglong,d,assam,AS,Karbi Anglong,karbi_anglong
+Kargil,d,ladakh,LA,Kargil,kargil
+Karimganj,d,assam,AS,Karimganj,karimganj
+Karimnagar,d,telangana,TG,Karimnagar,karimnagar
+Karnal,d,haryana,HR,Karnal,karnal
+Karnataka,s,karnataka,KA,Karnataka,karnataka
+Karur,d,tamil_nadu,TN,Karur,karur
+Kasaragod,d,kerala,KL,Kasaragod,kasaragod
+Kasganj,d,uttar_pradesh,UP,Kasganj,kasganj
+Kathua,d,jammu_and_kashmir,JK,Kathua,kathua
+Katihar,d,bihar,BR,Katihar,katihar
+Katni,d,madhya_pradesh,MP,Katni,katni
+Kaushambi,d,uttar_pradesh,UP,Kaushambi,kaushambi
+Kendrapara,d,odisha,OR,Kendrapara,kendrapara
+Kendujhar,d,odisha,OR,Kendujhar,kendujhar
+Kerala,s,kerala,KL,Kerala,kerala
+Khagaria,d,bihar,BR,Khagaria,khagaria
+Khammam,d,telangana,TG,Khammam,khammam
+Khandwa,d,madhya_pradesh,MP,Khandwa,east_nimar
+Khargone,d,madhya_pradesh,MP,Khargone,west_nimar
+Khawzawl,d,mizoram,MZ,Khawzawl,champhai
+Kheda,d,gujarat,GJ,Kheda,kheda
+Khordha,d,odisha,OR,Khordha,khordha
+Khowai,d,tripura,TR,Khowai,khowai
+Khunti,d,jharkhand,JH,Khunti,khunti
+Kinnaur,d,himachal_pradesh,HP,Kinnaur,kinnaur
+Kiphire,d,nagaland,NL,Kiphire,kiphire
+Kishanganj,d,bihar,BR,Kishanganj,kishanganj
+Kishtwar,d,jammu_and_kashmir,JK,Kishtwar,kishtwar
+Kodagu,d,karnataka,KA,Kodagu,kodagu
+Koderma,d,jharkhand,JH,Koderma,kodarma
+Kohima,d,nagaland,NL,Kohima,kohima
+Kokrajhar,d,assam,AS,Kokrajhar,kokrajhar
+Kolar,d,karnataka,KA,Kolar,kolar
+Kolasib,d,mizoram,MZ,Kolasib,kolasib
+Kolhapur,d,maharashtra,MH,Kolhapur,kolhapur
+Kolkata,d,west_bengal,WB,Kolkata,kolkata
+Kollam,d,kerala,KL,Kollam,kollam
+Komaram Bheem,d,telangana,TG,Komaram Bheem,kumurambheem_asifabad
+Kondagaon,d,chhattisgarh,CT,Kondagaon,kondagaon
+Koppal,d,karnataka,KA,Koppal,koppal
+Koraput,d,odisha,OR,Koraput,koraput
+Korba,d,chhattisgarh,CT,Korba,korba
+Koriya,d,chhattisgarh,CT,Koriya,koriya
+Kota,d,rajasthan,RJ,Kota,kota
+Kottayam,d,kerala,KL,Kottayam,kottayam
+Kozhikode,d,kerala,KL,Kozhikode,kozhikode
+Kra Daadi,d,arunachal_pradesh,AR,Kra Daadi,kurung_kumey
+Krishna,d,andhra_pradesh,AD,Krishna,krishna
+Krishnagiri,d,tamil_nadu,TN,Krishnagiri,krishnagiri
+Kulgam,d,jammu_and_kashmir,JK,Kulgam,kulgam
+Kullu,d,himachal_pradesh,HP,Kullu,kullu
+Kupwara,d,jammu_and_kashmir,JK,Kupwara,kupwara
+Kurnool,d,andhra_pradesh,AD,Kurnool,kurnool
+Kurukshetra,d,haryana,HR,Kurukshetra,kurukshetra
+Kurung Kumey,d,arunachal_pradesh,AR,Kurung Kumey,kurung_kumey
+Kushinagar,d,uttar_pradesh,UP,Kushinagar,kushinagar
+Kutch,d,gujarat,GJ,Kutch,kachchh
+Ladakh,u,ladakh,LA,Ladakh,ladakh
+Lahaul and Spiti,d,himachal_pradesh,HP,Lahaul and Spiti,lahul_and_spiti
+Lakhimpur,d,assam,AS,Lakhimpur,lakhimpur
+Lakhimpur Kheri,d,uttar_pradesh,UP,Lakhimpur Kheri,lakhimpur_kheri
+Lakhisarai,d,bihar,BR,Lakhisarai,lakhisarai
+Lakshadweep,d,lakshadweep,LD,Lakshadweep,lakshadweep
+Lakshadweep,u,lakshadweep,LD,Lakshadweep,lakshadweep
+Lalitpur,d,uttar_pradesh,UP,Lalitpur,lalitpur
+Latehar,d,jharkhand,JH,Latehar,latehar
+Latur,d,maharashtra,MH,Latur,latur
+Lawngtlai,d,mizoram,MZ,Lawngtlai,lawangtlai
+Leh,d,ladakh,LA,Leh,leh
+Lepa Rada,d,arunachal_pradesh,AR,Lepa Rada,west_siang
+Lohardaga,d,jharkhand,JH,Lohardaga,lohardaga
+Lohit,d,arunachal_pradesh,AR,Lohit,lohit
+Longding,d,arunachal_pradesh,AR,Longding,longding
+Longleng,d,nagaland,NL,Longleng,longleng
+Lower Dibang Valley,d,arunachal_pradesh,AR,Lower Dibang Valley,lower_dibang_valley
+Lower Siang,d,arunachal_pradesh,AR,Lower Siang,west_siang
+Lower Subansiri,d,arunachal_pradesh,AR,Lower Subansiri,lower_subansiri
+Lucknow,d,uttar_pradesh,UP,Lucknow,lucknow
+Ludhiana,d,punjab,PB,Ludhiana,ludhiana
+Lunglei,d,mizoram,MZ,Lunglei,lunglei
+Madhepura,d,bihar,BR,Madhepura,madhepura
+Madhubani,d,bihar,BR,Madhubani,madhubani
+Madhya Pradesh,s,madhya_pradesh,MP,Madhya Pradesh,madhya_pradesh
+Madurai,d,tamil_nadu,TN,Madurai,madurai
+Mahabubabad,d,telangana,TG,Mahabubabad,mahabubabad
+Maharajganj,d,uttar_pradesh,UP,Maharajganj,maharajganj
+Maharashtra,s,maharashtra,MH,Maharashtra,maharashtra
+Mahasamund,d,chhattisgarh,CT,Mahasamund,mahasamund
+Mahe,d,puducherry,PY,Mahe,mahe
+Mahendragarh,d,haryana,HR,Mahendragarh,mahendragarh
+Mahisagar,d,gujarat,GJ,Mahisagar,mahisagar
+Mahoba,d,uttar_pradesh,UP,Mahoba,mahoba
+Mainpuri,d,uttar_pradesh,UP,Mainpuri,mainpuri
+Majuli,d,assam,AS,Majuli,jorhat
+Malappuram,d,kerala,KL,Malappuram,malappuram
+Malda,d,west_bengal,WB,Malda,maldah
+Malkangiri,d,odisha,OR,Malkangiri,malkangiri
+Mamit,d,mizoram,MZ,Mamit,mamit
+Mancherial,d,telangana,TG,Mancherial,mancherial
+Mandi,d,himachal_pradesh,HP,Mandi,mandi
+Mandla,d,madhya_pradesh,MP,Mandla,mandla
+Mandsaur,d,madhya_pradesh,MP,Mandsaur,mandsaur
+Mandya,d,karnataka,KA,Mandya,mandya
+Manipur,s,manipur,MN,Manipur,manipur
+Mansa,d,punjab,PB,Mansa,mansa
+Mathura,d,uttar_pradesh,UP,Mathura,mathura
+Mau,d,uttar_pradesh,UP,Mau,mau
+Mayurbhanj,d,odisha,OR,Mayurbhanj,mayurbhanj
+Medak,d,telangana,TG,Medak,medak
+Medchal Malkajgiri,d,telangana,TG,Medchal Malkajgiri,medchal_malkajgiri
+Meerut,d,uttar_pradesh,UP,Meerut,meerut
+Meghalaya,s,meghalaya,ML,Meghalaya,meghalaya
+Mehsana,d,gujarat,GJ,Mehsana,mahesana
+Mirpur,d,jammu_and_kashmir,JK,Mirpur,mirpur
+Mirzapur,d,uttar_pradesh,UP,Mirzapur,mirzapur
+Mizoram,s,mizoram,MZ,Mizoram,mizoram
+Moga,d,punjab,PB,Moga,moga
+Mokokchung,d,nagaland,NL,Mokokchung,mokokchung
+Mon,d,nagaland,NL,Mon,mon
+Moradabad,d,uttar_pradesh,UP,Moradabad,moradabad
+Morbi,d,gujarat,GJ,Morbi,morbi
+Morena,d,madhya_pradesh,MP,Morena,morena
+Morigaon,d,assam,AS,Morigaon,morigaon
+Mulugu,d,telangana,TG,Mulugu,mulugu
+Mumbai,d,maharashtra,MH,Mumbai,mumbai_city
+Mumbai Suburban,d,maharashtra,MH,Mumbai Suburban,mumbai_suburban
+Mungeli,d,chhattisgarh,CT,Mungeli,mungeli
+Munger,d,bihar,BR,Munger,munger
+Murshidabad,d,west_bengal,WB,Murshidabad,murshidabad
+Muzaffarabad,d,jammu_and_kashmir,JK,Muzaffarabad,muzaffarabad
+Muzaffarnagar,d,uttar_pradesh,UP,Muzaffarnagar,muzaffarnagar
+Muzaffarpur,d,bihar,BR,Muzaffarpur,muzaffarpur
+Mysuru,d,karnataka,KA,Mysuru,mysore
+Nabarangapur,d,odisha,OR,Nabarangapur,nabarangapur
+Nadia,d,west_bengal,WB,Nadia,nadia
+Nagaland,s,nagaland,NL,Nagaland,nagaland
+Nagaon,d,assam,AS,Nagaon,nagaon
+Nagapattinam,d,tamil_nadu,TN,Nagapattinam,nagappattinam
+Nagarkurnool,d,telangana,TG,Nagarkurnool,nagarkurnool
+Nagaur,d,rajasthan,RJ,Nagaur,nagaur
+Nagpur,d,maharashtra,MH,Nagpur,nagpur
+Nainital,d,uttarakhand,UT,Nainital,nainital
+Nalanda,d,bihar,BR,Nalanda,nalanda
+Nalbari,d,assam,AS,Nalbari,nalbari
+Nalgonda,d,telangana,TG,Nalgonda,nalgonda
+Namakkal,d,tamil_nadu,TN,Namakkal,namakkal
+Namsai,d,arunachal_pradesh,AR,Namsai,namsai
+Nanded,d,maharashtra,MH,Nanded,nanded
+Nandurbar,d,maharashtra,MH,Nandurbar,nandurbar
+Narayanpet,d,telangana,TG,Narayanpet,narayanpet
+Narayanpur,d,chhattisgarh,CT,Narayanpur,narayanpur
+Narmada,d,gujarat,GJ,Narmada,narmada
+Narsinghpur,d,madhya_pradesh,MP,Narsinghpur,narsimhapur
+Nashik,d,maharashtra,MH,Nashik,nashik
+Navsari,d,gujarat,GJ,Navsari,navsari
+Nawada,d,bihar,BR,Nawada,nawada
+Nayagarh,d,odisha,OR,Nayagarh,nayagarh
+Neemuch,d,madhya_pradesh,MP,Neemuch,neemuch
+New Delhi,d,nct_of_delhi,DL,New Delhi,west
+Nicobars,d,andaman_and_nicobar,AN,Nicobars,nicobar_islands
+Nilgiris,d,tamil_nadu,TN,Nilgiris,the_nilgiris
+Nirmal,d,telangana,TG,Nirmal,nirmal
+Niwari,d,madhya_pradesh,MP,Niwari,tikamgarh
+Nizamabad,d,telangana,TG,Nizamabad,nizamabad
+Noney,d,manipur,MN,Noney,tamenglong
+North 24 Parganas,d,west_bengal,WB,North 24 Parganas,north_24_parganas
+North and Middle Andaman,d,andaman_and_nicobar,AN,North and Middle Andaman,north_and_middle_andaman
+North Delhi,d,nct_of_delhi,DL,North Delhi,west
+North East Delhi,d,nct_of_delhi,DL,North East Delhi,west
+North Garo Hills,d,meghalaya,ML,North Garo Hills,north_garo_hills
+North Goa,d,goa,GA,North Goa,north_goa
+North Sikkim,d,sikkim,SK,North Sikkim,north_sikkim
+North Tripura,d,tripura,TR,North Tripura,north_tripura
+North West Delhi,d,nct_of_delhi,DL,North West Delhi,west
+Nuapada,d,odisha,OR,Nuapada,nuapada
+Nuh,d,haryana,HR,Nuh,mewat
+Odisha,s,odisha,OR,Odisha,odisha
+Osmanabad,d,maharashtra,MH,Osmanabad,osmanabad
+Pakke Kessang,d,arunachal_pradesh,AR,Pakke Kessang,east_kameng
+Pakur,d,jharkhand,JH,Pakur,pakur
+Palakkad,d,kerala,KL,Palakkad,palakkad
+Palamu,d,jharkhand,JH,Palamu,palamu
+Palghar,d,maharashtra,MH,Palghar,palghar
+Pali,d,rajasthan,RJ,Pali,pali
+Palwal,d,haryana,HR,Palwal,palwal
+Panchkula,d,haryana,HR,Panchkula,panchkula
+Panchmahal,d,gujarat,GJ,Panchmahal,panch_mahals
+Panipat,d,haryana,HR,Panipat,panipat
+Panna,d,madhya_pradesh,MP,Panna,panna
+Papum Pare,d,arunachal_pradesh,AR,Papum Pare,papum_pare
+Parbhani,d,maharashtra,MH,Parbhani,parbhani
+Paschim Bardhaman,d,west_bengal,WB,Paschim Bardhaman,barddhaman
+Paschim Medinipur,d,west_bengal,WB,Paschim Medinipur,pashchim_medinipur
+Patan,d,gujarat,GJ,Patan,patan
+Pathanamthitta,d,kerala,KL,Pathanamthitta,pathanamthitta
+Pathankot,d,punjab,PB,Pathankot,pathankot
+Patiala,d,punjab,PB,Patiala,patiala
+Patna,d,bihar,BR,Patna,patna
+Pauri Garhwal,d,uttarakhand,UT,Pauri Garhwal,garhwal
+Peddapalli,d,telangana,TG,Peddapalli,peddapalli
+Perambalur,d,tamil_nadu,TN,Perambalur,perambalur
+Peren,d,nagaland,NL,Peren,peren
+Phek,d,nagaland,NL,Phek,phek
+Pherzawl,d,manipur,MN,Pherzawl,churachandpur
+Pilibhit,d,uttar_pradesh,UP,Pilibhit,pilibhit
+Pithoragarh,d,uttarakhand,UT,Pithoragarh,pithoragarh
+Porbandar,d,gujarat,GJ,Porbandar,porbandar
+Prakasam,d,andhra_pradesh,AD,Prakasam,prakasam
+Pratapgarh,d,rajasthan,RJ,Pratapgarh,pratapgarh
+Pratapgarh,d,uttar_pradesh,UP,Pratapgarh,pratapgarh
+Prayagraj,d,uttar_pradesh,UP,Prayagraj,allahabad
+Puducherry,d,puducherry,PY,Puducherry,puducherry
+Puducherry,u,puducherry,PY,Puducherry,puducherry
+Pudukkottai,d,tamil_nadu,TN,Pudukkottai,pudukkottai
+Pulwama,d,jammu_and_kashmir,JK,Pulwama,pulwama
+Punch,d,jammu_and_kashmir,JK,Punch,poonch
+Pune,d,maharashtra,MH,Pune,pune
+Punjab,s,punjab,PB,Punjab,punjab
+Purba Bardhaman,d,west_bengal,WB,Purba Bardhaman,barddhaman
+Purba Medinipur,d,west_bengal,WB,Purba Medinipur,purba_medinipur
+Puri,d,odisha,OR,Puri,puri
+Purnia,d,bihar,BR,Purnia,purnia
+Purulia,d,west_bengal,WB,Purulia,puruliya
+Rae Bareli,d,uttar_pradesh,UP,Rae Bareli,rae_bareli
+Raichur,d,karnataka,KA,Raichur,raichur
+Raigad,d,maharashtra,MH,Raigad,raigad
+Raigarh,d,chhattisgarh,CT,Raigarh,raigarh
+Raipur,d,chhattisgarh,CT,Raipur,raipur
+Raisen,d,madhya_pradesh,MP,Raisen,raisen
+Rajanna Sircilla,d,telangana,TG,Rajanna Sircilla,rajanna_sircilla
+Rajasthan,s,rajasthan,RJ,Rajasthan,rajasthan
+Rajgarh,d,madhya_pradesh,MP,Rajgarh,rajgarh
+Rajkot,d,gujarat,GJ,Rajkot,rajkot
+Rajnandgaon,d,chhattisgarh,CT,Rajnandgaon,rajnandgaon
+Rajouri,d,jammu_and_kashmir,JK,Rajouri,rajouri
+Rajsamand,d,rajasthan,RJ,Rajsamand,rajsamand
+Ramanagara,d,karnataka,KA,Ramanagara,ramanagara
+Ramanathapuram,d,tamil_nadu,TN,Ramanathapuram,ramanathapuram
+Ramban,d,jammu_and_kashmir,JK,Ramban,ramban
+Ramgarh,d,jharkhand,JH,Ramgarh,ramgarh
+Rampur,d,uttar_pradesh,UP,Rampur,rampur
+Ranchi,d,jharkhand,JH,Ranchi,ranchi
+Ranga Reddy,d,telangana,TG,Ranga Reddy,rangareddy
+Ranipet,d,tamil_nadu,TN,Ranipet,vellore
+Ratlam,d,madhya_pradesh,MP,Ratlam,ratlam
+Ratnagiri,d,maharashtra,MH,Ratnagiri,ratnagiri
+Rayagada,d,odisha,OR,Rayagada,rayagada
+Reasi,d,jammu_and_kashmir,JK,Reasi,reasi
+Rewa,d,madhya_pradesh,MP,Rewa,rewa
+Rewari,d,haryana,HR,Rewari,rewari
+Ribhoi,d,meghalaya,ML,Ribhoi,ri_bhoi
+Rohtak,d,haryana,HR,Rohtak,rohtak
+Rohtas,d,bihar,BR,Rohtas,rohtas
+Rudraprayag,d,uttarakhand,UT,Rudraprayag,rudraprayag
+Rupnagar,d,punjab,PB,Rupnagar,rupnagar
+S.A.S. Nagar,d,punjab,PB,S.A.S. Nagar,sahibzada_ajit_singh_nagar
+S.P.S. Nellore,d,andhra_pradesh,AD,S.P.S. Nellore,nellore
+Sabarkantha,d,gujarat,GJ,Sabarkantha,sabar_kantha
+Sagar,d,madhya_pradesh,MP,Sagar,sagar
+Saharanpur,d,uttar_pradesh,UP,Saharanpur,saharanpur
+Saharsa,d,bihar,BR,Saharsa,saharsa
+Sahibganj,d,jharkhand,JH,Sahibganj,sahibganj
+Saiha,d,mizoram,MZ,Saiha,saiha
+Salem,d,tamil_nadu,TN,Salem,salem
+Samastipur,d,bihar,BR,Samastipur,samastipur
+Samba,d,jammu_and_kashmir,JK,Samba,samba
+Sambalpur,d,odisha,OR,Sambalpur,sambalpur
+Sambhal,d,uttar_pradesh,UP,Sambhal,sambhal
+Sangareddy,d,telangana,TG,Sangareddy,sangareddy
+Sangli,d,maharashtra,MH,Sangli,sangli
+Sangrur,d,punjab,PB,Sangrur,sangrur
+Sant Kabir Nagar,d,uttar_pradesh,UP,Sant Kabir Nagar,sant_kabir_nagar
+Saraikela-Kharsawan,d,jharkhand,JH,Saraikela-Kharsawan,saraikela-kharsawan
+Saran,d,bihar,BR,Saran,saran
+Satara,d,maharashtra,MH,Satara,satara
+Satna,d,madhya_pradesh,MP,Satna,satna
+Sawai Madhopur,d,rajasthan,RJ,Sawai Madhopur,sawai_madhopur
+Sehore,d,madhya_pradesh,MP,Sehore,sehore
+Senapati,d,manipur,MN,Senapati,senapati
+Seoni,d,madhya_pradesh,MP,Seoni,seoni
+Serchhip,d,mizoram,MZ,Serchhip,serchhip
+Shahdara,d,nct_of_delhi,DL,Shahdara,west
+Shahdol,d,madhya_pradesh,MP,Shahdol,shahdol
+Shahid Bhagat Singh Nagar,d,punjab,PB,Shahid Bhagat Singh Nagar,shahid_bhagat_singh_nagar
+Shahjahanpur,d,uttar_pradesh,UP,Shahjahanpur,shahjahanpur
+Shajapur,d,madhya_pradesh,MP,Shajapur,shajapur
+Shamli,d,uttar_pradesh,UP,Shamli,shamli
+Sheikhpura,d,bihar,BR,Sheikhpura,sheikhpura
+Sheohar,d,bihar,BR,Sheohar,sheohar
+Sheopur,d,madhya_pradesh,MP,Sheopur,sheopur
+Shi Yomi,d,arunachal_pradesh,AR,Shi Yomi,west_siang
+Shimla,d,himachal_pradesh,HP,Shimla,shimla
+Shivamogga,d,karnataka,KA,Shivamogga,shimoga
+Shivpuri,d,madhya_pradesh,MP,Shivpuri,shivpuri
+Shopiyan,d,jammu_and_kashmir,JK,Shopiyan,shupiyan
+Shrawasti,d,uttar_pradesh,UP,Shrawasti,shravasti
+Siang,d,arunachal_pradesh,AR,Siang,west_siang
+Siddharthnagar,d,uttar_pradesh,UP,Siddharthnagar,siddharth_nagar
+Siddipet,d,telangana,TG,Siddipet,siddipet
+Sidhi,d,madhya_pradesh,MP,Sidhi,sidhi
+Sikar,d,rajasthan,RJ,Sikar,sikar
+Sikkim,s,sikkim,SK,Sikkim,sikkim
+Simdega,d,jharkhand,JH,Simdega,simdega
+Sindhudurg,d,maharashtra,MH,Sindhudurg,sindhudurg
+Singrauli,d,madhya_pradesh,MP,Singrauli,singrauli
+Sipahijala,d,tripura,TR,Sipahijala,sipahijala
+Sirmaur,d,himachal_pradesh,HP,Sirmaur,sirmaur
+Sirohi,d,rajasthan,RJ,Sirohi,sirohi
+Sirsa,d,haryana,HR,Sirsa,sirsa
+Sitamarhi,d,bihar,BR,Sitamarhi,sitamarhi
+Sitapur,d,uttar_pradesh,UP,Sitapur,sitapur
+Sivaganga,d,tamil_nadu,TN,Sivaganga,sivaganga
+Sivasagar,d,assam,AS,Sivasagar,sivasagar
+Siwan,d,bihar,BR,Siwan,siwan
+Solan,d,himachal_pradesh,HP,Solan,solan
+Solapur,d,maharashtra,MH,Solapur,solapur
+Sonbhadra,d,uttar_pradesh,UP,Sonbhadra,sonbhadra
+Sonipat,d,haryana,HR,Sonipat,sonipat
+Sonitpur,d,assam,AS,Sonitpur,sonitpur
+South 24 Parganas,d,west_bengal,WB,South 24 Parganas,south_24_parganas
+South Andaman,d,andaman_and_nicobar,AN,South Andaman,south_andaman
+South Delhi,d,nct_of_delhi,DL,South Delhi,west
+South East Delhi,d,nct_of_delhi,DL,South East Delhi,west
+South Garo Hills,d,meghalaya,ML,South Garo Hills,south_garo_hills
+South Goa,d,goa,GA,South Goa,south_goa
+South Salmara Mankachar,d,assam,AS,South Salmara Mankachar,dhubri
+South Sikkim,d,sikkim,SK,South Sikkim,south_sikkim
+South Tripura,d,tripura,TR,South Tripura,south_tripura
+South West Delhi,d,nct_of_delhi,DL,South West Delhi,west
+South West Garo Hills,d,meghalaya,ML,South West Garo Hills,south_west_garo_hills
+South West Khasi Hills,d,meghalaya,ML,South West Khasi Hills,south_west_khasi_hills
+Sri Muktsar Sahib,d,punjab,PB,Sri Muktsar Sahib,muktsar
+Srikakulam,d,andhra_pradesh,AD,Srikakulam,srikakulam
+Srinagar,d,jammu_and_kashmir,JK,Srinagar,srinagar
+Subarnapur,d,odisha,OR,Subarnapur,subarnapur
+Sukma,d,chhattisgarh,CT,Sukma,sukma
+Sultanpur,d,uttar_pradesh,UP,Sultanpur,sultanpur
+Sundargarh,d,odisha,OR,Sundargarh,sundargarh
+Supaul,d,bihar,BR,Supaul,supaul
+Surajpur,d,chhattisgarh,CT,Surajpur,surajpur
+Surat,d,gujarat,GJ,Surat,surat
+Surendranagar,d,gujarat,GJ,Surendranagar,surendranagar
+Surguja,d,chhattisgarh,CT,Surguja,surguja
+Suryapet,d,telangana,TG,Suryapet,suryapet
+Tamenglong,d,manipur,MN,Tamenglong,tamenglong
+Tamil Nadu,s,tamil_nadu,TN,Tamil Nadu,tamil_nadu
+Tapi,d,gujarat,GJ,Tapi,tapi
+Tarn Taran,d,punjab,PB,Tarn Taran,tarn_taran
+Tawang,d,arunachal_pradesh,AR,Tawang,tawang
+Tehri Garhwal,d,uttarakhand,UT,Tehri Garhwal,tehri_garhwal
+Telangana,s,telangana,TG,Telangana,telangana
+Tengnoupal,d,manipur,MN,Tengnoupal,chandel
+Tenkasi,d,tamil_nadu,TN,Tenkasi,tirunelveli
+Thane,d,maharashtra,MH,Thane,thane
+Thanjavur,d,tamil_nadu,TN,Thanjavur,thanjavur
+Theni,d,tamil_nadu,TN,Theni,theni
+Thiruvallur,d,tamil_nadu,TN,Thiruvallur,thiruvallur
+Thiruvananthapuram,d,kerala,KL,Thiruvananthapuram,thiruvananthapuram
+Thiruvarur,d,tamil_nadu,TN,Thiruvarur,thiruvarur
+Thoothukkudi,d,tamil_nadu,TN,Thoothukkudi,thoothukkudi
+Thoubal,d,manipur,MN,Thoubal,thoubal
+Thrissur,d,kerala,KL,Thrissur,thrissur
+Tikamgarh,d,madhya_pradesh,MP,Tikamgarh,tikamgarh
+Tinsukia,d,assam,AS,Tinsukia,tinsukia
+Tirap,d,arunachal_pradesh,AR,Tirap,tirap
+Tiruchirappalli,d,tamil_nadu,TN,Tiruchirappalli,tiruchirappalli
+Tirunelveli,d,tamil_nadu,TN,Tirunelveli,tirunelveli
+Tirupathur,d,tamil_nadu,TN,Tirupathur,krishnagiri
+Tiruppur,d,tamil_nadu,TN,Tiruppur,tiruppur
+Tiruvannamalai,d,tamil_nadu,TN,Tiruvannamalai,tiruvannamalai
+Tonk,d,rajasthan,RJ,Tonk,tonk
+Tripura,s,tripura,TR,Tripura,tripura
+Tuensang,d,nagaland,NL,Tuensang,tuensang
+Tumakuru,d,karnataka,KA,Tumakuru,tumkur
+Udaipur,d,rajasthan,RJ,Udaipur,udaipur
+Udalguri,d,assam,AS,Udalguri,udalguri
+Udham Singh Nagar,d,uttarakhand,UT,Udham Singh Nagar,udham_singh_nagar
+Udhampur,d,jammu_and_kashmir,JK,Udhampur,udhampur
+Udupi,d,karnataka,KA,Udupi,udupi
+Ujjain,d,madhya_pradesh,MP,Ujjain,ujjain
+Ukhrul,d,manipur,MN,Ukhrul,ukhrul
+Umaria,d,madhya_pradesh,MP,Umaria,umaria
+Una,d,himachal_pradesh,HP,Una,una
+Unnao,d,uttar_pradesh,UP,Unnao,unnao
+Unokoti,d,tripura,TR,Unokoti,unokoti
+Upper Dibang Valley,d,arunachal_pradesh,AR,Upper Dibang Valley,dibang_valley
+Upper Siang,d,arunachal_pradesh,AR,Upper Siang,upper_siang
+Upper Subansiri,d,arunachal_pradesh,AR,Upper Subansiri,upper_subansiri
+Uttar Bastar Kanker,d,chhattisgarh,CT,Uttar Bastar Kanker,uttar_bastar_kanker
+Uttar Dinajpur,d,west_bengal,WB,Uttar Dinajpur,uttar_dinajpur
+Uttar Pradesh,s,uttar_pradesh,UP,Uttar Pradesh,uttar_pradesh
+Uttara Kannada,d,karnataka,KA,Uttara Kannada,uttara_kannada
+Uttarakhand,s,uttarakhand,UT,Uttarakhand,uttarakhand
+Uttarkashi,d,uttarakhand,UT,Uttarkashi,uttarkashi
+Vadodara,d,gujarat,GJ,Vadodara,vadodara
+Vaishali,d,bihar,BR,Vaishali,vaishali
+Valsad,d,gujarat,GJ,Valsad,valsad
+Varanasi,d,uttar_pradesh,UP,Varanasi,varanasi
+Vellore,d,tamil_nadu,TN,Vellore,vellore
+Vidisha,d,madhya_pradesh,MP,Vidisha,vidisha
+Vijayapura,d,chhattisgarh,CT,Vijayapura,bijapur
+Vikarabad,d,telangana,TG,Vikarabad,vikarabad
+Viluppuram,d,tamil_nadu,TN,Viluppuram,viluppuram
+Virudhunagar,d,tamil_nadu,TN,Virudhunagar,virudunagar
+Visakhapatnam,d,andhra_pradesh,AD,Visakhapatnam,visakhapatnam
+Vizianagaram,d,andhra_pradesh,AD,Vizianagaram,vizianagaram
+Wanaparthy,d,telangana,TG,Wanaparthy,wanaparthy
+Warangal Rural,d,telangana,TG,Warangal Rural,warangal_rural
+Warangal Urban,d,telangana,TG,Warangal Urban,warangal_urban
+Wardha,d,maharashtra,MH,Wardha,wardha
+Washim,d,maharashtra,MH,Washim,washim
+Wayanad,d,kerala,KL,Wayanad,wayanad
+West Bengal,s,west_bengal,WB,West Bengal,west_bengal
+West Champaran,d,bihar,BR,West Champaran,pashchim_champaran
+West Delhi,d,nct_of_delhi,DL,West Delhi,west
+West Garo Hills,d,meghalaya,ML,West Garo Hills,west_garo_hills
+West Godavari,d,andhra_pradesh,AD,West Godavari,west_godavari
+West Jaintia Hills,d,meghalaya,ML,West Jaintia Hills,jaintia_hills
+West Kameng,d,arunachal_pradesh,AR,West Kameng,west_kameng
+West Karbi Anglong,d,assam,AS,West Karbi Anglong,karbi_anglong
+West Khasi Hills,d,meghalaya,ML,West Khasi Hills,west_khasi_hills
+West Siang,d,arunachal_pradesh,AR,West Siang,west_siang
+West Sikkim,d,sikkim,SK,West Sikkim,west_sikkim
+West Singhbhum,d,jharkhand,JH,West Singhbhum,pashchimi_singhbhum
+West Tripura,d,tripura,TR,West Tripura,west_tripura
+Wokha,d,nagaland,NL,Wokha,wokha
+Y.S.R. Kadapa,d,andhra_pradesh,AD,Y.S.R. Kadapa,y_s_r
+Yadadri Bhuvanagiri,d,telangana,TG,Yadadri Bhuvanagiri,yadadri_bhuvanagiri
+Yadgir,d,karnataka,KA,Yadgir,yadgir
+Yamunanagar,d,haryana,HR,Yamunanagar,yamunanagar
+Yanam,d,puducherry,PY,Yanam,yanam
+Yavatmal,d,maharashtra,MH,Yavatmal,yavatmal
+Zunheboto,d,nagaland,NL,Zunheboto,zunheboto
