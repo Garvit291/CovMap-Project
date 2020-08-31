@@ -33,10 +33,10 @@ const SearchBox = ({handleSearch}) => {
     <div className = 'container'>
         <input type='text' className='input' onChange={onChange} value={text}  />
         {display && ( <div>
-                {items.filter((namedata)=> namedata.apiName.indexOf(text.toLowerCase())>-1).map((item)=> {
+                {items.filter((namedata)=> namedata.apiName.indexOf(text.toLowerCase())>-1).map((item,i)=> {
                     
             return(
-                <div  onClick = {() => optionSelected(item)} className='li'>
+                <div key = {i} onClick = {() => optionSelected(item)} className='li'>
                 <span>{item.c19oName}</span>
                 </div>
             );

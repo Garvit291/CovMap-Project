@@ -10,6 +10,7 @@ import geojson from '../data/India GADM/IND_level1_states.geojson';
 import SearchBox from './SearchBox.js';
 import axios from 'axios';
 import {fetchData} from '../api/index.js';
+import DataCard from './DataCard.js';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2Fydml0MiIsImEiOiJja2U1Z3lvZWcxMnF2MzduN3FyZmtzaDViIn0.-XsOlUf85kWRRFa88u6aLQ';
 
@@ -90,7 +91,6 @@ const MapBox = () => {
         }
         let state = capitalizeFirstLetter(item.state)
         handleDistrict(item.c19oName, state)
-
       }
 
       else if (item.type==='State'){
@@ -108,6 +108,7 @@ const MapBox = () => {
         let totalconfirmed=0
         let totalactive = 0
         let totaldeceased = 0
+        let totalrecovered = 0 
         let totaldeltaconfirmed = 0
         let r=[]
 
@@ -119,11 +120,14 @@ const MapBox = () => {
           totalactive = totalactive + a
           let d = district[1].deceased
           totaldeceased = totaldeceased + d
+          let r = district[1].recovered
+          totalrecovered = totalrecovered + r
+          
 
           let deltac = Object.entries(district[1].delta)[0][1]
           totaldeltaconfirmed = totaldeltaconfirmed + deltac
   })
-  r.push(totalconfirmed,totalactive,totaldeceased,totaldeltaconfirmed)
+  r.push(totalconfirmed,totalactive,totaldeceased,totalrecovered,totaldeltaconfirmed)
 
         setData(r);
         console.log(r)
@@ -137,17 +141,19 @@ const MapBox = () => {
   let totalactive = 0
   let totaldeceased = 0
   let totaldeltaconfirmed = 0
+  let totalrecovered = 0 
   let r=[]
  Object.entries(data[state]['districtData']).map((district)=>{
     if (d===district[0]){
         totalconfirmed =   district[1].confirmed
         totalactive = district[1].active
         totaldeceased = district[1].deceased
+        totalrecovered = district[1].recovered
         totaldeltaconfirmed=Object.entries(district[1].delta)[0][1]
     }
   })
   
-  r.push(totalconfirmed,totalactive,totaldeceased,totaldeltaconfirmed)
+  r.push(totalconfirmed,totalactive,totaldeceased, totalrecovered,totaldeltaconfirmed)
         setData(r)
         console.log(r)
       }
@@ -218,6 +224,10 @@ const getUserLocation = () =>{
       onViewportChange={nextViewport => setViewport(nextViewport)}
       mapboxApiAccessToken={MAPBOX_TOKEN}
       >
+
+      <div className='statcard'>
+        <DataCard data={data}/>
+      </div>
     
       <Source
           type="geojson"
