@@ -9,7 +9,7 @@ import {clusterLayer, clusterCountLayer, unclusteredPointLayer,geoJsonLayer} fro
 import geojson from '../data/India GADM/IND_level1_states.geojson';
 import SearchBox from './SearchBox.js';
 import axios from 'axios';
-import {fetchData} from '../api/index.js';
+import {fetchData, fetchgeojson} from '../api/index.js';
 import DataCard from './DataCard.js';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2Fydml0MiIsImEiOiJja2U1Z3lvZWcxMnF2MzduN3FyZmtzaDViIn0.-XsOlUf85kWRRFa88u6aLQ';
@@ -55,8 +55,12 @@ const MapBox = () => {
       });
 
       const [data , setData] = useState ([])
-
-      
+      const [geodata ,setGeodata] = useState();
+      const getGeojson = async () =>{
+          const response = await fetchgeojson();
+          const geodata = response.data
+          setGeodata(geodata)
+      }
       
 
       const zoomToLocation = (lat,long) =>{
@@ -161,8 +165,8 @@ const MapBox = () => {
       const _sourceRef = React.createRef();
 
     const  successCallback = async function (position) {
-    const ulon = position.coords.longitude;
-    const ulat = position.coords.latitude;
+    const ulon = 77.5011
+    const ulat = 27.2038
     console.log(ulon,ulat);
     setViewport({
       latitude:ulat,
@@ -231,7 +235,7 @@ const getUserLocation = () =>{
     
       <Source
           type="geojson"
-          data={geojson}
+          data={geodata}
         >
         <Layer {...geoJsonLayer}/>
       </Source>
@@ -241,7 +245,7 @@ const getUserLocation = () =>{
           positionOptions={{enableHighAccuracy: true}}
           trackUserLocation={true}
           />
-         <button onClick = {getUserLocation}>get</button>
+         <button onClick = {getGeojson}>get</button>
         </div>
         <div style={fullscreenControlStyle}>
           <FullscreenControl />
