@@ -53,10 +53,11 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'rest_framework_gis',
     'rest_framework',
-    
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -140,3 +141,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#cors origin for react and django to work simultaneously
+# we whitelist localhost:3000 because that's where frontend will be served
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
