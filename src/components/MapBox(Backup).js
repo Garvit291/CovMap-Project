@@ -1,26 +1,20 @@
 import React , {useState} from 'react';
-import  MapGL, {
-    Source,
-    Layer,
-    FlyToInterpolator,
-    NavigationControl,
-    FullscreenControl,
-    ScaleControl,
-    GeolocateControl
-    } from 'react-map-gl';
-
+import  MapGL, {Source, Layer,FlyToInterpolator,
+NavigationControl,
+  FullscreenControl,
+  ScaleControl,
+  GeolocateControl
+} from 'react-map-gl';
 import {clusterLayer, clusterCountLayer, unclusteredPointLayer,geoJsonLayer} from './layers';
+import geojson from '../data/India GADM/IND_level1_states.geojson';
+import SearchBox from './SearchBox.js';
 import axios from 'axios';
-<<<<<<< Updated upstream
-import {fetchData, fetchgeojson} from '../api/index.js';
+import {fetchData} from '../api/index.js';
 import DataCard from './DataCard.js';
-=======
->>>>>>> Stashed changes
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2Fydml0MiIsImEiOiJja2U1Z3lvZWcxMnF2MzduN3FyZmtzaDViIn0.-XsOlUf85kWRRFa88u6aLQ';
 
 
-<<<<<<< Updated upstream
 const geolocateStyle = {
   position: 'absolute',
   bottom: '100px',
@@ -61,12 +55,8 @@ const MapBox = () => {
       });
 
       const [data , setData] = useState ([])
-      const [geodata ,setGeodata] = useState();
-      const getGeojson = async () =>{
-          const response = await fetchgeojson();
-          const geodata = response.data
-          setGeodata(geodata)
-      }
+
+      
       
 
       const zoomToLocation = (lat,long) =>{
@@ -171,8 +161,8 @@ const MapBox = () => {
       const _sourceRef = React.createRef();
 
     const  successCallback = async function (position) {
-    const ulon = 77.5011
-    const ulat = 27.2038
+    const ulon = position.coords.longitude;
+    const ulat = position.coords.latitude;
     console.log(ulon,ulat);
     setViewport({
       latitude:ulat,
@@ -241,7 +231,7 @@ const getUserLocation = () =>{
     
       <Source
           type="geojson"
-          data={geodata}
+          data={geojson}
         >
         <Layer {...geoJsonLayer}/>
       </Source>
@@ -251,7 +241,7 @@ const getUserLocation = () =>{
           positionOptions={{enableHighAccuracy: true}}
           trackUserLocation={true}
           />
-         <button onClick = {getGeojson}>get</button>
+         <button onClick = {getUserLocation}>get</button>
         </div>
         <div style={fullscreenControlStyle}>
           <FullscreenControl />
@@ -262,14 +252,9 @@ const getUserLocation = () =>{
         <div style={scaleControlStyle}>
           <ScaleControl />
         </div>
-        
       </MapGL>
       </div>
   )
-=======
-class Mapbox extends React.Component{
-
->>>>>>> Stashed changes
 }
 
 export default MapBox;
