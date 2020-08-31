@@ -36,10 +36,6 @@ class TestCenListView(ListAPIView):
             return qTestCens
         return queryset
 
-class StatesDetailView(RetrieveAPIView):
-    queryset = models.IndStates.objects.all()
-    serializer_class = serializers.StatesSerializer
-    lookup_field='state'
 
 class DistrictsListView(ListAPIView):
     serializer_class = serializers.DistrictsSerializer
@@ -61,7 +57,6 @@ class DistrictsDetailView(RetrieveAPIView):
 
 class StatesListView(ListAPIView):
     serializer_class = serializers.StatesSerializer
-
     def get_queryset(self):
         queryset = models.IndStates.objects.all()
         longitude = float(self.request.query_params.get('lng', None))
@@ -71,6 +66,24 @@ class StatesListView(ListAPIView):
             qState = queryset.filter(geom__contains=location)
             return qState
         return queryset
+
+
+class StatesDetailView(RetrieveAPIView):
+    queryset = models.IndStates.objects.all()
+    serializer_class = serializers.StatesSerializer
+    lookup_field='state'
+
+
+
+class StateCoordsListView(ListAPIView):
+    queryset = models.StateCoords.objects.all()
+    serializer_class = serializers.StateCoordsSerializer
+
+
+class DistrictCoordsListView(ListAPIView):
+    queryset = models.DistrictCoords.objects.all()
+    serializer_class = serializers.DistrictCoordsSerializer
+
 
 class StateCoordsDetailView(RetrieveAPIView):
     queryset = models.StateCoords.objects.all()
