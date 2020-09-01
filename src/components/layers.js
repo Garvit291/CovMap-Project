@@ -39,5 +39,5 @@ export const clusterLayer = {
       'type': 'fill',
       'source': 'data',
       'layout': {},
-      'paint': { 'fill-color': 'cyan', 'fill-opacity': 0.3 }
+      'paint': { 'fill-color': 'red', 'fill-opacity': 0.8 }
   };

@@ -11,16 +11,13 @@ import  MapGL, {
 
 import {clusterLayer, clusterCountLayer, unclusteredPointLayer,geoJsonLayer} from './layers';
 import axios from 'axios';
-<<<<<<< Updated upstream
 import {fetchData, fetchgeojson} from '../api/index.js';
+import SearchBox from './SearchBox.js';
 import DataCard from './DataCard.js';
-=======
->>>>>>> Stashed changes
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2Fydml0MiIsImEiOiJja2U1Z3lvZWcxMnF2MzduN3FyZmtzaDViIn0.-XsOlUf85kWRRFa88u6aLQ';
 
 
-<<<<<<< Updated upstream
 const geolocateStyle = {
   position: 'absolute',
   bottom: '100px',
@@ -61,11 +58,13 @@ const MapBox = () => {
       });
 
       const [data , setData] = useState ([])
-      const [geodata ,setGeodata] = useState();
+      const [geodata ,setGeodata] = useState([]);
       const getGeojson = async () =>{
           const response = await fetchgeojson();
-          const geodata = response.data
-          setGeodata(geodata)
+          const data = response.data.geometry.coordinates[0][0]
+          
+          console.log(response.data.geometry.coordinates[0][0])
+          setGeodata([...geodata,...data])
       }
       
 
@@ -241,7 +240,26 @@ const getUserLocation = () =>{
     
       <Source
           type="geojson"
-          data={geodata}
+          data={
+{    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": "sonipat",
+            "type": "Feature",
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [[geodata]]
+            },
+            "properties": {
+                "name_2": "Sonipat",
+                "name_1": "Haryana",
+                "state": "haryana",
+                "engtype_2": "District",
+                "statecode": "HR"
+            }
+        }
+    ]
+}}
         >
         <Layer {...geoJsonLayer}/>
       </Source>
@@ -266,10 +284,6 @@ const getUserLocation = () =>{
       </MapGL>
       </div>
   )
-=======
-class Mapbox extends React.Component{
-
->>>>>>> Stashed changes
 }
 
 export default MapBox;

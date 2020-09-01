@@ -6,7 +6,7 @@ export const fetchData = async () => {
 }
 
 export const fetchgeojson = async () =>{
-  const response = await axios.get('http://localhost:8000/api/district/?lng=77.015076&lat=28.990160');
+  const response = await axios.get('http://54.211.144.29:8080/api/state/chandigarh');
   return response
 }
 

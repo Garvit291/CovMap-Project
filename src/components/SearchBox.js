@@ -12,6 +12,7 @@ const SearchBox = ({handleSearch}) => {
     const [text, setText] = useState('');
     const [display , setDisplay] = useState(false);
 
+    
     const onChange = (e) =>{
        setText(e.target.value);
        console.log('changed')
@@ -38,6 +39,7 @@ const SearchBox = ({handleSearch}) => {
             return(
                 <div key = {i} onClick = {() => optionSelected(item)} className='li'>
                 <span>{item.c19oName}</span>
+
                 </div>
             );
         })}
