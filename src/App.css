@@ -51,7 +51,14 @@
 
 .statcard{
   z-index: 10;
-  position: absolute;
-  bottom: 50px;
+  position: relative;
+  bottom: -40px;
   background-color: violet;
+}
+
+.get_button{
+  position: absolute;
+    bottom: 10;
+  right: 0;
+  padding: 10px;
 }
