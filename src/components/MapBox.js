@@ -3,11 +3,15 @@ import  MapGL, {
     NavigationControl,
     FullscreenControl,
     ScaleControl,
-    GeolocateControl
+    GeolocateControl,Layer,Source
     } from 'react-map-gl';
-
+import{geoJsonLayer} from './layers.js';
 import SearchBox from './SearchBox.js';
 import OnUserLocation from './OnUserLocation';
+import {fetchData,fetchgeojson} from '../api/index.js';
+import DataCard from './DataCard.js';
+import namedata from '../data/csvjson.js';
+
 
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2Fydml0MiIsImEiOiJja2U1Z3lvZWcxMnF2MzduN3FyZmtzaDViIn0.-XsOlUf85kWRRFa88u6aLQ';
@@ -44,6 +48,10 @@ const scaleControlStyle = {
 
 
 const MapBox = () => {
+    const [data,setData] = useState([]);
+    const [geodata ,setGeodata] = useState([]);
+    const [items , setItems] = useState([...namedata]);
+    const [district,setDistrict] = useState('');
     const [viewport, setViewport] = useState({
         latitude: 25.275005879170045,
         longitude: 78.97082512588096,
@@ -51,11 +59,115 @@ const MapBox = () => {
         bearing: 0,
         pitch: 0
       });
-    
+
+      const getItem = (dist) =>{
+          items.map((item)=>{
+            if(item.apiName===dist){
+              handleSearch(item)
+            }
+          })
+      }
+
+    const getGeojson = async (ulon,ulat) =>{
+          const response = await fetchgeojson(ulon , ulat);
+          const data = response.data.features[0].geometry.coordinates[0][0]
+          setGeodata([...geodata,...data])
+          console.log(response.data.features[0].id)
+          const dist = response.data.features[0].id
+          setDistrict(dist)
+          getItem(dist)
+      }
+
+    function capitalizeFirstLetter(str) {
+      
+     str = str.split("_");
+
+    for (var i = 0, x = str.length; i < x; i++) {
+        str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+    }
+
+    return str.join(" ");
+
+}
+
+    const handleSearch = (item) =>
+    {  
+      if (item.type==='District'){
+        if(item.state==='daman_and_diu'|| item.state==='dadra_and_nagar_haveli'){
+          item.state='Dadra and Nagar Haveli and Daman and Diu'
+        }
+        let state = capitalizeFirstLetter(item.state)
+        handleDistrict(item.c19oName, state)
+      }
+
+      else if (item.type==='State'){
+        let state = capitalizeFirstLetter(item.state)
+        handleState(state)
+      }
+
+      else if(item.type ==='Union Territory'){
+        handleState(item.c19oName)
+      }
+    }  
+
+    const handleState = async (state) =>{
+      const response = await fetchData();
+        let totalconfirmed=0
+        let totalactive = 0
+        let totaldeceased = 0
+        let totalrecovered = 0 
+        let totaldeltaconfirmed = 0
+        let r=[]
+
+      const data = response.data
+        Object.entries(data[state]['districtData']).map((district)=>{
+          let c=district[1].confirmed
+          totalconfirmed=totalconfirmed+c
+          let a = district[1].active 
+          totalactive = totalactive + a
+          let d = district[1].deceased
+          totaldeceased = totaldeceased + d
+          let r = district[1].recovered
+          totalrecovered = totalrecovered + r
+          
+
+          let deltac = Object.entries(district[1].delta)[0][1]
+          totaldeltaconfirmed = totaldeltaconfirmed + deltac
+  })
+  r.push(totalconfirmed,totalactive,totaldeceased,totalrecovered,totaldeltaconfirmed)
+
+        setData(r);
+        console.log(r)
+        
+      }
+
+      const handleDistrict = async (d , state) =>{
+        const response = await fetchData();
+        const data = response.data
+ let totalconfirmed=0
+  let totalactive = 0
+  let totaldeceased = 0
+  let totaldeltaconfirmed = 0
+  let totalrecovered = 0 
+  let r=[]
+ Object.entries(data[state]['districtData']).map((district)=>{
+    if (d===district[0]){
+        totalconfirmed =   district[1].confirmed
+        totalactive = district[1].active
+        totaldeceased = district[1].deceased
+        totalrecovered = district[1].recovered
+        totaldeltaconfirmed=Object.entries(district[1].delta)[0][1]
+    }
+  })
+  
+  r.push(totalconfirmed,totalactive,totaldeceased, totalrecovered,totaldeltaconfirmed)
+        setData(r)
+        console.log(r)
+      }
   return (
     <div>
       <div className="searchbox">
-            <SearchBox handleSearch/>
+            <SearchBox handleSearch={handleSearch}/>
       </div>
     
       <MapGL
@@ -67,7 +179,32 @@ const MapBox = () => {
       mapboxApiAccessToken={MAPBOX_TOKEN}
       >
 
-      <OnUserLocation setViewport={setViewport}/>
+      <OnUserLocation setViewport={setViewport} getGeojson={getGeojson}/>
+      <Source
+          type="geojson"
+          data={
+{    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": "sonipat",
+            "type": "Feature",
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [[geodata]]
+            },
+            "properties": {
+                "name_2": "Sonipat",
+                "name_1": "Haryana",
+                "state": "haryana",
+                "engtype_2": "District",
+                "statecode": "HR"
+            }
+        }
+    ]
+}}
+        >
+        <Layer {...geoJsonLayer}/>
+      </Source>
 
       <div style={geolocateStyle}>
           <GeolocateControl
@@ -84,6 +221,10 @@ const MapBox = () => {
         <div style={scaleControlStyle}>
           <ScaleControl />
         </div>
+
+        <div className='statcard'>
+        <DataCard data={data}/>
+      </div>
         
       </MapGL>
       </div>

@@ -51,8 +51,9 @@
 
 .statcard{
   z-index: 10;
-  position: relative;
-  bottom: -40px;
+  position: absolute;
+  bottom: 20px;
+  left: 90px;
   background-color: violet;
 }
 
@@ -61,4 +62,12 @@
     bottom: 10;
   right: 0;
   padding: 10px;
+}
+.statcard2 {
+  z-index: 10;
+  width: 90px;
+  position: absolute;
+  bottom: 57px;
+  left:114px;
+  background-color: violet;
 }

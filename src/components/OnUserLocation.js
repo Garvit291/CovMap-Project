@@ -3,16 +3,15 @@ import {Layer,Source,FlyToInterpolator} from 'react-map-gl';
 import { fetchgeojson} from '../api/index.js';
 import{geoJsonLayer} from './layers.js';
 
-const OnUserLocation =({setViewport}) => {
+
+
+const OnUserLocation =({setViewport ,getGeojson}) => {
 
     const [ulon,setUlon] = useState();
       const [ulat,setUlat] = useState();
-      const [geodata ,setGeodata] = useState([]);
-      const getGeojson = async (ulon,ulat) =>{
-          const response = await fetchgeojson(ulon , ulat);
-          const data = response.data.features[0].geometry.coordinates[0][0]
-          setGeodata([...geodata,...data])
-      }
+      
+      
+      
 
       const  successCallback = async function (position) {
     const lon = position.coords.longitude;
@@ -49,31 +48,7 @@ const OnUserLocation =({setViewport}) => {
         <div className='get_button'>
          <button onClick = {() => getUserLocation()}>get</button>
          </div>
-         <Source
-          type="geojson"
-          data={
-{    "type": "FeatureCollection",
-    "features": [
-        {
-            "id": "sonipat",
-            "type": "Feature",
-            "geometry": {
-                "type": "MultiPolygon",
-                "coordinates": [[geodata]]
-            },
-            "properties": {
-                "name_2": "Sonipat",
-                "name_1": "Haryana",
-                "state": "haryana",
-                "engtype_2": "District",
-                "statecode": "HR"
-            }
-        }
-    ]
-}}
-        >
-        <Layer {...geoJsonLayer}/>
-      </Source>
+         
             
         </div>
     )
