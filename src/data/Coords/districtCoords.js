@@ -1,4 +1,4 @@
-{
+export const districtCoords={
   "type": "FeatureCollection",
   "features": [
     {
@@ -11360,7 +11360,7 @@
       }
     },
     {
-      "id": "pratapgarh",
+      "id": "pratapgarhup",
       "type": "Feature",
       "geometry": {
         "type": "Point",
@@ -11370,7 +11370,7 @@
         ]
       },
       "properties": {
-        "name_2": "Pratapgarh",
+        "name_2": "PratapgarhUP",
         "name_1": "Uttar Pradesh",
         "state": "uttar_pradesh",
         "engtype_2": "District",

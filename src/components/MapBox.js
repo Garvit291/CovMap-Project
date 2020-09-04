@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React , {useState,useEffect} from 'react';
 import  MapGL, {
     NavigationControl,
     FullscreenControl,
@@ -11,6 +11,14 @@ import OnUserLocation from './OnUserLocation';
 import {fetchData,fetchgeojson,fetchstate,fetchdistrict} from '../api/index.js';
 import DataCard from './DataCard.js';
 import namedata from '../data/csvjson.js';
+import {stateCoords} from '../data/Coords/stateCoords.js';
+import {districtCoords} from '../data/Coords/districtCoords.js';
+import {covmap} from '../api/index';
+import apiDict from './csvjsonX.js';
+import axios from 'axios';
+import ClusterLayer from './ClusterLayer';
+
+import * as jp from 'jsonpath';
 
 
 
@@ -49,6 +57,7 @@ const scaleControlStyle = {
 
 const MapBox = () => {
     const [data,setData] = useState([]);
+    const [processed,setProcessed] = useState(false);
     const [flag,setFlag] = useState(false)
     const [coords, setCoords] = useState([]);
     const [geodata ,setGeodata] = useState([]);
@@ -189,6 +198,103 @@ const MapBox = () => {
         setData(r)
         console.log(r)
       }
+
+
+
+  const _sourceRef = React.createRef()
+   const   mapRef= React.createRef()
+
+  const refactorStateCoords = (data) => {
+        let stateCodes=jp.query(data, '$..statecode');
+        for (let sc of stateCodes) {
+            // let obj=jp.query(stateCoords,`$.features[*][?(@.statecode=="${sc}")]`)[0]
+            jp.apply(stateCoords, `$.features[*][?(@.statecode=="${sc}")]`,(obj)=>{
+                let properties = {
+                    ...obj,
+                    active: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].active`).reduce((a, b) => a + b, 0),
+                    confirmed: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].confirmed`).reduce((a, b) => a + b, 0),
+                    recovered: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].recovered`).reduce((a, b) => a + b, 0),
+                    deceased: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].deceased`).reduce((a, b) => a + b, 0)
+                };
+                return properties;
+            });
+        }
+        setProcessed(true)
+        // console.log(stateCoords);
+
+    }
+
+
+  const   refactorDistrictCoords =(data)=>{
+        let districts=jp.query(districtCoords,'$..id');
+        for (let district of districts){
+            let confirmed=[0],
+                active=[0],
+                deceased=[0],
+                recovered=[0];
+            for (let c19Dist of jp.query(apiDict,`$[?(@.apiName=="${district}" && @.type=="d")]`)){
+                confirmed.push(parseInt(jp.query(data,`$[?(@.statecode=="${c19Dist.statecode}")]..["${c19Dist.c19oName}"].confirmed`)));
+                active.push(parseInt(jp.query(data,`$[?(@.statecode=="${c19Dist.statecode}")]..["${c19Dist.c19oName}"].active`)));
+                deceased.push(parseInt(jp.query(data,`$[?(@.statecode=="${c19Dist.statecode}")]..["${c19Dist.c19oName}"].deceased`)));
+                recovered.push(parseInt(jp.query(data,`$[?(@.statecode=="${c19Dist.statecode}")]..["${c19Dist.c19oName}"].recovered`)));
+            }
+            jp.apply(districtCoords,`$.features[?(@.id=="${district}")].properties`,(obj) => {
+                let properties = {
+                    ...obj,
+                    confirmed: confirmed.reduce((a, b) => a + b, 0),
+                    active: active.reduce((a, b) => a + b, 0),
+                    deceased: deceased.reduce((a, b) => a + b, 0),
+                    recovered: recovered.reduce((a, b) => a + b, 0),
+                };
+                return properties;
+            });
+        }
+        setProcessed(true)
+        // console.log(JSON.stringify(districtCoords));
+    }
+
+    async function a (){
+        // const stateCo = await covmap.get('/stateCoords/');
+        const response = await axios.get('https://api.covid19india.org/state_district_wise.json')
+        if(response['status']===200){
+            // this.refactorStateCoords(response.data)
+            refactorDistrictCoords(response.data)
+        }
+    }
+
+    useEffect(() => {
+      a();
+      
+    }, [])
+
+ const  renderCoords = (coords)=>{
+        if(processed===true){
+            // console.log(coords);
+            return(
+                <Source
+                    id="coords"
+                    type="geojson"
+                    // data="https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
+                    data={districtCoords}
+                    cluster={true}
+                    clusterMaxZoom={14}
+                    clusterRadius={100}
+                    // ref={this._sourceRef}
+                    ref={ref => _sourceRef.current = ref && ref.getSource()}
+                    clusterProperties={{
+                        "confirmed": ["+", ["get", "confirmed"]],
+                        "active": ["+", ["get", "active"]],
+                        "recovered": ["+", ["get", "recovered"]],
+                        "deceased": ["+", ["get", "deceased"]]
+                    }}
+                >
+                    <ClusterLayer type="deceased" sourceId="coords"/>
+                </Source>);
+        }
+        return <div></div>;
+    }
+
+
   return (
     <div>
       <div className="searchbox">
@@ -202,7 +308,10 @@ const MapBox = () => {
       mapStyle="mapbox://styles/garvit2/cke5j2o2c1oej19qo843rhfi4"
       onViewportChange={nextViewport => setViewport(nextViewport)}
       mapboxApiAccessToken={MAPBOX_TOKEN}
+      ref={ref => mapRef.current = ref && ref.getMap()}
+
       >
+      {renderCoords(districtCoords)}
 
       <OnUserLocation setViewport={setViewport} getGeojson={getGeojson} setFlag= {setFlag}/>
       <Source

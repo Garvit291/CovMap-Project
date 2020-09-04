@@ -20,3 +20,9 @@ export const fetchstate = async (state) =>{
   return response
 }
 
+export const covmap = axios.create({
+    baseURL: 'http://54.211.144.29:8080/api',
+    params:{
+      format: 'json'
+    }
+});

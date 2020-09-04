@@ -1,4 +1,4 @@
-{
+export const stateCoords={
   "type": "FeatureCollection",
   "features": [
     {
@@ -241,22 +241,22 @@
         "statecode": "NL"
       }
     },
-    {
-      "id": "daman_and_diu",
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          72.27918011740577,
-          20.50551116661502
-        ]
-      },
-      "properties": {
-        "name_1": "Daman and Diu",
-        "engtype_1": "Union Territory",
-        "statecode": "DD"
-      }
-    },
+    // {
+    //   "id": "daman_and_diu",
+    //   "type": "Feature",
+    //   "geometry": {
+    //     "type": "Point",
+    //     "coordinates": [
+    //       72.27918011740577,
+    //       20.50551116661502
+    //     ]
+    //   },
+    //   "properties": {
+    //     "name_1": "Daman and Diu",
+    //     "engtype_1": "Union Territory",
+    //     "statecode": "DD"
+    //   }
+    // },
     {
       "id": "goa",
       "type": "Feature",
