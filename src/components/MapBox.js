@@ -8,7 +8,7 @@ import  MapGL, {
 import{geoJsonLayer} from './layers.js';
 import SearchBox from './SearchBox.js';
 import OnUserLocation from './OnUserLocation';
-import {fetchData,fetchgeojson} from '../api/index.js';
+import {fetchData,fetchgeojson,fetchstate,fetchdistrict} from '../api/index.js';
 import DataCard from './DataCard.js';
 import namedata from '../data/csvjson.js';
 
@@ -49,6 +49,8 @@ const scaleControlStyle = {
 
 const MapBox = () => {
     const [data,setData] = useState([]);
+    const [flag,setFlag] = useState(false)
+    const [coords, setCoords] = useState([]);
     const [geodata ,setGeodata] = useState([]);
     const [items , setItems] = useState([...namedata]);
     const [district,setDistrict] = useState('');
@@ -68,14 +70,31 @@ const MapBox = () => {
           })
       }
 
+    const fetchForDistrict = async (dist) =>{
+      const res = await fetchdistrict(dist)
+      console.log(res.data.geometry.coordinates)
+      const dta = res.data.geometry.coordinates
+      setCoords(dta)
+      getGeojson(coords[0],coords[1])
+
+    }
+
+    const fetchForState = async (state) =>{
+      const res = await fetchstate(state)
+      const dta = res.data.geometry.coordinates
+      setCoords(dta)
+      getGeojson(coords[0],coords[1])
+    }
+
     const getGeojson = async (ulon,ulat) =>{
           const response = await fetchgeojson(ulon , ulat);
           const data = response.data.features[0].geometry.coordinates[0][0]
-          setGeodata([...geodata,...data])
+          setGeodata([...data])
           console.log(response.data.features[0].id)
           const dist = response.data.features[0].id
           setDistrict(dist)
-          getItem(dist)
+          getItem(district)
+          
       }
 
     function capitalizeFirstLetter(str) {
@@ -98,11 +117,17 @@ const MapBox = () => {
         }
         let state = capitalizeFirstLetter(item.state)
         handleDistrict(item.c19oName, state)
+        if (flag){
+        fetchForDistrict(item.apiName)
+        }
       }
 
       else if (item.type==='State'){
         let state = capitalizeFirstLetter(item.state)
         handleState(state)
+        if(flag){
+          fetchForState(item.state)
+        }
       }
 
       else if(item.type ==='Union Territory'){
@@ -167,7 +192,7 @@ const MapBox = () => {
   return (
     <div>
       <div className="searchbox">
-            <SearchBox handleSearch={handleSearch}/>
+            <SearchBox handleSearch={handleSearch} setFlag= {setFlag}/>
       </div>
     
       <MapGL
@@ -179,7 +204,7 @@ const MapBox = () => {
       mapboxApiAccessToken={MAPBOX_TOKEN}
       >
 
-      <OnUserLocation setViewport={setViewport} getGeojson={getGeojson}/>
+      <OnUserLocation setViewport={setViewport} getGeojson={getGeojson} setFlag= {setFlag}/>
       <Source
           type="geojson"
           data={

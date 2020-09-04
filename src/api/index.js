@@ -16,7 +16,7 @@ export const fetchdistrict = async (dist) =>{
 }
 
 export const fetchstate = async (state) =>{
-  const response = await axios.get(`http://54.211.144.29:8080/api/stateCoords/${state}`);
+  const response = await axios.get(`http://54.211.144.29:8080/api/state/${state}`);
   return response
 }
 

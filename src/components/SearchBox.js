@@ -3,7 +3,7 @@ import './SearchBox.css';
 import namedata from '../data/csvjson.js';
 
 
-const SearchBox = ({handleSearch}) => {
+const SearchBox = ({handleSearch , setFlag}) => {
 
     
     const [items , setItems] = useState([...namedata]);
@@ -26,6 +26,8 @@ const SearchBox = ({handleSearch}) => {
 
     const optionSelected  = (item) =>{
         handleSearch(item);
+        setFlag(true)
+
         console.log(item)
         setDisplay(false);
     }
