@@ -25,8 +25,8 @@ const SearchBox = ({handleSearch , setFlag}) => {
     }
 
     const optionSelected  = (item) =>{
-        handleSearch(item);
-        setFlag(true)
+        handleSearch(item,true);
+
 
         console.log(item)
         setDisplay(false);

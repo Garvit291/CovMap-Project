@@ -2,7 +2,7 @@ import React , {useState,useEffect} from 'react';
 import  MapGL, {
     NavigationControl,
     FullscreenControl,
-    ScaleControl,
+    ScaleControl,FlyToInterpolator,
     GeolocateControl,Layer,Source
     } from 'react-map-gl';
 import{geoJsonLayer} from './layers.js';
@@ -58,7 +58,6 @@ const scaleControlStyle = {
 const MapBox = () => {
     const [data,setData] = useState([]);
     const [processed,setProcessed] = useState(false);
-    const [flag,setFlag] = useState(false)
     const [coords, setCoords] = useState([]);
     const [geodata ,setGeodata] = useState([]);
     const [items , setItems] = useState([...namedata]);
@@ -74,7 +73,7 @@ const MapBox = () => {
       const getItem = (dist) =>{
           items.map((item)=>{
             if(item.apiName===dist){
-              handleSearch(item)
+              handleSearch(item,false)
             }
           })
       }
@@ -83,16 +82,21 @@ const MapBox = () => {
       const res = await fetchdistrict(dist)
       console.log(res.data.geometry.coordinates)
       const dta = res.data.geometry.coordinates
-      setCoords(dta)
-      getGeojson(coords[0],coords[1])
+      setViewport({
+        latitude:dta[1],
+        longitude:dta[0],
+        zoom:9,
+        transitionInterpolator: new FlyToInterpolator({speed: 1}),
+        transitionDuration: '.2s'
+        })
+      getGeojson2(dta[0],dta[1])
 
     }
 
     const fetchForState = async (state) =>{
       const res = await fetchstate(state)
       const dta = res.data.geometry.coordinates
-      setCoords(dta)
-      getGeojson(coords[0],coords[1])
+      getGeojson2(dta[0],dta[1])
     }
 
     const getGeojson = async (ulon,ulat) =>{
@@ -104,6 +108,12 @@ const MapBox = () => {
           setDistrict(dist)
           getItem(district)
           
+      }
+
+      const getGeojson2 = async (ulon,ulat) =>{
+          const response = await fetchgeojson(ulon , ulat);
+          const data = response.data.features[0].geometry.coordinates[0][0]
+          setGeodata([...data])
       }
 
     function capitalizeFirstLetter(str) {
@@ -118,7 +128,7 @@ const MapBox = () => {
 
 }
 
-    const handleSearch = (item) =>
+    const handleSearch = (item,flag) =>
     {  
       if (item.type==='District'){
         if(item.state==='daman_and_diu'|| item.state==='dadra_and_nagar_haveli'){
@@ -288,7 +298,7 @@ const MapBox = () => {
                         "deceased": ["+", ["get", "deceased"]]
                     }}
                 >
-                    <ClusterLayer type="deceased" sourceId="coords"/>
+                    <ClusterLayer type="confirmed" sourceId="coords"/>
                 </Source>);
         }
         return <div></div>;
@@ -298,7 +308,7 @@ const MapBox = () => {
   return (
     <div>
       <div className="searchbox">
-            <SearchBox handleSearch={handleSearch} setFlag= {setFlag}/>
+            <SearchBox handleSearch={handleSearch}/>
       </div>
     
       <MapGL
@@ -313,7 +323,7 @@ const MapBox = () => {
       >
       {renderCoords(districtCoords)}
 
-      <OnUserLocation setViewport={setViewport} getGeojson={getGeojson} setFlag= {setFlag}/>
+      <OnUserLocation setViewport={setViewport} getGeojson={getGeojson}/>
       <Source
           type="geojson"
           data={

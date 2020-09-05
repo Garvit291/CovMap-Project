@@ -5,7 +5,7 @@ import{geoJsonLayer} from './layers.js';
 
 
 
-const OnUserLocation =({setViewport ,getGeojson , setFlag}) => {
+const OnUserLocation =({setViewport ,getGeojson }) => {
 
     const [ulon,setUlon] = useState();
       const [ulat,setUlat] = useState();
@@ -16,19 +16,17 @@ const OnUserLocation =({setViewport ,getGeojson , setFlag}) => {
       const  successCallback = async function (position) {
     const lon = position.coords.longitude;
     const lat = position.coords.latitude;
-    console.log(lon,lat);
-      setUlat(lat);
-      setUlon(lon);
-      if (ulon && ulat){
-        getGeojson(ulon,ulat)
-        setFlag(false)
+    console.log(lon,lat)
         setViewport({
-        latitude:ulat,
-        longitude:ulon,
+        latitude:lat,
+        longitude:lon,
         zoom:9,
         transitionInterpolator: new FlyToInterpolator({speed: 1}),
         transitionDuration: '.2s'
         })
+
+      if (lon && lat){
+        getGeojson(lon,lat)    
       }
   }
 
