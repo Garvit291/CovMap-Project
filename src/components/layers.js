@@ -1,27 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const colors={
   recovered: ['step',
   ['get', 'recovered'],
@@ -166,5 +144,6 @@ export const clusterLayer = (sourceId,type)=>  {
       'type': 'fill',
       'source': 'data',
       'layout': {},
-      'paint': { 'fill-color': 'red', 'fill-opacity': 0.8 }
+      'paint': { 'fill-color': 'red', 'fill-opacity': 0.5 }
   };
+  

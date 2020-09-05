@@ -57,6 +57,7 @@ const scaleControlStyle = {
 
 const MapBox = () => {
     const [data,setData] = useState([]);
+    const [layerType,setLayerType] = useState('recovered');
     const [name,setName] = useState('India');
     const [processed,setProcessed] = useState(false);
     const [geodata ,setGeodata] = useState([]);
@@ -68,6 +69,21 @@ const MapBox = () => {
         bearing: 0,
         pitch: 0
       });
+
+      const setLayerRecovered = () =>{
+        setLayerType('recovered')
+      }
+      const setLayerDeceased = () =>{
+        setLayerType('deceased')
+      }
+      const setLayerActive = () =>{
+        setLayerType('active')
+      }
+      const setLayerConfirmed = () =>{
+        renderCoordsc(districtCoords)
+      }
+
+    
 
       const getItem = (dist) =>{
           items.map((item)=>{
@@ -344,7 +360,35 @@ const MapBox = () => {
                         "deceased": ["+", ["get", "deceased"]]
                     }}
                 >
-                    <ClusterLayer type="confirmed" sourceId="coords"/>
+                    <ClusterLayer type='recovered' sourceId="coords"/>
+                </Source>);
+        }
+        return <div></div>;
+    }
+
+
+    const  renderCoordsc = (coords)=>{
+        if(processed===true){
+            // console.log(coords);
+            return(
+                <Source
+                    id="coords"
+                    type="geojson"
+                    // data="https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
+                    data={districtCoords}
+                    cluster={true}
+                    clusterMaxZoom={14}
+                    clusterRadius={100}
+                    // ref={this._sourceRef}
+                    ref={ref => _sourceRef.current = ref && ref.getSource()}
+                    clusterProperties={{
+                        "confirmed": ["+", ["get", "confirmed"]],
+                        "active": ["+", ["get", "active"]],
+                        "recovered": ["+", ["get", "recovered"]],
+                        "deceased": ["+", ["get", "deceased"]]
+                    }}
+                >
+                    <ClusterLayer type='confirmed' sourceId="coords"/>
                 </Source>);
         }
         return <div></div>;
@@ -367,7 +411,9 @@ const MapBox = () => {
       ref={ref => mapRef.current = ref && ref.getMap()}
 
       >
-      {renderCoords(districtCoords)}
+      
+
+      {renderCoordsc(districtCoords)}
 
       <OnUserLocation setViewport={setViewport} getGeojson={getGeojson}/>
       <Source
@@ -410,6 +456,15 @@ const MapBox = () => {
         </div>
         <div style={scaleControlStyle}>
           <ScaleControl />
+        </div>
+
+        <div className='layerswitch'>
+
+        <button className='switchbutton' onClick={()=>setLayerActive()} >Active</button>
+        <button className='switchbutton' onClick={()=>setLayerConfirmed()} >Confirmed</button>
+        <button className='switchbutton' onClick={()=>setLayerRecovered()} >Recovered</button>
+        <button className='switchbutton' onClick={()=>setLayerDeceased()} >Deceased</button>
+
         </div>
 
         <div className='statcard'>

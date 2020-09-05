@@ -75,3 +75,18 @@
   left:114px;
   background-color: violet;
 }
+
+.layerswitch{
+  height: 44px;
+  width: 360px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex-direction: row;
+}
+
+.switchbutton{
+  width: 100px;
+  margin: 10px;
+  height: 20px;
+}
