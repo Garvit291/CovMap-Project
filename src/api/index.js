@@ -10,13 +10,20 @@ export const fetchgeojson = async (lon,lat) =>{
   return response
 }
 
+export const fetchgeojsonstate = async (lon,lat) =>{
+  const response = await axios.get(`http://54.211.144.29/api/state/?lng=${lon}&lat=${lat}`);
+  return response
+}
+
+
+
 export const fetchdistrict = async (dist) =>{
   const response = await axios.get(`http://54.211.144.29/api/districtCoords/${dist}`);
   return response
 }
 
 export const fetchstate = async (state) =>{
-  const response = await axios.get(`http://54.211.144.29/api/state/${state}`);
+  const response = await axios.get(`http://54.211.144.29/api/stateCoords/${state}`);
   return response
 }
 

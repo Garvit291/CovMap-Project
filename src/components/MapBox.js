@@ -8,7 +8,7 @@ import  MapGL, {
 import{geoJsonLayer} from './layers.js';
 import SearchBox from './SearchBox.js';
 import OnUserLocation from './OnUserLocation';
-import {fetchData,fetchgeojson,fetchstate,fetchdistrict} from '../api/index.js';
+import {fetchData,fetchgeojson,fetchstate,fetchdistrict,fetchgeojsonstate} from '../api/index.js';
 import DataCard from './DataCard.js';
 import namedata from '../data/csvjson.js';
 import {stateCoords} from '../data/Coords/stateCoords.js';
@@ -58,7 +58,6 @@ const scaleControlStyle = {
 const MapBox = () => {
     const [data,setData] = useState([]);
     const [processed,setProcessed] = useState(false);
-    const [coords, setCoords] = useState([]);
     const [geodata ,setGeodata] = useState([]);
     const [items , setItems] = useState([...namedata]);
     const [district,setDistrict] = useState('');
@@ -96,7 +95,14 @@ const MapBox = () => {
     const fetchForState = async (state) =>{
       const res = await fetchstate(state)
       const dta = res.data.geometry.coordinates
-      getGeojson2(dta[0],dta[1])
+      setViewport({
+        latitude:dta[1],
+        longitude:dta[0],
+        zoom:8,
+        transitionInterpolator: new FlyToInterpolator({speed: 1}),
+        transitionDuration: '.2s'
+        })
+      getGeojson3(dta[0],dta[1])
     }
 
     const getGeojson = async (ulon,ulat) =>{
@@ -112,6 +118,14 @@ const MapBox = () => {
 
       const getGeojson2 = async (ulon,ulat) =>{
           const response = await fetchgeojson(ulon , ulat);
+          const data = response.data.features[0].geometry.coordinates[0][0]
+          setGeodata([...data])
+      }
+
+      const getGeojson3 = async (ulon,ulat) =>{
+          const response = await fetchgeojsonstate(ulon , ulat);
+          console.log(response.data)
+          console.log('state')
           const data = response.data.features[0].geometry.coordinates[0][0]
           setGeodata([...data])
       }
@@ -145,12 +159,15 @@ const MapBox = () => {
         let state = capitalizeFirstLetter(item.state)
         handleState(state)
         if(flag){
-          fetchForState(item.state)
+          fetchForState(item.apiName)
         }
       }
 
       else if(item.type ==='Union Territory'){
         handleState(item.c19oName)
+        if(flag){
+          fetchForState(item.apiName)
+        }
       }
     }  
 
@@ -178,7 +195,7 @@ const MapBox = () => {
           let deltac = Object.entries(district[1].delta)[0][1]
           totaldeltaconfirmed = totaldeltaconfirmed + deltac
   })
-  r.push(totalconfirmed,totalactive,totaldeceased,totalrecovered,totaldeltaconfirmed)
+  r.push(totalconfirmed,totalactive,totalrecovered,totaldeceased)
 
         setData(r);
         console.log(r)
@@ -204,7 +221,7 @@ const MapBox = () => {
     }
   })
   
-  r.push(totalconfirmed,totalactive,totaldeceased, totalrecovered,totaldeltaconfirmed)
+  r.push(totalconfirmed,totalactive, totalrecovered,totaldeceased)
         setData(r)
         console.log(r)
       }
@@ -263,6 +280,16 @@ const MapBox = () => {
         // console.log(JSON.stringify(districtCoords));
     }
 
+    const  getIndStats=(data)=>{
+        return {
+            confirmed:  jp.query(data,"$..districtData[*].confirmed").reduce((a, b) => parseInt(a) + parseInt(b), 0),
+            active:     jp.query(data,   "$..districtData[*].active").reduce((a, b) => parseInt(a) + parseInt(b), 0),
+            recovered:  jp.query(data,`$..districtData[*].recovered`).reduce((a, b) => parseInt(a) + parseInt(b), 0),
+            deceased:   jp.query(data, `$..districtData[*].deceased`).reduce((a, b) => parseInt(a) + parseInt(b), 0)
+        }
+    }
+
+
     async function a (){
         // const stateCo = await covmap.get('/stateCoords/');
         const response = await axios.get('https://api.covid19india.org/state_district_wise.json')
@@ -271,9 +298,27 @@ const MapBox = () => {
             refactorDistrictCoords(response.data)
         }
     }
+    async function b (){
+        // const stateCo = await covmap.get('/stateCoords/');
+        const response = await axios.get('https://api.covid19india.org/state_district_wise.json')
+        if(response['status']===200){
+            // this.refactorStateCoords(response.data)
+            const dta = getIndStats(response.data);
+            let i = []
+            let c = dta.confirmed
+            let a = dta.active
+            let r = dta.recovered
+            let d = dta.deceased
+            i.push(c,a,r,d)
+            console.log(i)
+            setData(i)
+        
+        }
+    }
 
     useEffect(() => {
       a();
+      b();
       
     }, [])
 
@@ -367,7 +412,7 @@ const MapBox = () => {
         </div>
 
         <div className='statcard'>
-        <DataCard data={data}/>
+        <DataCard stats={data}/>
       </div>
         
       </MapGL>

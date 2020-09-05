@@ -52,9 +52,9 @@
 .statcard{
   z-index: 10;
   position: absolute;
-  bottom: 20px;
-  left: 90px;
-  background-color: violet;
+  top: 20px;
+  right: 90px;
+  background-color:thistle;
 }
 
 .get_button{
