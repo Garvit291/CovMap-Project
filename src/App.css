@@ -54,7 +54,11 @@
   position: absolute;
   top: 20px;
   right: 90px;
-  background-color:thistle;
+  background-color: rgba(212, 243, 249, 0.8);
+}
+
+.name{
+  color:#162447;
 }
 
 .get_button{

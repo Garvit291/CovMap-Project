@@ -7,7 +7,7 @@ import * as jp from 'jsonpath';
 
 
 
-const DataCard = ({stats}) => {
+const DataCard = ({stats , name}) => {
     
 
   
@@ -28,14 +28,14 @@ const DataCard = ({stats}) => {
 	datasets: [{
 		data: [stats[1],stats[2],stats[3]],
 		backgroundColor: [
-		'#FF6384',
-		'#36A2EB',
-		'#FFCE56'
+		'#ec0101',
+		'#b6eb7a',
+		'#a2d5f2'
 		],
 		hoverBackgroundColor: [
-		'#FF6384',
-		'#36A2EB',
-		'#FFCE56'
+		'#eb8f8f',
+		'#a8df65',
+		'#40a8c4'
 		]
 	}]
 }
@@ -44,7 +44,7 @@ const DataCard = ({stats}) => {
     return (
         <div>
             
-        <h2>Doughnut Example</h2>
+        <h2 className='name'>{name}</h2>
         
         {doughnut}
         

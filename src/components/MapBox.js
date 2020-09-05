@@ -57,10 +57,10 @@ const scaleControlStyle = {
 
 const MapBox = () => {
     const [data,setData] = useState([]);
+    const [name,setName] = useState('India');
     const [processed,setProcessed] = useState(false);
     const [geodata ,setGeodata] = useState([]);
     const [items , setItems] = useState([...namedata]);
-    const [district,setDistrict] = useState('');
     const [viewport, setViewport] = useState({
         latitude: 25.275005879170045,
         longitude: 78.97082512588096,
@@ -111,8 +111,7 @@ const MapBox = () => {
           setGeodata([...data])
           console.log(response.data.features[0].id)
           const dist = response.data.features[0].id
-          setDistrict(dist)
-          getItem(district)
+          getItem(dist)
           
       }
 
@@ -144,6 +143,8 @@ const MapBox = () => {
 
     const handleSearch = (item,flag) =>
     {  
+      setName(item.c19oName)
+
       if (item.type==='District'){
         if(item.state==='daman_and_diu'|| item.state==='dadra_and_nagar_haveli'){
           item.state='Dadra and Nagar Haveli and Daman and Diu'
@@ -412,7 +413,7 @@ const MapBox = () => {
         </div>
 
         <div className='statcard'>
-        <DataCard stats={data}/>
+        <DataCard stats={data} name = {name}/>
       </div>
         
       </MapGL>
