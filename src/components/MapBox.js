@@ -56,7 +56,7 @@ const scaleControlStyle = {
 const MapBox = () => {
   const [data,setData] = useState([]);
   const [layername , setLayerName] = useState('');
-  const [type,setType] = useState('');
+  const [type,setType] = useState('district');
   const [name,setName] = useState('India');
   const [processed,setProcessed] = useState(false);
   const [geodata ,setGeodata] = useState([]);
@@ -73,9 +73,10 @@ const MapBox = () => {
   const getItem = (dist) =>{
       items.map((item)=>{
         if(item.apiName===dist){
-          handleSearch(item,false)
+          
           setLayerName(item.apiName)
           setType('district')
+          handleSearch(item,false)
         }
       })
   }

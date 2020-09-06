@@ -33,6 +33,26 @@
 
 .li{
   color: white;
-  font-size: 18px;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    justify-content: space-around;
+    height: 45px;
+    width: 205px;
+    background-color: #133b5c;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+.optionName{
+
+}
+
+.ol{
+
+}
+
+.statecode{
+  color: orange;
 }

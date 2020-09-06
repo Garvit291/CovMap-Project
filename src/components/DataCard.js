@@ -7,19 +7,23 @@ import * as jp from 'jsonpath';
 
 
 const DataCard = ({stats , name}) => {
+
+	const p1= Math.round(stats[1]/stats[0]*100)
+	const p2= Math.round(stats[2]/stats[0]*100)
+	const p3= Math.round(stats[3]/stats[0]*100)
     const doughnut = <Doughnut 
         				data={{
 							labels: [
-								'Active',
-								'Recovered',
-								'Deceased'
+								`Active : ${p1} %`,
+								`Recovered : ${p2} %`,
+								`Deceased : ${p3} %`
 							],
 							datasets: [{
 								data: [stats[1],stats[2],stats[3]],
 								backgroundColor: [
 								'#ec0101',
-								'#b6eb7a',
-								'#a2d5f2'
+								'#79d70f',
+								'#8675a9'
 								],
 								hoverBackgroundColor: [
 								'#eb8f8f',
@@ -28,7 +32,15 @@ const DataCard = ({stats , name}) => {
 								]
 							}]
 						}
-        			}/>
+        			}
+					options={{ 
+                legend : {display:true},
+                title : {display:true , text: `Current Situation in ${name}`}
+            }}
+
+			width={20}
+			height= {8}
+					/>
     return (
         <div>
         <h2 className='name'>{name}</h2>

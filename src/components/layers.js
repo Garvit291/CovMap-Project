@@ -140,7 +140,7 @@ export const clusterLayer = (sourceId,type)=>  {
   };
 
   export const geoJsonLayer = {
-      id:'geojson-layer',
+      'id':'geojson-layer',
       'type': 'fill',
       'source': 'data',
       'layout': {},
