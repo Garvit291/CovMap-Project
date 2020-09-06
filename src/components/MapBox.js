@@ -391,7 +391,6 @@ const MapBox = () => {
   const renderCoords = (coords,clusterType)=>{
     if(processed===true){
             // console.log(coords);
-<<<<<<< HEAD
             return(
                 <Source
                     id="coords"
@@ -442,7 +441,6 @@ const MapBox = () => {
                 </Source>);
         }
         return <div></div>;
-=======
       return(
         <Source
           id="coords"
@@ -464,7 +462,6 @@ const MapBox = () => {
           <ClusterLayer type={clusterType} sourceId="coords"/>
         </Source>
       );
->>>>>>> 66b2af488683b7d388de420347f36bf0b0f2cdc2
     }
     return <div></div>;
   }
@@ -486,16 +483,13 @@ const MapBox = () => {
       ref={ref => mapRef.current = ref && ref.getMap()}
 
       >
-<<<<<<< HEAD
       
 
       {renderCoordsc(districtCoords)}
-=======
       {clusterType === "active" ? renderCoords(districtCoords,"active"):<div></div>}
       {clusterType === "recovered" ? renderCoords(districtCoords,"recovered"):<div></div>}
       {clusterType === "deceased" ? renderCoords(districtCoords,"deceased"):<div></div>}
       {clusterType === "confirmed" ? renderCoords(districtCoords,"confirmed"):<div></div>}
->>>>>>> 66b2af488683b7d388de420347f36bf0b0f2cdc2
 
       <OnUserLocation setViewport={setViewport} getGeojson={getGeojson}/>
       {/* <Source
