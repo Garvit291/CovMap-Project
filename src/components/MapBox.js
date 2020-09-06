@@ -54,165 +54,159 @@ const scaleControlStyle = {
 };
 
 
-
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const MapBox = () => {
-    const [data,setData] = useState([]);
-    const [name,setName] = useState('India');
-    const [processed,setProcessed] = useState(false);
-    const [geodata ,setGeodata] = useState([]);
-    const [items , setItems] = useState([...namedata]);
-    const [viewport, setViewport] = useState({
-        latitude: 25.275005879170045,
-        longitude: 78.97082512588096,
-        zoom: 3.8325797292588644,
-        bearing: 0,
-        pitch: 0
-      });
+  const [data,setData] = useState([]);
+  const [name,setName] = useState('India');
+  const [processed,setProcessed] = useState(false);
+  const [geodata ,setGeodata] = useState([]);
+  const [clusterType,setClusterType] = useState('confirmed');
+  const [items , setItems] = useState([...namedata]);
+  const [viewport, setViewport] = useState({
+      latitude: 25.275005879170045,
+      longitude: 78.97082512588096,
+      zoom: 3.8325797292588644,
+      bearing: 0,
+      pitch: 0
+    });
 
-      const getItem = (dist) =>{
-          items.map((item)=>{
-            if(item.apiName===dist){
-              handleSearch(item,false)
-            }
-          })
-      }
+  const getItem = (dist) =>{
+      items.map((item)=>{
+        if(item.apiName===dist){
+          handleSearch(item,false)
+        }
+      })
+  }
 
-    const fetchForDistrict = async (dist) =>{
-      const res = await fetchdistrict(dist)
-      console.log(res.data.geometry.coordinates)
-      const dta = res.data.geometry.coordinates
-      setViewport({
-        latitude:dta[1],
-        longitude:dta[0],
-        zoom:9,
-        transitionInterpolator: new FlyToInterpolator({speed: 1}),
-        transitionDuration: '.2s'
-        })
-      getGeojson2(dta[0],dta[1])
+  const fetchForDistrict = async (dist) =>{
+    const res = await fetchdistrict(dist)
+    console.log(res.data.geometry.coordinates)
+    const dta = res.data.geometry.coordinates
+    setViewport({
+      latitude:dta[1],
+      longitude:dta[0],
+      zoom:9,
+      transitionInterpolator: new FlyToInterpolator({speed: 1}),
+      transitionDuration: '.2s'
+      })
+    getGeojson2(dta[0],dta[1])
 
-    }
+  }
 
-    const fetchForState = async (state) =>{
-      const res = await fetchstate(state)
-      const dta = res.data.geometry.coordinates
-      setViewport({
-        latitude:dta[1],
-        longitude:dta[0],
-        zoom:8,
-        transitionInterpolator: new FlyToInterpolator({speed: 1}),
-        transitionDuration: '.2s'
-        })
-      getGeojson3(dta[0],dta[1])
-    }
+  const fetchForState = async (state) =>{
+    const res = await fetchstate(state)
+    const dta = res.data.geometry.coordinates
+    setViewport({
+      latitude:dta[1],
+      longitude:dta[0],
+      zoom:8,
+      transitionInterpolator: new FlyToInterpolator({speed: 1}),
+      transitionDuration: '.2s'
+      })
+    getGeojson3(state);
+  }
 
-    const getGeojson = async (ulon,ulat) =>{
-          const response = await fetchgeojson(ulon , ulat);
-          const data = response.data.features[0].geometry.coordinates[0][0]
-          setGeodata([...data])
-          console.log(response.data.features[0].id)
-          const dist = response.data.features[0].id
-          getItem(dist)
-          
-      }
+  const getGeojson = async (ulon,ulat) =>{
+    const response = await fetchgeojson(ulon , ulat);
+    const data = response.data.features[0].geometry.coordinates[0][0]
+    setGeodata([...data])
+    console.log(response.data.features[0].id)
+    const dist = response.data.features[0].id
+    getItem(dist)        
+  }
 
-      const getGeojson2 = async (ulon,ulat) =>{
-          const response = await fetchgeojson(ulon , ulat);
-          const data = response.data.features[0].geometry.coordinates[0][0]
-          setGeodata([...data])
-      }
+  const getGeojson2 = async (ulon,ulat) =>{
+    const response = await fetchgeojson(ulon , ulat);
+    const data = response.data.features[0].geometry.coordinates[0][0]
+    setGeodata([...data])
+  }
 
-      const getGeojson3 = async (ulon,ulat) =>{
-          const response = await fetchgeojsonstate(ulon , ulat);
-          console.log(response.data)
-          console.log('state')
-          const data = response.data.features[0].geometry.coordinates[0][0]
-          setGeodata([...data])
-      }
+  const getGeojson3 = async (state) =>{
+    const response = await fetchgeojsonstate(state);
+    console.log(response.data)
+    console.log('state')
+    // const data = response.data.features[0].geometry.coordinates[0][0]
+    setGeodata([...data])
+  }
 
-    function capitalizeFirstLetter(str) {
-      
-     str = str.split("_");
+  function capitalizeFirstLetter(str) { 
+    str = str.split("_");
 
-    for (var i = 0, x = str.length; i < x; i++) {
-        str[i] = str[i][0].toUpperCase() + str[i].substr(1);
-    }
+  for (var i = 0, x = str.length; i < x; i++) {
+      str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+  }
 
-    return str.join(" ");
+  return str.join(" ");
 
 }
 
-    const handleSearch = (item,flag) =>
-    {  
-      setName(item.c19oName)
-
-      if (item.type==='District'){
-        if(item.state==='daman_and_diu'|| item.state==='dadra_and_nagar_haveli'){
-          item.state='Dadra and Nagar Haveli and Daman and Diu'
-        }
-        let state = capitalizeFirstLetter(item.state)
-        handleDistrict(item.c19oName, state)
-        if (flag){
-        fetchForDistrict(item.apiName)
-        }
+  const handleSearch = (item,flag) =>
+  {  
+    setName(item.c19oName)
+    if (item.type==='District'){
+      if(item.state==='daman_and_diu'|| item.state==='dadra_and_nagar_haveli'){
+        item.state='Dadra and Nagar Haveli and Daman and Diu'
       }
-
-      else if (item.type==='State'){
-        let state = capitalizeFirstLetter(item.state)
-        handleState(state)
-        if(flag){
-          fetchForState(item.apiName)
-        }
+      let state = capitalizeFirstLetter(item.state)
+      handleDistrict(item.c19oName, state)
+      if (flag){
+      fetchForDistrict(item.apiName)
       }
-
-      else if(item.type ==='Union Territory'){
-        handleState(item.c19oName)
-        if(flag){
-          fetchForState(item.apiName)
-        }
+    }
+    else if (item.type==='State'){
+      let state = capitalizeFirstLetter(item.state)
+      handleState(state)
+      if(flag){
+        fetchForState(item.apiName)
       }
-    }  
+    }
+    else if(item.type ==='Union Territory'){
+      handleState(item.c19oName)
+      if(flag){
+        fetchForState(item.apiName)
+      }
+    }
+  }  
 
-    const handleState = async (state) =>{
-      const response = await fetchData();
-        let totalconfirmed=0
-        let totalactive = 0
-        let totaldeceased = 0
-        let totalrecovered = 0 
-        let totaldeltaconfirmed = 0
-        let r=[]
+  const handleState = async (state) =>{
+    const response = await fetchData();
+      let totalconfirmed=0
+      let totalactive = 0
+      let totaldeceased = 0
+      let totalrecovered = 0 
+      let totaldeltaconfirmed = 0
+      let r=[]
 
-      const data = response.data
-        Object.entries(data[state]['districtData']).map((district)=>{
-          let c=district[1].confirmed
-          totalconfirmed=totalconfirmed+c
-          let a = district[1].active 
-          totalactive = totalactive + a
-          let d = district[1].deceased
-          totaldeceased = totaldeceased + d
-          let r = district[1].recovered
-          totalrecovered = totalrecovered + r
-          
-
-          let deltac = Object.entries(district[1].delta)[0][1]
-          totaldeltaconfirmed = totaldeltaconfirmed + deltac
-  })
-  r.push(totalconfirmed,totalactive,totalrecovered,totaldeceased)
-
-        setData(r);
-        console.log(r)
+    const data = response.data
+      Object.entries(data[state]['districtData']).map((district)=>{
+        let c=district[1].confirmed
+        totalconfirmed=totalconfirmed+c
+        let a = district[1].active 
+        totalactive = totalactive + a
+        let d = district[1].deceased
+        totaldeceased = totaldeceased + d
+        let r = district[1].recovered
+        totalrecovered = totalrecovered + r
         
-      }
 
-      const handleDistrict = async (d , state) =>{
-        const response = await fetchData();
-        const data = response.data
- let totalconfirmed=0
-  let totalactive = 0
-  let totaldeceased = 0
-  let totaldeltaconfirmed = 0
-  let totalrecovered = 0 
-  let r=[]
- Object.entries(data[state]['districtData']).map((district)=>{
+        let deltac = Object.entries(district[1].delta)[0][1]
+        totaldeltaconfirmed = totaldeltaconfirmed + deltac
+    })
+    r.push(totalconfirmed,totalactive,totalrecovered,totaldeceased)
+    setData(r);
+    console.log(r)
+  }
+
+  const handleDistrict = async (d , state) =>{
+    const response = await fetchData();
+    const data = response.data
+    let totalconfirmed=0
+    let totalactive = 0
+    let totaldeceased = 0
+    let totaldeltaconfirmed = 0
+    let totalrecovered = 0 
+    let r=[]
+    Object.entries(data[state]['districtData']).map((district)=>{
     if (d===district[0]){
         totalconfirmed =   district[1].confirmed
         totalactive = district[1].active
@@ -222,38 +216,38 @@ const MapBox = () => {
     }
   })
   
-  r.push(totalconfirmed,totalactive, totalrecovered,totaldeceased)
-        setData(r)
-        console.log(r)
-      }
+    r.push(totalconfirmed,totalactive, totalrecovered,totaldeceased)
+    setData(r)
+    console.log(r)
+  }
 
 
 
   const _sourceRef = React.createRef()
-   const   mapRef= React.createRef()
+  const   mapRef= React.createRef()
 
   const refactorStateCoords = (data) => {
-        let stateCodes=jp.query(data, '$..statecode');
-        for (let sc of stateCodes) {
+    let stateCodes=jp.query(data, '$..statecode');
+    for (let sc of stateCodes) {
             // let obj=jp.query(stateCoords,`$.features[*][?(@.statecode=="${sc}")]`)[0]
-            jp.apply(stateCoords, `$.features[*][?(@.statecode=="${sc}")]`,(obj)=>{
-                let properties = {
-                    ...obj,
-                    active: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].active`).reduce((a, b) => a + b, 0),
-                    confirmed: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].confirmed`).reduce((a, b) => a + b, 0),
-                    recovered: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].recovered`).reduce((a, b) => a + b, 0),
-                    deceased: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].deceased`).reduce((a, b) => a + b, 0)
-                };
-                return properties;
-            });
-        }
-        setProcessed(true)
+      jp.apply(stateCoords, `$.features[*][?(@.statecode=="${sc}")]`,(obj)=>{
+          let properties = {
+              ...obj,
+              active: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].active`).reduce((a, b) => a + b, 0),
+              confirmed: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].confirmed`).reduce((a, b) => a + b, 0),
+              recovered: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].recovered`).reduce((a, b) => a + b, 0),
+              deceased: jp.query(data,`$[?(@.statecode=="${sc}")].districtData[*].deceased`).reduce((a, b) => a + b, 0)
+          };
+          return properties;
+      });
+    }
+    setProcessed(true)
         // console.log(stateCoords);
 
     }
 
 
-  const   refactorDistrictCoords =(data)=>{
+  const refactorDistrictCoords =(data)=>{
         let districts=jp.query(districtCoords,'$..id');
         for (let district of districts){
             let confirmed=[0],
@@ -281,74 +275,79 @@ const MapBox = () => {
         // console.log(JSON.stringify(districtCoords));
     }
 
-    const  getIndStats=(data)=>{
-        return {
-            confirmed:  jp.query(data,"$..districtData[*].confirmed").reduce((a, b) => parseInt(a) + parseInt(b), 0),
-            active:     jp.query(data,   "$..districtData[*].active").reduce((a, b) => parseInt(a) + parseInt(b), 0),
-            recovered:  jp.query(data,`$..districtData[*].recovered`).reduce((a, b) => parseInt(a) + parseInt(b), 0),
-            deceased:   jp.query(data, `$..districtData[*].deceased`).reduce((a, b) => parseInt(a) + parseInt(b), 0)
-        }
+  const getIndStats=(data)=>{
+    return {
+        confirmed:  jp.query(data,"$..districtData[*].confirmed").reduce((a, b) => parseInt(a) + parseInt(b), 0),
+        active:     jp.query(data,   "$..districtData[*].active").reduce((a, b) => parseInt(a) + parseInt(b), 0),
+        recovered:  jp.query(data,`$..districtData[*].recovered`).reduce((a, b) => parseInt(a) + parseInt(b), 0),
+        deceased:   jp.query(data, `$..districtData[*].deceased`).reduce((a, b) => parseInt(a) + parseInt(b), 0)
     }
+  }
 
 
-    async function a (){
-        // const stateCo = await covmap.get('/stateCoords/');
-        const response = await axios.get('https://api.covid19india.org/state_district_wise.json')
-        if(response['status']===200){
-            // this.refactorStateCoords(response.data)
-            refactorDistrictCoords(response.data)
-        }
+  async function a (){
+      // const stateCo = await covmap.get('/stateCoords/');
+      const response = await axios.get('https://api.covid19india.org/state_district_wise.json')
+      // setTimeout(
+        // () => setClusterType('active'), 
+        // 8000
+      // );
+      if(response['status']===200){
+          // this.refactorStateCoords(response.data)
+          refactorDistrictCoords(response.data)
+      }
+  }
+  async function b (){
+      // const stateCo = await covmap.get('/stateCoords/');
+    const response = await axios.get('https://api.covid19india.org/state_district_wise.json')
+    if(response['status']===200){
+        // this.refactorStateCoords(response.data)
+        const dta = getIndStats(response.data);
+        let i = []
+        let c = dta.confirmed
+        let a = dta.active
+        let r = dta.recovered
+        let d = dta.deceased
+        i.push(c,a,r,d)
+        console.log(i)
+        setData(i)
+    
     }
-    async function b (){
-        // const stateCo = await covmap.get('/stateCoords/');
-        const response = await axios.get('https://api.covid19india.org/state_district_wise.json')
-        if(response['status']===200){
-            // this.refactorStateCoords(response.data)
-            const dta = getIndStats(response.data);
-            let i = []
-            let c = dta.confirmed
-            let a = dta.active
-            let r = dta.recovered
-            let d = dta.deceased
-            i.push(c,a,r,d)
-            console.log(i)
-            setData(i)
-        
-        }
-    }
+  }
 
-    useEffect(() => {
-      a();
-      b();
-      
-    }, [])
+  useEffect(() => {
+    a();
+    b();
+    
+  }, [])
 
- const  renderCoords = (coords)=>{
-        if(processed===true){
+  const renderCoords = (coords,clusterType)=>{
+    if(processed===true){
             // console.log(coords);
-            return(
-                <Source
-                    id="coords"
-                    type="geojson"
-                    // data="https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
-                    data={districtCoords}
-                    cluster={true}
-                    clusterMaxZoom={14}
-                    clusterRadius={100}
-                    // ref={this._sourceRef}
-                    ref={ref => _sourceRef.current = ref && ref.getSource()}
-                    clusterProperties={{
-                        "confirmed": ["+", ["get", "confirmed"]],
-                        "active": ["+", ["get", "active"]],
-                        "recovered": ["+", ["get", "recovered"]],
-                        "deceased": ["+", ["get", "deceased"]]
-                    }}
-                >
-                    <ClusterLayer type="confirmed" sourceId="coords"/>
-                </Source>);
-        }
-        return <div></div>;
+      return(
+        <Source
+          id="coords"
+          type="geojson"
+          // data="https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
+          data={districtCoords}
+          cluster={true}
+          clusterMaxZoom={14}
+          clusterRadius={100}
+          // ref={this._sourceRef}
+          ref={ref => _sourceRef.current = ref && ref.getSource()}
+          clusterProperties={{
+              "confirmed": ["+", ["get", "confirmed"]],
+              "active": ["+", ["get", "active"]],
+              "recovered": ["+", ["get", "recovered"]],
+              "deceased": ["+", ["get", "deceased"]]
+          }}
+        >
+          <ClusterLayer type={clusterType} sourceId="coords"/>
+        </Source>
+      );
     }
+    return <div></div>;
+  }
 
 
   return (
@@ -367,35 +366,18 @@ const MapBox = () => {
       ref={ref => mapRef.current = ref && ref.getMap()}
 
       >
-      {renderCoords(districtCoords)}
+      {clusterType === "active" ? renderCoords(districtCoords,"active"):<div></div>}
+      {clusterType === "recovered" ? renderCoords(districtCoords,"recovered"):<div></div>}
+      {clusterType === "deceased" ? renderCoords(districtCoords,"deceased"):<div></div>}
+      {clusterType === "confirmed" ? renderCoords(districtCoords,"confirmed"):<div></div>}
 
       <OnUserLocation setViewport={setViewport} getGeojson={getGeojson}/>
-      <Source
+      {/* <Source
           type="geojson"
-          data={
-{    "type": "FeatureCollection",
-    "features": [
-        {
-            "id": "sonipat",
-            "type": "Feature",
-            "geometry": {
-                "type": "MultiPolygon",
-                "coordinates": [[geodata]]
-            },
-            "properties": {
-                "name_2": "Sonipat",
-                "name_1": "Haryana",
-                "state": "haryana",
-                "engtype_2": "District",
-                "statecode": "HR"
-            }
-        }
-    ]
-}}
-        >
+          data={}
+      >
         <Layer {...geoJsonLayer}/>
-      </Source>
-
+      </Source> */}
       <div style={geolocateStyle}>
           <GeolocateControl
           positionOptions={{enableHighAccuracy: true}}
@@ -404,6 +386,10 @@ const MapBox = () => {
         </div>
         <div style={fullscreenControlStyle}>
           <FullscreenControl />
+          <button onClick={()=>setClusterType('confirmed')}>show confirmed</button>
+          <button onClick={()=>setClusterType('active')}>show active</button>
+          <button onClick={()=>setClusterType('recovered')}>show recovered</button>
+          <button onClick={()=>setClusterType('deceased')}>show deceased</button>
         </div>
         <div style={navStyle}>
           <NavigationControl />
