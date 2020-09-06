@@ -53,76 +53,10 @@ const scaleControlStyle = {
   padding: '10px'
 };
 
-
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const MapBox = () => {
-<<<<<<< HEAD
-    const [data,setData] = useState([]);
-    const [layerType,setLayerType] = useState('recovered');
-    const [name,setName] = useState('India');
-    const [processed,setProcessed] = useState(false);
-    const [geodata ,setGeodata] = useState([]);
-    const [items , setItems] = useState([...namedata]);
-    const [viewport, setViewport] = useState({
-        latitude: 25.275005879170045,
-        longitude: 78.97082512588096,
-        zoom: 3.8325797292588644,
-        bearing: 0,
-        pitch: 0
-      });
-
-      const setLayerRecovered = () =>{
-        setLayerType('recovered')
-      }
-      const setLayerDeceased = () =>{
-        setLayerType('deceased')
-      }
-      const setLayerActive = () =>{
-        setLayerType('active')
-      }
-      const setLayerConfirmed = () =>{
-        renderCoordsc(districtCoords)
-      }
-
-    
-
-      const getItem = (dist) =>{
-          items.map((item)=>{
-            if(item.apiName===dist){
-              handleSearch(item,false)
-            }
-          })
-      }
-
-    const fetchForDistrict = async (dist) =>{
-      const res = await fetchdistrict(dist)
-      console.log(res.data.geometry.coordinates)
-      const dta = res.data.geometry.coordinates
-      setViewport({
-        latitude:dta[1],
-        longitude:dta[0],
-        zoom:9,
-        transitionInterpolator: new FlyToInterpolator({speed: 1}),
-        transitionDuration: '.2s'
-        })
-      getGeojson2(dta[0],dta[1])
-
-    }
-
-    const fetchForState = async (state) =>{
-      const res = await fetchstate(state)
-      const dta = res.data.geometry.coordinates
-      setViewport({
-        latitude:dta[1],
-        longitude:dta[0],
-        zoom:8,
-        transitionInterpolator: new FlyToInterpolator({speed: 1}),
-        transitionDuration: '.2s'
-        })
-      getGeojson3(dta[0],dta[1])
-    }
-=======
   const [data,setData] = useState([]);
+  const [layername , setLayerName] = useState('');
+  const [type,setType] = useState('');
   const [name,setName] = useState('India');
   const [processed,setProcessed] = useState(false);
   const [geodata ,setGeodata] = useState([]);
@@ -140,6 +74,8 @@ const MapBox = () => {
       items.map((item)=>{
         if(item.apiName===dist){
           handleSearch(item,false)
+          setLayerName(item.apiName)
+          setType('district')
         }
       })
   }
@@ -155,7 +91,6 @@ const MapBox = () => {
       transitionInterpolator: new FlyToInterpolator({speed: 1}),
       transitionDuration: '.2s'
       })
-    getGeojson2(dta[0],dta[1])
 
   }
 
@@ -169,7 +104,6 @@ const MapBox = () => {
       transitionInterpolator: new FlyToInterpolator({speed: 1}),
       transitionDuration: '.2s'
       })
-    getGeojson3(state);
   }
 
   const getGeojson = async (ulon,ulat) =>{
@@ -181,19 +115,6 @@ const MapBox = () => {
     getItem(dist)        
   }
 
-  const getGeojson2 = async (ulon,ulat) =>{
-    const response = await fetchgeojson(ulon , ulat);
-    const data = response.data.features[0].geometry.coordinates[0][0]
-    setGeodata([...data])
-  }
-
-  const getGeojson3 = async (state) =>{
-    const response = await fetchgeojsonstate(state);
-    console.log(response.data)
-    console.log('state')
-    // const data = response.data.features[0].geometry.coordinates[0][0]
-    setGeodata([...data])
-  }
 
   function capitalizeFirstLetter(str) { 
     str = str.split("_");
@@ -203,7 +124,6 @@ const MapBox = () => {
   }
 
   return str.join(" ");
->>>>>>> 66b2af488683b7d388de420347f36bf0b0f2cdc2
 
 }
 
@@ -217,6 +137,8 @@ const MapBox = () => {
       let state = capitalizeFirstLetter(item.state)
       handleDistrict(item.c19oName, state)
       if (flag){
+      setType('district')
+      setLayerName(item.apiName)
       fetchForDistrict(item.apiName)
       }
     }
@@ -224,12 +146,16 @@ const MapBox = () => {
       let state = capitalizeFirstLetter(item.state)
       handleState(state)
       if(flag){
+        setType('state')
+        setLayerName(item.apiName)
         fetchForState(item.apiName)
       }
     }
     else if(item.type ==='Union Territory'){
       handleState(item.c19oName)
       if(flag){
+        setType('state')
+        setLayerName(item.apiName)
         fetchForState(item.apiName)
       }
     }
@@ -409,63 +335,26 @@ const MapBox = () => {
                         "deceased": ["+", ["get", "deceased"]]
                     }}
                 >
-                    <ClusterLayer type='recovered' sourceId="coords"/>
+                    <ClusterLayer type={clusterType} sourceId="coords"/>
                 </Source>);
         }
         return <div></div>;
     }
 
-
-    const  renderCoordsc = (coords)=>{
-        if(processed===true){
-            // console.log(coords);
-            return(
-                <Source
-                    id="coords"
-                    type="geojson"
-                    // data="https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
-                    data={districtCoords}
-                    cluster={true}
-                    clusterMaxZoom={14}
-                    clusterRadius={100}
-                    // ref={this._sourceRef}
-                    ref={ref => _sourceRef.current = ref && ref.getSource()}
-                    clusterProperties={{
-                        "confirmed": ["+", ["get", "confirmed"]],
-                        "active": ["+", ["get", "active"]],
-                        "recovered": ["+", ["get", "recovered"]],
-                        "deceased": ["+", ["get", "deceased"]]
-                    }}
-                >
-                    <ClusterLayer type='confirmed' sourceId="coords"/>
-                </Source>);
-        }
-        return <div></div>;
-      return(
-        <Source
-          id="coords"
+  const renderLayer = ( Name,type) =>{
+    return(
+       <Source
+          id ='data'
           type="geojson"
-          // data="https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
-          data={districtCoords}
-          cluster={true}
-          clusterMaxZoom={14}
-          clusterRadius={100}
-          // ref={this._sourceRef}
-          ref={ref => _sourceRef.current = ref && ref.getSource()}
-          clusterProperties={{
-              "confirmed": ["+", ["get", "confirmed"]],
-              "active": ["+", ["get", "active"]],
-              "recovered": ["+", ["get", "recovered"]],
-              "deceased": ["+", ["get", "deceased"]]
-          }}
-        >
-          <ClusterLayer type={clusterType} sourceId="coords"/>
-        </Source>
-      );
-    }
-    return <div></div>;
+          data={`http://54.211.144.29/api/${type}/${Name}`}
+      >
+        <Layer {...geoJsonLayer}/>
+      </Source>
+    );
   }
 
+    
+      
 
   return (
     <div>
@@ -485,13 +374,14 @@ const MapBox = () => {
       >
       
 
-      {renderCoordsc(districtCoords)}
       {clusterType === "active" ? renderCoords(districtCoords,"active"):<div></div>}
       {clusterType === "recovered" ? renderCoords(districtCoords,"recovered"):<div></div>}
       {clusterType === "deceased" ? renderCoords(districtCoords,"deceased"):<div></div>}
       {clusterType === "confirmed" ? renderCoords(districtCoords,"confirmed"):<div></div>}
 
       <OnUserLocation setViewport={setViewport} getGeojson={getGeojson}/>
+
+      {layername?renderLayer(layername,type):<div></div>}
       {/* <Source
           type="geojson"
           data={}
@@ -506,10 +396,7 @@ const MapBox = () => {
         </div>
         <div style={fullscreenControlStyle}>
           <FullscreenControl />
-          <button onClick={()=>setClusterType('confirmed')}>show confirmed</button>
-          <button onClick={()=>setClusterType('active')}>show active</button>
-          <button onClick={()=>setClusterType('recovered')}>show recovered</button>
-          <button onClick={()=>setClusterType('deceased')}>show deceased</button>
+          
         </div>
         <div style={navStyle}>
           <NavigationControl />
@@ -519,11 +406,11 @@ const MapBox = () => {
         </div>
 
         <div className='layerswitch'>
-
-        <button className='switchbutton' onClick={()=>setLayerActive()} >Active</button>
-        <button className='switchbutton' onClick={()=>setLayerConfirmed()} >Confirmed</button>
-        <button className='switchbutton' onClick={()=>setLayerRecovered()} >Recovered</button>
-        <button className='switchbutton' onClick={()=>setLayerDeceased()} >Deceased</button>
+          <button onClick={()=>setClusterType('confirmed')}>show confirmed</button>
+          <button onClick={()=>setClusterType('active')}>show active</button>
+          <button onClick={()=>setClusterType('recovered')}>show recovered</button>
+          <button onClick={()=>setClusterType('deceased')}>show deceased</button>
+        
 
         </div>
 
@@ -535,5 +422,6 @@ const MapBox = () => {
       </div>
   )
 }
+
 
 export default MapBox;
