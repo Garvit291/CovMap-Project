@@ -31,7 +31,7 @@ const SearchBox = ({handleSearch , setFlag}) => {
         {display && ( <div className = 'ol'>
                 {items.filter((namedata)=> namedata.apiName.indexOf(text.toLowerCase())>-1).slice(0,8).map((item,i)=> {
             return(
-                <Paper>
+                <Paper elevation ={3}>
                 <div key = {i} onClick = {() => optionSelected(item)} className='li'>
                     <span className = 'optionName'>{item.c19oName} <span className='statecode'>({item.statecode})</span></span>
                 </div>

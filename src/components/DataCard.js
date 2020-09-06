@@ -2,7 +2,7 @@ import React , {useEffect,useSate} from 'react';
 import {Doughnut} from 'react-chartjs-2';
 import axios from 'axios'
 import * as jp from 'jsonpath';
-
+import Paper from '@material-ui/core/Paper';
 
 
 
@@ -42,10 +42,13 @@ const DataCard = ({stats , name}) => {
 			height= {8}
 					/>
     return (
-        <div>
+    
+		<div>
         <h2 className='name'>{name}</h2>
         {doughnut}
+		
       </div>
+	  
     );
 }
 

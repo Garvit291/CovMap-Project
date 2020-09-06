@@ -101,7 +101,7 @@ const MapBox = () => {
     setViewport({
       latitude:dta[1],
       longitude:dta[0],
-      zoom:8,
+      zoom:7,
       transitionInterpolator: new FlyToInterpolator({speed: 1}),
       transitionDuration: '.2s'
       })
@@ -407,10 +407,10 @@ const MapBox = () => {
         </div>
 
         <div className='layerswitch'>
-          <button onClick={()=>setClusterType('confirmed')}>show confirmed</button>
-          <button onClick={()=>setClusterType('active')}>show active</button>
-          <button onClick={()=>setClusterType('recovered')}>show recovered</button>
-          <button onClick={()=>setClusterType('deceased')}>show deceased</button>
+          <button  className='switch_button' onClick={()=>setClusterType('confirmed')}>show confirmed</button>
+          <button  className='switch_button' onClick={()=>setClusterType('active')}>show active</button>
+          <button className='switch_button' onClick={()=>setClusterType('recovered')}>show recovered</button>
+          <button  className='switch_button'onClick={()=>setClusterType('deceased')}>show deceased</button>
         
 
         </div>
