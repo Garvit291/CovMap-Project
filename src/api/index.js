@@ -10,8 +10,9 @@ export const fetchgeojson = async (lon,lat) =>{
   return response
 }
 
-export const fetchgeojsonstate = async (lon,lat) =>{
-  const response = await axios.get(`http://54.211.144.29/api/state/?lng=${lon}&lat=${lat}`);
+export const fetchgeojsonstate = async (state) =>{
+  // const response = await axios.get(`http://54.211.144.29/api/state/?lng=${lon}&lat=${lat}`);
+  const response = await axios.get(`http://54.211.144.29/api/state/${state}`);
   return response
 }
 

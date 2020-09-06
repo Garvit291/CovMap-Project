@@ -13,7 +13,7 @@ const OnUserLocation =({setViewport ,getGeojson }) => {
       
       
 
-      const  successCallback = async function (position) {
+    const  successCallback = async function (position) {
     const lon = position.coords.longitude;
     const lat = position.coords.latitude;
     console.log(lon,lat)
@@ -45,14 +45,11 @@ const OnUserLocation =({setViewport ,getGeojson }) => {
 
     return (
         <div>
-
-        <div className='get_button'>
-         <button onClick = {() => getUserLocation()}>get</button>
-         </div>
-         
-            
+          <div className='get_button'>
+          <button onClick = {() => getUserLocation()}>get</button>
+          </div>  
         </div>
-    )
+    );
 }
 
 
