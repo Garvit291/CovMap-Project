@@ -75,7 +75,12 @@ const MapBox = () => {
         if(item.apiName===dist){
           
           setLayerName(item.apiName)
+          if(item.type==='d'){
           setType('district')
+          }
+          else{
+            setType('state')
+          }
           handleSearch(item,false)
         }
       })
@@ -131,7 +136,7 @@ const MapBox = () => {
   const handleSearch = (item,flag) =>
   {  
     setName(item.c19oName)
-    if (item.type==='District'){
+    if (item.type==='d'){
       if(item.state==='daman_and_diu'|| item.state==='dadra_and_nagar_haveli'){
         item.state='Dadra and Nagar Haveli and Daman and Diu'
       }
@@ -151,16 +156,16 @@ const MapBox = () => {
       fetchForDistrict(item.apiName)
       }
     }
-    else if (item.type==='State'){
+    else if (item.type==='d'){
       let state = capitalizeFirstLetter(item.state)
-      handleState(state)
+      handleState(item.c19oName)
       if(flag){
         setType('state')
         setLayerName(item.apiName)
         fetchForState(item.apiName)
       }
     }
-    else if(item.type ==='Union Territory'){
+    else if(item.type ==='u'){
       handleState(item.c19oName)
       if(flag){
         setType('state')
