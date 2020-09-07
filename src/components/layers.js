@@ -144,6 +144,24 @@ export const clusterLayer = (sourceId,type)=>  {
       'type': 'fill',
       'source': 'data',
       'layout': {},
-      'paint': { 'fill-color': 'red', 'fill-opacity': 0.5 }
+      'paint': { 'fill-color': 'gray', 'fill-opacity': 0.5 }
   };
   
+  export const testCenLayer = {
+    id: 'testCens',
+    type: 'symbol',
+    source: 'testCen',
+    'filter': ['==', '$type', 'Point'],
+    // paint: {
+    //   'circle-color': '#11b4da',
+    //   'circle-radius': 4,
+    //   'circle-stroke-width': 1,
+    //   'circle-stroke-color': '#fff'
+    // }
+    'layout': {
+      'icon-image': 'pin',
+      // get the title name from the source's "title" property
+      },
+    'icon-allow-overlap': true,
+    'icon-size': 0.06
+  };

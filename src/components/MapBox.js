@@ -5,7 +5,7 @@ import  MapGL, {
     ScaleControl,FlyToInterpolator,
     GeolocateControl,Layer,Source
     } from 'react-map-gl';
-import{geoJsonLayer} from './layers.js';
+import{geoJsonLayer,testCenLayer} from './layers.js';
 import SearchBox from './SearchBox.js';
 import OnUserLocation from './OnUserLocation';
 import {fetchData,fetchgeojson,fetchstate,fetchdistrict,fetchgeojsonstate} from '../api/index.js';
@@ -230,8 +230,8 @@ const MapBox = () => {
 
 
 
-  const _sourceRef = React.createRef()
-  const   mapRef= React.createRef()
+  const _sourceRef = React.createRef();
+  const   mapRef= React.useRef();
 
   const refactorStateCoords = (data) => {
     let stateCodes=jp.query(data, '$..statecode');
@@ -356,6 +356,10 @@ const MapBox = () => {
     }
 
   const renderLayer = ( Name,type) =>{
+    // map.loadImage('/map-pin.png', (error, image) => {
+      // if (error) throw error;
+      // if (!map.hasImage('map-pin')) map.addImage('map-pin', image, { sdf: true });
+    // });
     return(
        <Source
           id ='data'
@@ -367,8 +371,33 @@ const MapBox = () => {
     );
   }
 
+  const renderTestCen = ( Name,type) =>{
+    // console.log(Name,type)
+    let map=mapRef.current.getMap();
+    // map.loadImage('/map-pin.png', (error, image) => {
+    //   if (error) throw error;
+    //   if (!map.hasImage('map-pin')) map.addImage('map-pin', image, { sdf: true });
+    // });
+    return(
+       <Source
+          id ='testCen'
+          type="geojson"
+          data={`http://54.211.144.29/api/testCen/?${type}=${Name}`}
+      >
+        <Layer {...testCenLayer}/>
+      </Source>
+    );
+  }
+
     
-      
+  const mapOnLoad=()=>{
+    if (!mapRef.current) return
+    const map = mapRef.current.getMap();
+    map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png', (error, image) => {
+                  if (error) return
+                    map.addImage('pin', image)
+                  })
+  }
 
   return (
     <div>
@@ -377,14 +406,14 @@ const MapBox = () => {
       </div>
     
       <MapGL
-      {...viewport}
-      width="100vw"
-      height="100vh"
-      mapStyle="mapbox://styles/garvit2/cke5j2o2c1oej19qo843rhfi4"
-      onViewportChange={nextViewport => setViewport(nextViewport)}
-      mapboxApiAccessToken={MAPBOX_TOKEN}
-      ref={ref => mapRef.current = ref && ref.getMap()}
-
+        {...viewport}
+        width="100vw"
+        height="100vh"
+        mapStyle="mapbox://styles/garvit2/cke5j2o2c1oej19qo843rhfi4"
+        onViewportChange={nextViewport => setViewport(nextViewport)}
+        mapboxApiAccessToken={MAPBOX_TOKEN}
+        ref={mapRef}
+        onLoad={mapOnLoad}
       >
       
 
@@ -396,6 +425,7 @@ const MapBox = () => {
       <OnUserLocation setViewport={setViewport} getGeojson={getGeojson}/>
 
       {layername?renderLayer(layername,type):<div></div>}
+      {layername?renderTestCen(layername,type):<div></div>}
       {/* <Source
           type="geojson"
           data={}
@@ -424,8 +454,6 @@ const MapBox = () => {
           <button  className='switch_button' onClick={()=>setClusterType('active')}>show active</button>
           <button className='switch_button' onClick={()=>setClusterType('recovered')}>show recovered</button>
           <button  className='switch_button'onClick={()=>setClusterType('deceased')}>show deceased</button>
-        
-
         </div>
 
         <div className='statcard'>
