@@ -156,7 +156,7 @@ const MapBox = () => {
       fetchForDistrict(item.apiName)
       }
     }
-    else if (item.type==='d'){
+    else if (item.type==='s'){
       let state = capitalizeFirstLetter(item.state)
       handleState(item.c19oName)
       if(flag){
