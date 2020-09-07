@@ -135,6 +135,14 @@ const MapBox = () => {
       if(item.state==='daman_and_diu'|| item.state==='dadra_and_nagar_haveli'){
         item.state='Dadra and Nagar Haveli and Daman and Diu'
       }
+      if(item.state==='andaman_and_nicobar'){
+        item.state='Andaman and Nicobar Islands'
+      }
+      if(item.state==='jammu_and_kashmir'){
+        item.state='Jammu and Kashmir'
+      }
+
+
       let state = capitalizeFirstLetter(item.state)
       handleDistrict(item.c19oName, state)
       if (flag){
