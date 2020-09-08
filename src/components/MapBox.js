@@ -411,7 +411,7 @@ const MapBox = () => {
        <Source
           id ='data'
           type="geojson"
-          data={`http://54.211.144.29/api/${type}/${Name}`}
+          data={`http://54.211.144.29:8080/api/${type}/${Name}`}
       >
         <Layer {...geoJsonLayer}/>
       </Source>
@@ -429,7 +429,7 @@ const MapBox = () => {
        <Source
           id ='testCen'
           type="geojson"
-          data={`http://54.211.144.29/api/testCen/?${type}=${Name}`}
+          data={`http://54.211.144.29:8080/api/testCen/?${type}=${Name}`}
       >
         <Layer {...testCenLayer}/>
       </Source>
