@@ -2,7 +2,6 @@ import React , {useEffect,useSate} from 'react';
 import {Doughnut} from 'react-chartjs-2';
 import axios from 'axios'
 import * as jp from 'jsonpath';
-import Paper from '@material-ui/core/Paper';
 
 
 
@@ -38,8 +37,8 @@ const DataCard = ({stats , name}) => {
                 title : {display:true , text: `Current Situation in ${name}`}
             }}
 
-			width={20}
-			height= {8}
+			width={15}
+			height= {6}
 					/>
     return (
     

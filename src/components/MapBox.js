@@ -8,7 +8,7 @@ import  MapGL, {
 import{geoJsonLayer,testCenLayer} from './layers.js';
 import SearchBox from './SearchBox.js';
 import OnUserLocation from './OnUserLocation';
-import {fetchData,fetchgeojson,fetchstate,fetchdistrict,fetchgeojsonstate} from '../api/index.js';
+import {fetchData,fetchgeojson,fetchstate,fetchdistrict,fetchtestcen} from '../api/index.js';
 import DataCard from './DataCard.js';
 import namedata from '../data/csvjson.js';
 import {stateCoords} from '../data/Coords/stateCoords.js';
@@ -17,6 +17,8 @@ import {covmap} from '../api/index';
 import apiDict from './csvjsonX.js';
 import axios from 'axios';
 import ClusterLayer from './ClusterLayer';
+import TCard from './Card.js';
+import Switch from '@material-ui/core/Switch';
 
 import * as jp from 'jsonpath';
 
@@ -25,19 +27,9 @@ import * as jp from 'jsonpath';
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ2Fydml0MiIsImEiOiJja2U1Z3lvZWcxMnF2MzduN3FyZmtzaDViIn0.-XsOlUf85kWRRFa88u6aLQ';
 
 
-const geolocateStyle = {
-  position: 'absolute',
-  bottom: '100px',
-  right: 0,
-  padding: '10px'
-};
 
-const fullscreenControlStyle = {
-  position: 'absolute',
-    bottom: 10,
-  right: 0,
-  padding: '10px'
-};
+
+
 
 const navStyle = {
   position: 'absolute',
@@ -55,6 +47,8 @@ const scaleControlStyle = {
 
 const MapBox = () => {
   const [data,setData] = useState([]);
+  const [check,setCheck] = useState(true)
+  const [testcen,setTestcen]=useState([]);
   const [layername , setLayerName] = useState('');
   const [type,setType] = useState('district');
   const [name,setName] = useState('India');
@@ -70,6 +64,48 @@ const MapBox = () => {
       pitch: 0
     });
 
+
+  const handleChange = (e) =>{
+    setCheck(e.target.checked)
+    toggle()
+  }
+
+  const toggle = () =>{
+    if(check){
+      setClusterType('')
+    }
+    else{
+      setClusterType('confirmed')
+    }
+  }
+
+  const Testcendetd = async (d) =>{
+    
+    const response = await fetchtestcen(d,'district')
+    console.log(response.data.features)
+    const data = response.data.features
+    setTestcen(data)
+    return(
+      <div>
+      </div>
+    );
+
+  }
+
+  const Testcendets = async (s) =>{
+    
+    const response = await fetchtestcen(s,'state')
+    console.log(response.data.features)
+    const data = response.data.features
+    setTestcen(data)
+    return(
+      <div>
+      </div>
+    );
+
+  }
+
+
   const getItem = (dist) =>{
       items.map((item)=>{
         if(item.apiName===dist){
@@ -77,11 +113,17 @@ const MapBox = () => {
           setLayerName(item.apiName)
           if(item.type==='d'){
           setType('district')
+          Testcendetd(item.apiName)
           }
           else{
             setType('state')
+            Testcendets(item.apiName)
           }
           handleSearch(item,false)
+        }
+
+        else {
+          return(<div></div>)
         }
       })
   }
@@ -97,6 +139,7 @@ const MapBox = () => {
       transitionInterpolator: new FlyToInterpolator({speed: 1}),
       transitionDuration: '.2s'
       })
+      Testcendetd(dist)
 
   }
 
@@ -110,6 +153,7 @@ const MapBox = () => {
       transitionInterpolator: new FlyToInterpolator({speed: 1}),
       transitionDuration: '.2s'
       })
+      Testcendets(state)
   }
 
   const getGeojson = async (ulon,ulat) =>{
@@ -118,6 +162,9 @@ const MapBox = () => {
     setGeodata([...data])
     console.log(response.data.features[0].id)
     const dist = response.data.features[0].id
+    const buf = response.data.features[0].properties.state
+    console.log(buf)
+    if (buf!=='nct_of_delhi')
     getItem(dist)        
   }
 
@@ -389,6 +436,8 @@ const MapBox = () => {
     );
   }
 
+
+  
     
   const mapOnLoad=()=>{
     if (!mapRef.current) return
@@ -426,22 +475,14 @@ const MapBox = () => {
 
       {layername?renderLayer(layername,type):<div></div>}
       {layername?renderTestCen(layername,type):<div></div>}
+      
       {/* <Source
           type="geojson"
           data={}
       >
         <Layer {...geoJsonLayer}/>
       </Source> */}
-      <div style={geolocateStyle}>
-          <GeolocateControl
-          positionOptions={{enableHighAccuracy: true}}
-          trackUserLocation={true}
-          />
-        </div>
-        <div style={fullscreenControlStyle}>
-          <FullscreenControl />
-          
-        </div>
+        
         <div style={navStyle}>
           <NavigationControl />
         </div>
@@ -449,16 +490,60 @@ const MapBox = () => {
           <ScaleControl />
         </div>
 
+    
         <div className='layerswitch'>
-          <button  className='switch_button' onClick={()=>setClusterType('confirmed')}>show confirmed</button>
-          <button  className='switch_button' onClick={()=>setClusterType('active')}>show active</button>
-          <button className='switch_button' onClick={()=>setClusterType('recovered')}>show recovered</button>
-          <button  className='switch_button'onClick={()=>setClusterType('deceased')}>show deceased</button>
-        </div>
+
+        <div className='button-box'> 
+          <div  className='switch_button blue' onClick={()=>setClusterType('confirmed')}>
+              <h4 className = 'glow_blue'> Confirmed </h4>
+              <h4 className= 'glow_blue'> {data[0]}</h4>
+          </div>
+          </div>
+
+          <div className='button-box '>
+          <div  className='switch_button red' onClick={()=>setClusterType('active')}>
+              <h4 className='glow_red'> Active </h4>
+              <h4 className='glow_red'> {data[1]}</h4>
+          </div>
+          </div>
+
+          <div className='button-box '>
+          <div className='switch_button  green' onClick={()=>setClusterType('recovered')}>
+              <h4 className ='glow_green'> Recovered </h4>
+              <h4 className='glow_green'> {data[2]}</h4>
+          </div>
+          </div>
+
+          <div className='button-box'> 
+          <div  className='switch_button purple'onClick={()=>setClusterType('deceased')}>
+              <h4 className='glow_purple'> Deceased </h4>
+              <h4 className='glow_purple'> {data[3]}</h4>
+          </div>
+          </div>
+          
+         </div>
+      <div className='card-container'>
+        {testcen.slice(0,10).map((centre)=>{
+          return(
+            <TCard centre = {centre}/>
+          )
+        })}
+      </div>  
 
         <div className='statcard'>
         <DataCard stats={data} name = {name}/>
       </div>
+    <div className='switch'>
+
+      <h3 className='cl'> ClusterLayer </h3>
+      <Switch
+            checked={check}
+            onChange={e=>handleChange(e)}
+            name="checked"
+            color="primary"
+          
+          />
+     </div>     
         
       </MapGL>
       </div>

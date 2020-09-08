@@ -28,6 +28,11 @@ export const fetchstate = async (state) =>{
   return response
 }
 
+export const fetchtestcen = async (name , type) =>{
+  const response = await axios.get(`http://54.211.144.29/api/testCen/?${type}=${name}`)
+  return response
+}
+
 export const covmap = axios.create({
     baseURL: 'http://54.211.144.29:8080/api',
     params:{

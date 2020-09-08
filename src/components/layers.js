@@ -144,7 +144,8 @@ export const clusterLayer = (sourceId,type)=>  {
       'type': 'fill',
       'source': 'data',
       'layout': {},
-      'paint': { 'fill-color': 'gray', 'fill-opacity': 0.5 }
+      'paint': { 'fill-color': 'gray', 'fill-opacity': 0.5 ,
+      'fill-outline-color':'white',}
   };
   
   export const testCenLayer = {

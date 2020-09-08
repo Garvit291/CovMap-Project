@@ -2,6 +2,7 @@ import React , {useState} from 'react';
 import {Layer,Source,FlyToInterpolator} from 'react-map-gl';
 import { fetchgeojson} from '../api/index.js';
 import{geoJsonLayer} from './layers.js';
+import MyLocationIcon from '@material-ui/icons/MyLocation';
 
 
 
@@ -45,8 +46,8 @@ const OnUserLocation =({setViewport ,getGeojson }) => {
 
     return (
         <div>
-          <div className='get_button'>
-          <button onClick = {() => getUserLocation()}>get</button>
+          <div className='get_button_container'>
+          <button className='get_button' onClick = {() => getUserLocation()}><MyLocationIcon/></button>
           </div>  
         </div>
     );
