@@ -2,6 +2,7 @@ import React , {useState} from 'react';
 import './SearchBox.css';
 import namedata from '../data/csvjson.js';
 import Paper from '@material-ui/core/Paper';
+import SearchIcon from '@material-ui/icons/Search';
 
 
 const SearchBox = ({handleSearch , setFlag}) => {
@@ -27,7 +28,10 @@ const SearchBox = ({handleSearch , setFlag}) => {
         
     return ( 
     <div className = 'container'>
-        <input type='text' className='input' onChange={onChange} value={text}  />
+        <div className='searchdiv'>
+        <input type='text' className='input' onChange={onChange} value={text}  placeholder='Search district or state' />
+        <SearchIcon color = 'primary' style={{fontSize:'30'}}/>
+        </div>
         {display && ( <div className = 'ol'>
                 {items.filter((namedata)=> namedata.apiName.indexOf(text.toLowerCase())>-1).slice(0,8).map((item,i)=> {
             return(

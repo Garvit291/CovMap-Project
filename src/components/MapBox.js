@@ -535,7 +535,6 @@ const MapBox = () => {
       </div>
     <div className='switch'>
 
-      <h3 className='cl'> ClusterLayer </h3>
       <Switch
             checked={check}
             onChange={e=>handleChange(e)}

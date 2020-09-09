@@ -47,7 +47,7 @@ const OnUserLocation =({setViewport ,getGeojson }) => {
     return (
         <div>
           <div className='get_button_container'>
-          <button className='get_button' onClick = {() => getUserLocation()}><MyLocationIcon/></button>
+          <button className='get_button' onClick = {() => getUserLocation()}><MyLocationIcon color='primary'/></button>
           </div>  
         </div>
     );
