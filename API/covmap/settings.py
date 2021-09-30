@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
-
+import json
 
 if os.name=='nt':
     VENV_BASE = os.environ['VIRTUAL_ENV']
@@ -19,7 +19,8 @@ if os.name=='nt':
     os.environ['PROJ_LIB']=os.path.join(VENV_BASE,'Lib\\site-packages\\osgeo\\data\\proj')+';'+os.environ['PATH']
 
 
-
+with open('/etc/covmapConfig.json') as config_file:
+    config=json.load(config_file)
 
 
 
@@ -31,12 +32,12 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3&)a3@#toxu=7*^s$ga=w=&agz8k1$($dl*-7wn-808+09#*m%'
+SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.211.144.29','localhost','covmap.live','.covmap.live','www.covmap.live']
 
 
 # Application definition
@@ -141,10 +142,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 #cors origin for react and django to work simultaneously
 # we whitelist localhost:3000 because that's where frontend will be served
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
-)
+#CORS_ORIGIN_WHITELIST = (
+#    'http://localhost:3000',
+#)
+CORS_ORIGIN_ALLOW_ALL = True
