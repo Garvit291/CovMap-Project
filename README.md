@@ -15,17 +15,17 @@
 ## SearchBar to search any location
 ![](https://github.com/Garvit291/CovMap-Project/blob/main/images/search.jpeg?raw=true)
 
-    Search Bar allows to Search for any City / State / UT of india and also provides suggestions according to user's query
+Search Bar allows to Search for any City / State / UT of india and also provides suggestions according to user's query
 
 ## Statistics and Pie Chart 
 ![](https://github.com/Garvit291/CovMap-Project/blob/main/images/stats.jpeg?raw=true)
 
-    A statcard consisting of Several numbers about the Covid cases and Pie chart depicting those numbers in a graph is also available on CovMap
+A statcard consisting of Several numbers about the Covid cases and Pie chart depicting those numbers in a graph is also available on CovMap
 
 ## Highlighting the Layer
 ![](https://github.com/Garvit291/CovMap-Project/blob/main/images/layer.jpeg?raw=true)
 
-     When a city is searched on CovMap the Camera of the Map will be zoomed to that city and the MapLayer of that city will be highlighted in a different Color
+ When a city is searched on CovMap the Camera of the Map will be zoomed to that city and the MapLayer of that city will be highlighted in a different Color
 
 
 
@@ -42,10 +42,10 @@
 - [Material UI](https://mui.com/) - MUI offers a comprehensive suite of UI tools to help you ship new features faster. Start with Material UI, our fully-loaded component library, or bring your own design system to our production-ready components.
 
 # Future Improvements 
-### 1. Addition of Feature to book appoitments with doctors
-### 2. Integration of AI bot to solve small medical queries
-### 3. Navigation to Nearest Hospitals
-### 4. Improvements for Mobile device rendering 
+ 1. Addition of Feature to book appoitments with doctors
+ 2. Integration of AI bot to solve small medical queries
+ 3. Navigation to Nearest Hospitals
+ 4. Improvements for Mobile device rendering 
 
 
 
