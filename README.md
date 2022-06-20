@@ -1,50 +1,53 @@
-# ![WebApp](https://iharsh234.github.io/WebApp/images/demo/demo_landing.JPG)
+# ![WebApp](https://github.com/Garvit291/CovMap-Project/blob/main/images/covmap.jpeg?raw=true)
 # CovMap
 <table>
 <tr>
 <td>
-  A webapp using Quandl API to display history of stock growth in a given period of time. It helps predict the growth of stocks from the  charts of stock performace in any period of time. It helps to judge stocks, with the principle of momentum investing, which returns 1% per month on average.
+    CovMap is a WebApp Built to view Statistics of Cocid-19 Cases in any area of India. It allows you to run a search Query at different Levels. The lowest level is all the cities of India including Union Teritories. 
 </td>
 </tr>
 </table>
 
 
-## Site
-
-### Landing Page
-Currently it is working on all NSE (India) Stocks, BSE (India) Stocks Symbol will be added soon.
-
-![](https://iharsh234.github.io/WebApp/images/demo/web_app_face.JPG)
-
-### Query Filled Form
-![](https://iharsh234.github.io/WebApp/images/demo/demo_query.JPG)
-
-### Charts
-![](https://iharsh234.github.io/WebApp/images/demo/demo_chart1.JPG)
-![](https://iharsh234.github.io/WebApp/images/demo/demo_chart2.JPG)
-![](https://iharsh234.github.io/WebApp/images/demo/demo_chart3.JPG)
+# Features
 
 
+## SearchBar to search any location
+![](https://github.com/Garvit291/CovMap-Project/blob/main/images/search.jpeg?raw=true)
 
-## Built with 
+    Search Bar allows to Search for any City / State / UT of india and also provides suggestions according to user's query
 
-- [jQuery - Ajax](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
-- [Google Chart API](https://developers.google.com/chart/interactive/docs/quick_start) - Free , Rich Gallery , Customizable and Cross-browser compatible.
-- [Bootstrap](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.
+## Statistics and Pie Chart 
+![](https://github.com/Garvit291/CovMap-Project/blob/main/images/stats.jpeg?raw=true)
+
+    A statcard consisting of Several numbers about the Covid cases and Pie chart depicting those numbers in a graph is also available on CovMap
+
+## Highlighting the Layer
+![](https://github.com/Garvit291/CovMap-Project/blob/main/images/layer.jpeg?raw=true)
+
+     When a city is searched on CovMap the Camera of the Map will be zoomed to that city and the MapLayer of that city will be highlighted in a different Color
 
 
-## To-do
-- Add BSE (India) Symbol to the current App.
-- Decide comparison models of Stocks. (suggestions are most welcome).
-- Another WebApp, capable of comparing at least 10 stocks.
 
-## Team
 
-[![Harsh Vijay](https://avatars1.githubusercontent.com/u/12688534?v=3&s=144)](https://github.com/iharsh234)  | [![Quandl.com](https://github.com/iharsh234/WebApp/blob/master/images/quandl.jpg)](https://www.quandl.com/)
----|---
-[Harsh Vijay ](https://github.com/iharsh234) |[Quandl](https://www.quandl.com)
+# Built with 
 
-## [License](https://github.com/iharsh234/WebApp/blob/master/LICENSE.md)
+- [Reactjs](https://reactjs.org/) - React makes it painless to create interactive UIs , helps to design simple views for each state in your application and used to  efficiently update and render just the right components when the  data changes.
 
-MIT © [Harsh Vijay ](https://github.com/iharsh234)
+
+- [React Mapbox GL JS](https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/) - Mapbox provides powerful routing engines, accurate, traffic-powered travel times, and intuitive turn-by-turn directions to help you build engaging navigation experiences and different interactive maps 
+
+- [Chart js](https://www.chartjs.org/docs/latest/) - Simple yet flexible JavaScript charting for designers & developers
+
+- [Material UI](https://mui.com/) - MUI offers a comprehensive suite of UI tools to help you ship new features faster. Start with Material UI, our fully-loaded component library, or bring your own design system to our production-ready components.
+
+# Future Improvements 
+### 1. Addition of Feature to book appoitments with doctors
+### 2. Integration of AI bot to solve small medical queries
+### 3. Navigation to Nearest Hospitals
+### 4. Improvements for Mobile device rendering 
+
+
+
+ © [Garvit291](https://github.com/Garvit291)
 
